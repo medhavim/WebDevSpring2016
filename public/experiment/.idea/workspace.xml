@@ -27,8 +27,8 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5409836">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.6885246">
+              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -226,7 +226,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453511234907</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added project name">
+      <created>1453511310140</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1453511310140</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -264,7 +270,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added dashboard.css" />
     <MESSAGE value="added dashboard.css in css folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dashboard.css in css folder" />
+    <MESSAGE value="added project name" />
+    <option name="LAST_COMMIT_MESSAGE" value="added project name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -289,8 +296,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5409836">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.6885246">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
           <folding />
         </state>
       </provider>
