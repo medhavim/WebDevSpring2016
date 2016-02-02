@@ -66,6 +66,7 @@
                 <h1></h1>
                 <div id="field" class="tab-pane fade in active">
                     <form role="form">
+                        <br>
                         <div class="form-group">
                             <label for="inputFirstName3">First Name: </label>
                             <div class="row">
@@ -88,6 +89,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <br>
 
                         <div class="form-group">
                             <label for="inputLastName3">Last Name: </label>
@@ -112,6 +115,8 @@
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="form-group">
                             <label for="input-date">Date of Birth:</label>
                             <div class="row">
@@ -135,17 +140,46 @@
                             </div>
                         </div>
 
+                        <br>
+
                         <div class="form-group">
-                            <label>Gender:</label>
+                            <label for="inputGender">Gender:</label>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Gender
-                                            <span class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Male</a></li>
-                                            <li><a href="#">Female</a></li>
-                                        </ul>
+                                    <select name="gender" id="inputGender">
+                                        <option value="male" selected>Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-offset-1 col-sm-5">
+                                    <a href="#" class="btn btn-warning">
+                                        <scan class="glyphicon glyphicon-pencil"></scan>
+                                    </a>
+                                    <a href="#" class="btn btn-primary">
+                                        <scan class="glyphicon glyphicon-plus"></scan>
+                                    </a>
+                                    <a href="#" class="btn btn-danger">
+                                        <scan class="glyphicon glyphicon-remove"></scan>
+                                    </a>
+                                    <a href="#" class="btn btn-info">
+                                        <scan class="glyphicon glyphicon-align-justify"></scan>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label>Roles:</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="checkbox">
+                                    <label><input type="checkbox" value checked>Admin</label>
+                                        </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox">Student</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value checked>User</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-offset-1 col-sm-5">
@@ -165,46 +199,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                        <label>Roles:</label>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="checkbox">
-                                    <label><input type="checkbox">Admin</label>
-                                        </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox">Student</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox">User</label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox">Faculty</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-offset-1 col-sm-5">
-                                    <a href="#" class="btn btn-warning">
-                                        <scan class="glyphicon glyphicon-pencil"></scan>
-                                    </a>
-                                    <a href="#" class="btn btn-primary">
-                                        <scan class="glyphicon glyphicon-plus"></scan>
-                                    </a>
-                                    <a href="#" class="btn btn-danger">
-                                        <scan class="glyphicon glyphicon-remove"></scan>
-                                    </a>
-                                    <a href="#" class="btn btn-info">
-                                        <scan class="glyphicon glyphicon-align-justify"></scan>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <br>
 
                         <div class="form-group">
                             <label>License Agreement:</label>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="radio">
-                                        <label><input type="radio" name="optradio">Yes</label>
+                                        <label><input type="radio" name="optradio" value checked>Yes</label>
                                     </div>
                                     <div class="radio">
                                         <label><input type="radio" name="optradio">No</label>
@@ -227,24 +229,20 @@
                             </div>
                         </div>
 
-                        <hr>
+                        <hr class="separator">
 
                         <div class="form-group">
-                            <label>Add New Field:</label>
+                            <label for="inputField">Add New Field:</label>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="dropdown">
-                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a new field
-                                            <span class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Single Line Text</a></li>
-                                            <li><a href="#">Date</a></li>
-                                            <li><a href="#">Dropdown</a></li>
-                                            <li><a href="#">Checkboxes</a></li>
-                                            <li><a href="#">Radio Buttons</a></li>
-                                            <li><a href="#">Paragraph Text Field</a></li>
-                                        </ul>
-                                    </div>
+                                    <select name="newField" id="inputField">
+                                        <option value="Single Line Text" selected>Single Line Text</option>
+                                        <option value="Date">Date</option>
+                                        <option value="Dropdown">Dropdown</option>
+                                        <option value="Checkboxes">Checkboxes</option>
+                                        <option value="Radio Buttons">Radio Buttons</option>
+                                        <option value="Paragraph Text Field">Paragraph Text Field</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-offset-1 col-sm-5">
                                     <a href="#" class="btn btn-warning invisible">
@@ -256,6 +254,7 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </form>
                 </div>
             </div>
