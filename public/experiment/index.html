@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+        <html lang="en" ng-app="MovieDBApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Database</h1>
+        <table class="table" ng-controller="MovieListController">
+        <thead>
+        <tr>
+            <th>
+                <!--{{movies}}
+                 {{movies[0]}} -->
+                ID
+            </th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>nbsp;</th>
+        </tr>
+        <tr>
+            <td><input class="form-control"/></td> <!-- without coupling-->
+            <td><input ng-model="title" class="form-control"/></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movies">
+            <!--<td> {{movie}}</td> -->
+            <td> {{movie.id}}</td>
+            <td> {{movie.title}}</td>
+            <td> {{movie.year}}</td>
+            <td> <button ng-click="addMovies()" class="btn btn-success">Add</button></td>
+        </tr>
+        </tbody></table>
+    </div>
+</body>
+</html>
