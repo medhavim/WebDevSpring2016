@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
     angular
         .module("FormBuilderApp")
         .config(configuration);
@@ -13,7 +14,7 @@
             })
             .when("/register", {
                 templateUrl: "views/users/register.view.html"
-                //controller: "RegisterController"
+                controller: "RegisterController"
             })
             .when("/login", {
                 templateUrl: "views/users/login.view.html"
