@@ -4,37 +4,56 @@
         .module("FormBuilderApp")
         .factory("UserService", UserService);
 
-    function UserService(){
-        var users = [
-            {	"_id":123, "firstName":"Alice",            "lastName":"Wonderland",
-                "username":"alice",  "password":"alice",   "roles": ["student"]		},
-            {	"_id":234, "firstName":"Bob",              "lastName":"Hope",
+    function UserService($rootScope){
+        var model = {
+            users: [
+                {	"_id":123, "firstName":"Alice",            "lastName":"Wonderland",
+                    "username":"alice",  "password":"alice",   "roles": ["student"]		},
+                {	"_id":234, "firstName":"Bob",              "lastName":"Hope",
                 "username":"bob",    "password":"bob",     "roles": ["admin"]		},
-            {	"_id":345, "firstName":"Charlie",          "lastName":"Brown",
+                {	"_id":345, "firstName":"Charlie",          "lastName":"Brown",
                 "username":"charlie","password":"charlie", "roles": ["faculty"]		},
-            {	"_id":456, "firstName":"Dan",              "lastName":"Craig",
+                {	"_id":456, "firstName":"Dan",              "lastName":"Craig",
                 "username":"dan",    "password":"dan",     "roles": ["faculty", "admin"]},
-            {	"_id":567, "firstName":"Edward",           "lastName":"Norton",
+                {	"_id":567, "firstName":"Edward",           "lastName":"Norton",
                 "username":"ed",     "password":"ed",      "roles": ["student"]		}
-        ];
-
-        var api= {
+            ],
             findUserByCredentials: findUserByCredentials,
             findAllUsers: findAllUsers,
+            findUserByUsername: findUserByUsername,
             createUser: createUser,
             deleteUserById: deleteUserById,
-            updateUser: updateUser
+            updateUser: updateUser,
+            setCurrentUser: setCurrentUser,
+            getCurrentUser: getCurrentUser
         };
 
-        return api;
+        return model;
+
+        function setCurrentUser (user) {
+            $rootScope.currentUser = user;
+        }
+
+        function getCurrentUser () {
+            return $rootScope.currentUser;
+        }
+
+        function findUserByUsername (username) {
+            for (var u in model.users) {
+                if (model.users[u].username == username) {
+                    return model.users[u];
+                }
+            }
+            return null;
+        }
 
         function findUserByCredentials(username, password, callback){
             var foundUser = null;
             var ind = 0;
-            for(ind in users){
-                if(users[ind].username == username && users[ind].password == password)
+            for(ind in model.users){
+                if(model.users[ind].username == username && model.users[ind].password == password)
                 {
-                    foundUser = users[ind];
+                    foundUser = model.users[ind];
                     break;
                 }
             }
@@ -42,7 +61,7 @@
         }
 
         function findAllUsers(callback){
-            callback(users);
+            callback(model.users);
         }
 
         function createUser(user, callback){
@@ -53,18 +72,18 @@
                 "password": user.password,
                 "email": user.email,
                 "roles": user.roles};
-            users.push(newUser);
+            model.users.push(newUser);
             callback(newUser);
 
         }
 
         function deleteUserById(userId, callback){
             var user;
-            for(user in users){
-                if(users[user]._id==userId)
+            for(user in model.users){
+                if(model.users[user]._id==userId)
                 {
-                    delete users[user];
-                    callback(users);
+                    delete model.users[user];
+                    callback(model.users);
                 }
             }
         }
@@ -72,14 +91,14 @@
         function updateUser(userId, user, callback){
             var updateUser = null;
             var ind = 0;
-            for(ind in users){
-                if(users[ind]._id==userId)
+            for(ind in model.users){
+                if(model.users[ind]._id==userId)
                 {
-                    users[ind].username= user.username;
-                    users[ind].password= user.password;
-                    users[ind].firstName= user.firstName;
-                    users[ind].lastName= user.lastName;
-                    users[ind].email_id= user.email_id;
+                    model.users[ind].username= user.username;
+                    model.users[ind].password= user.password;
+                    model.users[ind].firstName= user.firstName;
+                    model.users[ind].lastName= user.lastName;
+                    model.users[ind].email_id= user.email_id;
                     updateUser = user[ind];
                     break;
                 }
