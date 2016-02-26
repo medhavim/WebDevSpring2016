@@ -5,7 +5,7 @@
         .factory("UserService", UserService);
 
     function UserService(){
-        var userArr = [
+        var users = [
             {	"_id":123, "firstName":"Alice",            "lastName":"Wonderland",
                 "username":"alice",  "password":"alice",   "roles": ["student"]		},
             {	"_id":234, "firstName":"Bob",              "lastName":"Hope",
@@ -18,7 +18,7 @@
                 "username":"ed",     "password":"ed",      "roles": ["student"]		}
         ];
 
-        var service= {
+        var api= {
             findUserByUsernameAndPassword: findUserByUsernameAndPassword,
             findAllUsers: findAllUsers,
             createUser: createUser,
@@ -26,58 +26,62 @@
             updateUser: updateUser
         };
 
-        return service;
+        return api;
 
-        function findUserByUsernameAndPassword(username, password, callback)
-        {
+        function findUserByUsernameAndPassword(username, password, callback){
             var usr;
-            for(usr in userArr){
-                if(userArr[usr].username==username && userArr[usr].password==password)
+            for(usr in users){
+                if(users[usr].username==username && users[usr].password==password)
                 {
-                    callback(userArr[usr]);
+                    callback(users[usr]);
                 }
             }
             callback(null);
         }
 
-        function findAllUsers(callback)
-        {
-            callback(userArr);
+        function findAllUsers(callback){
+            callback(users);
         }
 
-        function createUser(user, callback)
-        {
-            user["_id"]= (new Date).getTime();
-            userArr.push(user);
-            callback(user);
-            console.log(userArr);
+        function createUser(user, callback){
+            //user["_id"]= (new Date).getTime();
+            //userArr.push(user);
+            //callback(user);
+            //console.log(userArr);
+            var newUser = {"_id":(new Date).getTime(),
+                "firstName": user.firstName,
+                "lastName": user.lastName,
+                "username":user.username,
+                "password": user.password,
+                "email": user.email,
+                "roles": user.roles};
+            users.push(newUser);
+            callback(newUser);
 
         }
 
-        function deleteUserById(userId, callback)
-        {
+        function deleteUserById(userId, callback){
             var user;
-            for(user in userArr){
-                if(userArr[user]._id==userId)
+            for(user in users){
+                if(users[user]._id==userId)
                 {
-                    delete userArr[user];
-                    callback(userArr);
+                    delete users[user];
+                    callback(users);
                 }
             }
         }
 
-        function updateUser(userId, user, callback)
-        {
+        function updateUser(userId, user, callback){
             var usr;
-            for(usr in userArr){
-                if(userArr[usr]._id==userId)
+            for(usr in users){
+                if(users[usr]._id==userId)
                 {
-                    userArr[usr].username= user.username;
-                    userArr[usr].password= user.password;
-                    userArr[usr].firstName= user.firstName;
-                    userArr[usr].lastName= user.lastName;
-                    userArr[usr].email_id= user.email_id;
-                    callback(userArr[usr]);
+                    users[usr].username= user.username;
+                    users[usr].password= user.password;
+                    users[usr].firstName= user.firstName;
+                    users[usr].lastName= user.lastName;
+                    users[usr].email_id= user.email_id;
+                    callback(users[usr]);
                 }
             }
         }
