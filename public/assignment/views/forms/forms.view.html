@@ -6,8 +6,7 @@
 
 </head>
 
-<body>
-
+<body ng-controller="FormController">
             <h1 class="page-header">Forms</h1>
             <nav>
                 <ul class="nav nav-tabs">
@@ -25,47 +24,25 @@
                                 <th>Action</th>
                             </tr>
                             <tr>
-                                <td><input class="form-control" type="text" name="userName" placeholder="Username"/></td>
+                                <td><input ng-model="formName" class="form-control" type="text" name="userName" placeholder="Form Name"/></td>
                                 <td style="white-space: nowrap">
-                                    <a href="forms.view.html" class="btn btn-success">
+                                    <button ng-click="updateForm()" class="btn btn-success">
                                         <scan class="glyphicon glyphicon-ok"></scan>
-                                    </a>
-                                    <a href="forms.view.html" class="btn btn-primary">
+                                    </button>
+                                    <button ng-click="addForm()" class="btn btn-primary">
                                         <scan class="glyphicon glyphicon-plus"></scan>
-                                    </a>
+                                    </button>
                                 </td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Registration Form</td>
+                            <tr ng-repeat="form in forms">
+                                <td>{{form.title}}</td>
                                 <td>
-                                    <a href="forms.view.html" class="btn btn-warning">
+                                    <a ng-click="selectForm($index)" class="btn btn-warning">
                                         <scan class="glyphicon glyphicon-pencil"></scan>
                                     </a>
-                                    <a href="forms.view.html" class="btn btn-danger">
-                                        <scan class="glyphicon glyphicon-remove"></scan>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Contact List</td>
-                                <td>
-                                    <a href="forms.view.html" class="btn btn-warning">
-                                        <scan class="glyphicon glyphicon-pencil"></scan>
-                                    </a>
-                                    <a href="forms.view.html" class="btn btn-danger">
-                                        <scan class="glyphicon glyphicon-remove"></scan>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>To Do List</td>
-                                <td>
-                                    <a href="forms.view.html" class="btn btn-warning">
-                                        <scan class="glyphicon glyphicon-pencil"></scan>
-                                    </a>
-                                    <a href="forms.view.html" class="btn btn-danger">
+                                    <a ng-click="deleteForm($index)" class="btn btn-danger">
                                         <scan class="glyphicon glyphicon-remove"></scan>
                                     </a>
                                 </td>

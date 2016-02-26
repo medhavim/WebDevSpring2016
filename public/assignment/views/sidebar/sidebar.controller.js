@@ -4,8 +4,7 @@
         .module("FormBuilderApp")
         .controller("SidebarController", SidebarController);
 
-    function SidebarController()
-    {
-
+    function SidebarController($scope, $rootScope) {
+        $scope=$rootScope;
     }
 })();

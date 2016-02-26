@@ -19,7 +19,7 @@
         ];
 
         var api= {
-            findUserByUsernameAndPassword: findUserByUsernameAndPassword,
+            findUserByCredentials: findUserByCredentials,
             findAllUsers: findAllUsers,
             createUser: createUser,
             deleteUserById: deleteUserById,
@@ -28,15 +28,17 @@
 
         return api;
 
-        function findUserByUsernameAndPassword(username, password, callback){
-            var usr;
-            for(usr in users){
-                if(users[usr].username==username && users[usr].password==password)
+        function findUserByCredentials(username, password, callback){
+            var foundUser = null;
+            var ind = 0;
+            for(ind in users){
+                if(users[ind].username == username && users[ind].password == password)
                 {
-                    callback(users[usr]);
+                    foundUser = users[ind];
+                    break;
                 }
             }
-            callback(null);
+            callback(foundUser);
         }
 
         function findAllUsers(callback){
@@ -44,10 +46,6 @@
         }
 
         function createUser(user, callback){
-            //user["_id"]= (new Date).getTime();
-            //userArr.push(user);
-            //callback(user);
-            //console.log(userArr);
             var newUser = {"_id":(new Date).getTime(),
                 "firstName": user.firstName,
                 "lastName": user.lastName,
@@ -72,18 +70,21 @@
         }
 
         function updateUser(userId, user, callback){
-            var usr;
-            for(usr in users){
-                if(users[usr]._id==userId)
+            var updateUser = null;
+            var ind = 0;
+            for(ind in users){
+                if(users[ind]._id==userId)
                 {
-                    users[usr].username= user.username;
-                    users[usr].password= user.password;
-                    users[usr].firstName= user.firstName;
-                    users[usr].lastName= user.lastName;
-                    users[usr].email_id= user.email_id;
-                    callback(users[usr]);
+                    users[ind].username= user.username;
+                    users[ind].password= user.password;
+                    users[ind].firstName= user.firstName;
+                    users[ind].lastName= user.lastName;
+                    users[ind].email_id= user.email_id;
+                    updateUser = user[ind];
+                    break;
                 }
             }
+            callback(updateUser);
         }
     }
 })();
