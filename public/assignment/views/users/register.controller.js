@@ -10,7 +10,7 @@
         $scope.username = "";
 
         function register(user) {
-            if (user == null) {
+            if (user === null) {
                 $scope.message = "Please fill in the required fields";
                 return;
             }
@@ -22,13 +22,14 @@
                 $scope.message = "Please provide a password";
                 return;
             }
-            if (user.password != user.password2) {
+            if (user.password !== user.password2) {
                 $scope.message = "Passwords must match";
                 return;
             }
 
             var checkUser = UserService.findUserByUsername(user.username);
-            if (checkUser != null) {
+
+            if (checkUser !== null) {
                 $scope.message = "User already exists";
                 return;
             }
@@ -38,12 +39,12 @@
                 "username": user.username,
                 "password": user.password,
                 "email": user.email};
+
             UserService.createUser(newUser, function(response) {
                 $rootScope.user = response;
                 $rootScope.loggedIn = true;
                 $location.path("profile/"+response.username);
             });
         }
-
     }
 })();

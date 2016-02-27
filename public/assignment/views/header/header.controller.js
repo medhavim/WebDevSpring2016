@@ -1,18 +1,16 @@
-(function(){
+(function() {
     'use strict';
     angular
         .module("FormBuilderApp")
         .controller("HeaderController", HeaderController);
 
-    function HeaderController($scope, $rootScope)
-    {
-        $scope=$rootScope;
-        $scope.logout=logout;
+    function HeaderController($scope, $rootScope) {
+        $scope = $rootScope;
+        $scope.logout = logout;
 
-        function logout()
-        {
+        function logout() {
             $scope.loggedIn = false;
-            $rootScope.user=null;
+            $rootScope.user = null;
         }
     }
 })();

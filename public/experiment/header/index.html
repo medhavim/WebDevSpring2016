@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .overflow {
+            position:absolute;
+            top:0;
+            left:0;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-top: 0;
+            color:#ccc;
+            max-width:90%;
+        }
+        .navbar-text {
+            margin-right: 15px;
+            margin-left: 15px;
+            white-space: normal
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+
+        <div class="navbar-header pull-left">
+            <p class="navbar-text">
+                Trying to get this long line of text to not wrap even if too wide for the view to display. Trying to get this long line of text to not wrap even if too wide for the view to display.
+            </p>
+        </div>
+
+        <div class="navbar-header pull-right">
+            <p class="navbar-text">Menu</p>
+        </div>
+
+    </div>
+</body>
+</html>

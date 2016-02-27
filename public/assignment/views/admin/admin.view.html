@@ -1,82 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<h1 class="page-header">Admin</h1>
+<h2 class="page-header">Users</h2>
 
-    <title>Assignments / Admin - Designing the Front End</title>
+<form class="form-horizontal">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr bgcolor="#708090">
+                <th>
+                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>Username
+                </th>
+                <th>
+                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>Password
+                </th>
+                <th>
+                    <span class="glyphicon glyphicon-sort-by-alphabet"></span>Role
+                </th>
+                <th>Action</th>
+            </tr>
 
-</head>
+            <tr>
+                <td>
+                    <input class="form-control" type="text" name="userName" placeholder="Username"/>
+                </td>
+                <td>
+                    <input class="form-control" type="password" name="password" placeholder="Password"/>
+                </td>
+                <td>
+                    <input class="form-control" type="text" name="role" placeholder="Role1, Role2"/>
+                </td>
+                <td class="table-content-nowrap">
+                    <a href="#" class="btn btn-success">
+                        <scan class="glyphicon glyphicon-ok"></scan>
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <scan class="glyphicon glyphicon-plus"></scan>
+                    </a>
+                </td>
+            </tr>
+            </thead>
 
-<body>
-            <h1 class="page-header">Admin</h1>
-            <h2 class="page-header">Users</h2>
-            <form class="form-horizontal">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead>
-                        <tr bgcolor="#708090">
-                            <th><span class="glyphicon glyphicon-sort-by-alphabet"></span>Username</th>
-                            <th><span class="glyphicon glyphicon-sort-by-alphabet"></span>Password</th>
-                            <th><span class="glyphicon glyphicon-sort-by-alphabet"></span>Role</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control" type="text" name="userName" placeholder="Username"/></td>
-                            <td><input class="form-control" type="password" name="password" placeholder="Password"/></td>
-                            <td><input class="form-control" type="text" name="role" placeholder="Role1, Role2"/></td>
-                            <td style="white-space: nowrap">
-                                <a href="#" class="btn btn-success">
-                                    <scan class="glyphicon glyphicon-ok"></scan>
-                                </a>
-                                <a href="#" class="btn btn-primary">
-                                    <scan class="glyphicon glyphicon-plus"></scan>
-                                </a>
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>alice</td>
-                            <td></td>
-                            <td>Student</td>
-                            <td>
-                                <a href="#" class="btn btn-warning">
-                                <scan class="glyphicon glyphicon-pencil"></scan>
-                                </a>
-                                <a href="#" class="btn btn-danger">
-                                    <scan class="glyphicon glyphicon-remove"></scan>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>bob</td>
-                            <td></td>
-                            <td>Faculty | Admin</td>
-                            <td>
-                                <a href="#" class="btn btn-warning">
-                                    <scan class="glyphicon glyphicon-pencil"></scan>
-                                </a>
-                                <a href="#" class="btn btn-danger">
-                                    <scan class="glyphicon glyphicon-remove"></scan>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>charlie</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="#" class="btn btn-warning">
-                                    <scan class="glyphicon glyphicon-pencil"></scan>
-                                </a>
-                                <a href="#" class="btn btn-danger">
-                                    <scan class="glyphicon glyphicon-remove"></scan>
-                                </a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-</body>
-</html>
+            <tbody>
+            <tr>
+                <td>alice</td>
+                <td></td>
+                <td>Student</td>
+                <td class="table-content-nowrap">
+                    <a href="#" class="btn btn-warning">
+                    <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>bob</td>
+                <td></td>
+                <td>Faculty | Admin</td>
+                <td class="table-content-nowrap">
+                    <a href="#" class="btn btn-warning">
+                        <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>charlie</td>
+                <td></td>
+                <td></td>
+                <td class="table-content-nowrap">
+                    <a href="#" class="btn btn-warning">
+                        <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
 

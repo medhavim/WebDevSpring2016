@@ -1,4 +1,4 @@
-(function (){
+(function () {
     'use strict';
     angular
         .module("FormBuilderApp")
@@ -11,10 +11,9 @@
                 {"_id": "010", "title": "ToDo",     "userId": 123},
                 {"_id": "020", "title": "CDs",      "userId": 234}
                 ],
-
             createFormForUser: createFormForUser,
-            findAllFormsForUser: findAllFormsForUser,
             deleteFormById: deleteFormById,
+            findAllFormsForUser: findAllFormsForUser,
             updateFormById: updateFormById
         };
 
@@ -30,30 +29,30 @@
             callback(newForm);
         }
 
+        function deleteFormById(formId, callback) {
+            for (var i = 0; i < model.forms.length; i++) {
+                if(model.forms[i]._id === formId) {
+                    model.forms.splice(i,1);
+                    break;
+                }
+            }
+            callback(model.forms);
+        }
+
         function findAllFormsForUser(userId, callback) {
             var userForms = [];
-            for (var i = 0; i<model.forms.length ; i++) {
-                if (model.forms[i].userId == userId){
+            for (var i = 0; i < model.forms.length ; i++) {
+                if (model.forms[i].userId === userId) {
                     userForms.push(model.forms[i]);
                 }
             }
             callback(userForms);
         }
 
-        function deleteFormById(formId, callback) {
-            for (var i=0; i<model.forms.length; i++){
-                if(model.forms[i]._id == formId){
-                    model.forms.splice(i,1);
-                    break;
-                }
-            }
-            callback(forms);
-        }
-
         function updateFormById(formId, newForm, callback) {
             var updatedForm = null;
             for (var i = 0; i < model.forms.length; i++) {
-                if (model.forms[i]._id == formId) {
+                if (model.forms[i]._id === formId) {
                     model.forms[i].title = newForm.title;
                     model.forms[i].userId = newForm.userId;
                     updatedForm = model.forms[i];

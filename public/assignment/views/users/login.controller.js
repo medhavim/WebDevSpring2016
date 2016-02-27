@@ -6,6 +6,7 @@
 
     function LoginController ($scope, $location, $rootScope, UserService) {
         $scope.login = login;
+        $scope.message = null;
 
         function login(user) {
             UserService.findUserByCredentials(user.username, user.password, function(response) {
@@ -13,9 +14,8 @@
                     $rootScope.loggedIn = true;
                     $rootScope.user = response;
                     $location.path("profile/"+user.username);
-                }
-                else {
-                    console.log("Wrong username and/or password.");
+                } else {
+                    $scope.message = "Wrong username and/or password.";
                 }
             });
         }
