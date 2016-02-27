@@ -19,6 +19,7 @@
 
         return model;
 
+        // This function creates a form for a particular user ID
         function createFormForUser(userId, form, callback) {
             var newForm = {
                 "_id": (new Date).getTime(),
@@ -29,6 +30,7 @@
             callback(newForm);
         }
 
+        // This function deletes a particular form
         function deleteFormById(formId, callback) {
             for (var i = 0; i < model.forms.length; i++) {
                 if(model.forms[i]._id === formId) {
@@ -39,6 +41,7 @@
             callback(model.forms);
         }
 
+        // This function finds all the forms for a particular user based on the user ID
         function findAllFormsForUser(userId, callback) {
             var userForms = [];
             for (var i = 0; i < model.forms.length ; i++) {
@@ -49,6 +52,7 @@
             callback(userForms);
         }
 
+        // This function updates the form details based on the form ID
         function updateFormById(formId, newForm, callback) {
             var updatedForm = null;
             for (var i = 0; i < model.forms.length; i++) {

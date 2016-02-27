@@ -1,3 +1,5 @@
+<!-- This file displays the Forms page -->
+
 <div ng-controller="FormController">
     <h1 class="page-header">Forms</h1>
     <nav>
@@ -21,6 +23,7 @@
 
                     <tr>
                         <td>
+                            <!-- Form Name input -->
                             <input ng-model="formName"
                                    class="form-control"
                                    type="text"
@@ -28,9 +31,12 @@
                                    placeholder="Form Name"/>
                         </td>
                         <td class="table-content-nowrap">
+                            <!-- Button to update an existing form -->
                             <button ng-click="updateForm()" class="btn btn-success">
                                 <scan class="glyphicon glyphicon-ok"></scan>
                             </button>
+
+                            <!-- Button to add a new form -->
                             <button ng-click="addForm()" class="btn btn-primary">
                                 <scan class="glyphicon glyphicon-plus"></scan>
                             </button>
@@ -42,9 +48,12 @@
                     <tr ng-repeat="form in forms">
                         <td>{{form.title}}</td>
                         <td class="table-content-nowrap">
+                            <!-- Button to select a form to update -->
                             <a ng-click="selectForm($index)" class="btn btn-warning">
                                 <scan class="glyphicon glyphicon-pencil"></scan>
                             </a>
+
+                            <!-- Button to delete an existing form -->
                             <a ng-click="deleteForm($index)" class="btn btn-danger">
                                 <scan class="glyphicon glyphicon-remove"></scan>
                             </a>

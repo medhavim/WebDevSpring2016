@@ -29,6 +29,7 @@
 
         return model;
 
+        // This function creates a new user
         function createUser(user, callback) {
             var newUser = { "_id":(new Date).getTime(),
                 "firstName": user.firstName,
@@ -43,6 +44,7 @@
 
         }
 
+        // This function deletes an existing user based on the user ID
         function deleteUserById(userId, callback) {
             var user;
             for(user in model.users) {
@@ -53,10 +55,12 @@
             }
         }
 
+        // This function provides all the users
         function findAllUsers(callback) {
             callback(model.users);
         }
 
+        // This function finds the correct username and password for a user
         function findUserByCredentials(username, password, callback) {
             var foundUser = null;
             var ind = 0;
@@ -69,6 +73,7 @@
             callback(foundUser);
         }
 
+        // This function searches for a user based on the username
         function findUserByUsername (username) {
             for (var u in model.users) {
                 if (model.users[u].username === username) {
@@ -78,6 +83,7 @@
             return null;
         }
 
+        // This function updates the details of a user
         function updateUser(userId, user, callback) {
             var updateUser = null;
             var ind = 0;
