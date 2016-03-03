@@ -16,7 +16,7 @@
                 templateUrl: "views/search/search.html",
                 controller: "SearchController"
             })
-            .when("/artist/:mbid", {
+            .when("/details/:mb_id", {
                 templateUrl: "views/details/details.html",
                 controller: "DetailsController as model"
             })

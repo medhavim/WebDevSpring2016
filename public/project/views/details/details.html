@@ -1,18 +1,21 @@
-<!--
-<h2>{{model.details.Title}}</h2>
-<div>{{model.details.Director}}</div>
-<img ng-src="{{model.details.Poster}}" height="100px" class="pull-left"/>
-<p>
-    {{model.details.Plot}}
-</p>
-<h3>Actors</h3>
+
+<h2>{{model.details.artist.name}}</h2>
+<div class="detail">
+<!--<img ng-src="{{model.details.image.1}}" height="100px" class="pull-left"/>-->
+    <div>
+        <p>
+            {{model.details.artist.bio.summary}}
+        </p>
+    </div>
+    <p>
+<a href="{{model.details.artist.url}}">Last.fm link</a></p>
 <ul>
-    <li ng-repeat="actorName in model.details.Actors.split(',')">
-        {{actorName}}
+    <li ng-repeat="similarArtist in model.details.similar.artist">
+        {{similarArtist}}
     </li>
 </ul>
--->
-
+</div>
+<!--
 <div class="detail">
     <a href="#/" title="Back">Back</a>
     <h1>{{artist.name}}</h1>
@@ -20,3 +23,4 @@
 
     <img src="{{artist.image.medium}}" alt="">
 </div>
+-->
