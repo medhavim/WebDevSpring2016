@@ -20,6 +20,7 @@
         }
 
         function renderDetails(response) {
+            console.log("details ");
             console.log(response);
             vm.details = response;
         }

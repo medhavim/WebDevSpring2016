@@ -1,0 +1,108 @@
+<!-- This file displays the Admin page -->
+
+<h1 class="page-header">Admin</h1>
+<h2 class="page-header">Users</h2>
+
+<div ng-controller="AdminController">
+    <form class="form-horizontal">
+        <!-- Displays an error message -->
+        <div ng-show="message" class="alert alert-danger" role="alert">{{message}}</div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr bgcolor="#708090">
+                    <th>
+                        <span class="glyphicon glyphicon-sort-by-alphabet"></span>Username
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-sort-by-alphabet"></span>Password
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-sort-by-alphabet"></span>Role
+                    </th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <input class="form-control" ng-model="user.username" type="text" name="userName" placeholder="Username"/>
+                    </th>
+                    <th>
+                        <input class="form-control" ng-model="user.password" type="password" name="password" placeholder="Password"/>
+                    </th>
+                    <th>
+                        <input class="form-control" ng-model="user.roles" type="text" name="role" placeholder="Role1, Role2"/>
+                    </th>
+                    <th class="table-content-nowrap">
+                        <button ng-click="addUser(user)" class="btn btn-primary">
+                            <scan class="glyphicon glyphicon-plus"></scan>
+                        </button>
+                        <button ng-click="modifyUser(user)" class="btn btn-success">
+                            <scan class="glyphicon glyphicon-ok"></scan>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                <tr ng-repeat="user in users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.roles}}</td>
+                    <td class="table-content-nowrap">
+                        <button ng-click="selectUser($index)" class="btn btn-warning">
+                            <scan class="glyphicon glyphicon-pencil"></scan>
+                        </button>
+                        <button ng-click="removeUser(user)" class="btn btn-danger">
+                            <scan class="glyphicon glyphicon-remove"></scan>
+                        </button>
+                    </td>
+                </tr>
+                <!--<td>alice</td>
+                <td></td>
+                <td>Student</td>
+                <td class="table-content-nowrap">
+                    <a href="#/admin" class="btn btn-warning">
+                    <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#/admin" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>bob</td>
+                <td></td>
+                <td>Faculty | Admin</td>
+                <td class="table-content-nowrap">
+                    <a href="#/admin" class="btn btn-warning">
+                        <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#/admin" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>charlie</td>
+                <td></td>
+                <td></td>
+                <td class="table-content-nowrap">
+                    <a href="#/admin" class="btn btn-warning">
+                        <scan class="glyphicon glyphicon-pencil"></scan>
+                    </a>
+                    <a href="#/admin" class="btn btn-danger">
+                        <scan class="glyphicon glyphicon-remove"></scan>
+                    </a>
+                </td>
+            </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+

@@ -18,11 +18,14 @@
         init();
 
         function fetchArtist(artistTitle) {
-            artistSearch.findArtistsByTitle(artistTitle, renderArtists)
+            artistSearch.findArtistsByTitle(artistTitle, renderArtists);
         }
 
         function renderArtists(response) {
+            //console.log("search");
+            //console.log(response);
             $scope.data = response;
+            $scope.medImage = artistSearch.displayMediumImage(response);
         }
     }
 })();

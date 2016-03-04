@@ -29,19 +29,27 @@
     <script src="views/sidebar/sidebar.controller.js"></script>
     <script src="views/search/search.controller.js"></script>
     <script src="views/details/details.controller.js"></script>
+    <script src="views/tracks/tracks.controller.js"></script>
+    <script src="views/users/login.controller.js"></script>
+    <script src="views/users/register.controller.js"></script>
+    <script src="views/users/profile.controller.js"></script>
+    <script src="views/admin/admin.controller.js"></script>
+
 
 
     <!-- Services -->
     <script src="services/artist.service.js"></script>
+    <script src="services/user.service.client.js"></script>
 
 </head>
 <body>
 <br/>
 <div class="container">
-    <div ng-include="'views/header/header.view.html'">
+    <div ng-include="'views/header/header.view.html'"></div>
+    <div class="col-sm-3 col-md-2 sidebar"
+         ng-include="'views/sidebar/sidebar.view.html'">
     </div>
-    <div ng-view>
-    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view></div>
 </div>
 
 <!-- Bootstrap core JavaScript
