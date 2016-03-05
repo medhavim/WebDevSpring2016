@@ -2,87 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a7accdd-a783-41a8-be49-4fcf4dfc6d5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/about-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/contact-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/ear-piece.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/event-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/event/event1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/event/event2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/event/event3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/footer-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/guitar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/guitar2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/header-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/light.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/map-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/performar-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/sponsor/sponsor6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/twit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/twitter-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/twitter/twitter1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/twitter/twitter2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/twitter/twitter3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/images/watch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/backgroud1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/backgroud2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/backgroud3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/backgroud4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/backgroud5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/css/responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/coundown-timer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/gmaps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/html5shiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/jquery.nav.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/jquery.parallax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/jquery.scrollTo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/modernizr.custom.86080.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/js/smoothscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Project_template/sendemail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/views/main/main.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/views/search/search.view.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/views/search/search.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/project/views/details/details.html" afterPath="$PROJECT_DIR$/public/project/views/details/details.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/project/views/tracks/tracks.html" afterPath="$PROJECT_DIR$/public/project/views/tracks/tracks.view.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/Jose" afterPath="$PROJECT_DIR$/public/experiment/Jose" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/guity" afterPath="$PROJECT_DIR$/public/experiment/guity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/juketube" afterPath="$PROJECT_DIR$/public/experiment/juketube" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/lastfm" afterPath="$PROJECT_DIR$/public/experiment/lastfm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/config.js" afterPath="$PROJECT_DIR$/public/project/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/css/dashboard.css" afterPath="$PROJECT_DIR$/public/project/css/dashboard.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/index.html" afterPath="$PROJECT_DIR$/public/project/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/services/artist.service.js" afterPath="$PROJECT_DIR$/public/project/services/artist.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/header/header.view.html" afterPath="$PROJECT_DIR$/public/project/views/header/header.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/home/home.html" afterPath="$PROJECT_DIR$/public/project/views/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/search/search.controller.js" afterPath="$PROJECT_DIR$/public/project/views/search/search.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/main/main.controller.js" afterPath="$PROJECT_DIR$/public/project/views/main/main.controller.js" />
     </list>
     <ignored path="webdev2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,71 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="search.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/search/search.view.html">
+      <file leaf-file-name="main.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/project/views/main/main.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/project/css/dashboard.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44247788">
-              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/project/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.75">
-              <caret line="40" column="36" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/header/header.view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75">
-              <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/home/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.6814159">
+              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -237,9 +112,9 @@
         <option value="$PROJECT_DIR$/public/project/views/header/header.view.html" />
         <option value="$PROJECT_DIR$/public/project/config.js" />
         <option value="$PROJECT_DIR$/public/project/views/home/home.html" />
+        <option value="$PROJECT_DIR$/public/project/css/dashboard.css" />
         <option value="$PROJECT_DIR$/public/project/views/main/main.controller.js" />
         <option value="$PROJECT_DIR$/public/project/index.html" />
-        <option value="$PROJECT_DIR$/public/project/css/dashboard.css" />
       </list>
     </option>
   </component>
@@ -918,14 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/search/search.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2991453">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/project/services/artist.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5555556">
@@ -950,34 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/header/header.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/project/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/search/search.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -990,26 +833,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/search/search.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06410257">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.75">
+        <state vertical-scroll-proportion="0.59292036">
           <caret line="40" column="36" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/main/main.controller.js">
+    <entry file="file://$PROJECT_DIR$/public/project/views/header/header.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.48672566">
+          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/index.html">
+    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.044247787">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1018,6 +869,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44247788">
           <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/search/search.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19911504">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/main/main.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6814159">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding />
         </state>
       </provider>
