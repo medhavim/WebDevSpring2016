@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PrismaticMusicApp">
+<html lang="en" ng-app="PrismaticMusicApp" class="ng-scope">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/music.ico">
+    <link rel="icon" href="music.ico">
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/cyborg/bootstrap.min.css" rel="stylesheet">
+    <link href="https://bootswatch.com/assets/css/custom.min.css" rel="stylesheet">
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
@@ -42,14 +43,14 @@
     <script src="services/user.service.client.js"></script>
 
 </head>
-<body>
-<br/>
-<div class="container">
-    <div ng-include="'views/header/header.view.html'"></div>
-    <div class="col-sm-3 col-md-2 sidebar"
+<body ng-controller="MainController" class="ng-scope">
+
+<div class="container ng-scope">
+    <div ng-include="'views/header/header.view.html'" class="ng-scope"></div>
+<!--    <div class="col-sm-3 col-md-2 sidebar"
          ng-include="'views/sidebar/sidebar.view.html'">
-    </div>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view></div>
+    </div>-->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main ng-scope" ng-view></div>
 </div>
 
 <!-- Bootstrap core JavaScript

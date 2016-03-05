@@ -1,0 +1,31 @@
+<h1>Search</h1>
+<h2>Artists</h2>
+<input ng-model="artistTitle" class="form-control ng-pristine ng-untouched ng-valid ng-scope" placeholer="Search artist"/>
+<!--<button ng-click="searchMovie(movieTitle)" class="btn btn-primary btn-block">-->
+<!--Search-->
+<!--</button>-->
+<a href="#/search/{{artistTitle}}" class="btn btn-primary btn-block">
+    Search
+</a>
+<br/>
+<br/>
+<table class="table table-striped table-hover ng-scope">
+    <thead>
+    <tr>
+        <th>Poster</th>
+        <th>Title</th>
+    </tr>
+    </thead>
+    <tbody>
+   <!-- <tr ng-repeat="artists in data.results.artistmatches.artist" class="ng-scope">-->
+   <tr ng-repeat="artist in data" class="ng-scope">
+        <td>
+            <img class="media-object" src="{{artist.image.medium}}">
+        </td>
+        <td>
+            <a href="#/tracks/{{artist.mbid}}">{{artist.name}}</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

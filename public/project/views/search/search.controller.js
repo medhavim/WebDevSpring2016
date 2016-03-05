@@ -6,8 +6,6 @@
 
     function SearchController($scope, $http, $routeParams, $location, artistSearch) {
 
-        $scope.artistTitle = "Coldplay";
-
         function init() {
             var artistTitle = $routeParams.title;
 
@@ -22,10 +20,7 @@
         }
 
         function renderArtists(response) {
-            //console.log("search");
-            //console.log(response);
-            $scope.data = response;
-            $scope.medImage = artistSearch.displayMediumImage(response);
+            $scope.data = artistSearch.displayMediumImage(response);
         }
     }
 })();

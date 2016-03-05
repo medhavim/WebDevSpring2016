@@ -41,17 +41,15 @@
 
         function displayImage (images){
             for (var i in images){
-                images[images[i]['size']] = images[i]['#/text'];
-                //console.log(i);
+                images[images[i]['size']] = images[i]['#text'];
             }
         }
 
         function displayMediumImage(res) {
             var artists = res.results.artistmatches.artist;
-            for (var a in artists) {
+            for (var a in artists)
                 displayImage(artists[a].image);
-                //console.log(artists[a].image);
-            }
+            return res.results.artistmatches.artist;
         }
     }
 
