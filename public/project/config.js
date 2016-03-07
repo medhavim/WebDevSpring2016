@@ -8,21 +8,25 @@
             .when("/home", {
                 templateUrl: "views/home/home.html"
             })
-            .when("/search", {
-                templateUrl: "views/search/search.view.html",
-                controller: "SearchController"
+            .when("/artist", {
+                templateUrl: "views/artist/search/search.view.html",
+                controller: "ArtistController"
             })
-            .when("/search/:title", {
-                templateUrl: "views/search/search.view.html",
-                controller: "SearchController"
+            .when("/artist/:title", {
+                templateUrl: "views/artist/search/search.view.html",
+                controller: "ArtistController"
             })
             .when("/details/:mb_id", {
                 templateUrl: "views/details/details.view.html",
                 controller: "DetailsController as model"
             })
-            .when("/tracks/:mb_id", {
-                templateUrl: "views/tracks/tracks.view.html",
-                controller: "TracksController as model"
+            .when("/track", {
+                templateUrl: "views/track/track.view.html",
+                controller: "TrackController as model"
+            })
+            .when("/track/:mb_id", {
+                templateUrl: "views/track/track.view.html",
+                controller: "TrackController as model"
             })
             .when("/profile", {
                 templateUrl: "views/users/profile.view.html",
@@ -41,7 +45,8 @@
                 controller: "LoginController"
             })
             .when("/admin", {
-                templateUrl: "views/admin/admin.view.html"
+                templateUrl: "views/admin/admin.view.html",
+                controller: "AdminController"
             })
             .otherwise({
                 redirectTo: "/home"

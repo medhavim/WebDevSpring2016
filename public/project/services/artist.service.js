@@ -5,14 +5,15 @@
 
     angular
         .module("PrismaticMusicApp")
-        .factory("artistSearch", artistSearch);
+        .factory("artistService", artistService);
 
-    function artistSearch($http) {
+    function artistService($http) {
         var api = {
             findArtistByMbId: findArtistByMbId,
             findArtistsByTitle: findArtistsByTitle,
             findTracksByMbId: findTracksByMbId,
-            displayMediumImage: displayMediumImage,
+            displayArtistImage: displayArtistImage,
+            displayTrackImage: displayTrackImage,
             displayImage: displayImage
         };
 
@@ -45,11 +46,18 @@
             }
         }
 
-        function displayMediumImage(res) {
+        function displayArtistImage(res) {
             var artists = res.results.artistmatches.artist;
             for (var a in artists)
                 displayImage(artists[a].image);
             return res.results.artistmatches.artist;
+        }
+
+        function displayTrackImage(res) {
+            var tracks = res.toptracks.track;
+            for (var t in tracks)
+                displayImage(tracks[t].image);
+            return res.toptracks.track;
         }
     }
 

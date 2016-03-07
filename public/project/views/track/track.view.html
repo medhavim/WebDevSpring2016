@@ -4,14 +4,15 @@
         <thead>
         <tr>
             <!--<th>Poster</th>-->
-            <th>ID</th>
+            <th>Poster</th>
             <th>Track Title</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="tracks in model.details.toptracks.track" class="ng-scope">
+        <tr ng-repeat="tracks in model.details" class="ng-scope">
             <td>
-                <a href="#/details/{{tracks.mbid}}">{{tracks.mbid}}</a>
+                <a href="#/details/{{tracks.mbid}}">
+                    <img class="media-object" src="{{tracks.image.medium}}"</a>
             </td>
             <td>
                 <a href="{{tracks.url}}">{{tracks.name}}</a>

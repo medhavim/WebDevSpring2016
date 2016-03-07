@@ -2,9 +2,9 @@
 
     angular
         .module("PrismaticMusicApp")
-        .controller("SearchController", SearchController);
+        .controller("ArtistController", ArtistController);
 
-    function SearchController($scope, $http, $routeParams, $location, artistSearch) {
+    function ArtistController($scope, $http, $routeParams, $location, artistService) {
 
         function init() {
             var artistTitle = $routeParams.title;
@@ -16,11 +16,11 @@
         init();
 
         function fetchArtist(artistTitle) {
-            artistSearch.findArtistsByTitle(artistTitle, renderArtists);
+            artistService.findArtistsByTitle(artistTitle, renderArtists);
         }
 
         function renderArtists(response) {
-            $scope.data = artistSearch.displayMediumImage(response);
+            $scope.data = artistService.displayArtistImage(response);
         }
     }
 })();
