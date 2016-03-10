@@ -2,27 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a7accdd-a783-41a8-be49-4fcf4dfc6d5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/images/music.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/services/chart.service.client.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/services/display.service.client.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/project/views/home/home.controller.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/music.ico" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/project/views/home/home.html" afterPath="$PROJECT_DIR$/public/project/views/home/home.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/downloads-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/intro-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/map-marker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/medhavi-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/medhavi-intro-bg.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/medhavi.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img/portfolio.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/resource/Medhavi-Mahansaria_Resume.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/grayscale.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/spinning.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_spinning.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/font-awesome/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/grayscale.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/jquery.easing.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/less/grayscale.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/sass/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/sass/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/sass/grayscale.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/images/backgroud4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/project/images/backgroud5.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/Jose" afterPath="$PROJECT_DIR$/public/experiment/Jose" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/guity" afterPath="$PROJECT_DIR$/public/experiment/guity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/juketube" afterPath="$PROJECT_DIR$/public/experiment/juketube" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/lastfm" afterPath="$PROJECT_DIR$/public/experiment/lastfm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/config.js" afterPath="$PROJECT_DIR$/public/project/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/css/dashboard.css" afterPath="$PROJECT_DIR$/public/project/css/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/index.html" afterPath="$PROJECT_DIR$/public/project/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/services/artist.service.js" afterPath="$PROJECT_DIR$/public/project/services/artist.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/artist/search/search.controller.js" afterPath="$PROJECT_DIR$/public/project/views/artist/search/search.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/artist/search/search.view.html" afterPath="$PROJECT_DIR$/public/project/views/artist/search/search.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/details/details.view.html" afterPath="$PROJECT_DIR$/public/project/views/details/details.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/track/search/search.view.html" afterPath="$PROJECT_DIR$/public/project/views/track/search/search.view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/track/track.controller.js" afterPath="$PROJECT_DIR$/public/project/views/track/track.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/track/track.view.html" afterPath="$PROJECT_DIR$/public/project/views/track/track.view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/project/views/home/home.view.html" afterPath="$PROJECT_DIR$/public/project/views/home/home.view.html" />
     </list>
     <ignored path="webdev2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,71 +93,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="search.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/artist/search/search.view.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.708333">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.34020618">
+              <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/details/details.view.html">
+      <file leaf-file-name="grayscale.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/grayscale.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25">
-              <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+            <state vertical-scroll-proportion="-6.509804">
+              <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/home/home.view.html">
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.833333">
-              <caret line="28" column="56" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="56" />
+            <state vertical-scroll-proportion="-0.3846154">
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/index.html">
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.791667">
-              <caret line="51" column="77" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="track.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/track/track.view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/project/views/track/search/search.view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8333335">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chart.service.client.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/project/services/chart.service.client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5304519">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state vertical-scroll-proportion="59.705883">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -129,8 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/assignment/views/users/login.controller.js" />
-        <option value="$PROJECT_DIR$/public/assignment/views/users/profile.controller.js" />
         <option value="$PROJECT_DIR$/public/assignment/views/users/register.controller.js" />
         <option value="$PROJECT_DIR$/public/experiment/juketube/index.html" />
         <option value="$PROJECT_DIR$/public/experiment/juketube/app.js" />
@@ -171,15 +189,17 @@
         <option value="$PROJECT_DIR$/public/project/services/display.service.client.js" />
         <option value="$PROJECT_DIR$/public/project/views/details/details.controller.js" />
         <option value="$PROJECT_DIR$/public/project/views/home/home.controller.js" />
-        <option value="$PROJECT_DIR$/public/project/css/dashboard.css" />
         <option value="$PROJECT_DIR$/public/project/index.html" />
         <option value="$PROJECT_DIR$/public/project/services/chart.service.client.js" />
         <option value="$PROJECT_DIR$/public/project/config.js" />
-        <option value="$PROJECT_DIR$/public/project/views/home/home.view.html" />
         <option value="$PROJECT_DIR$/public/project/views/artist/search/search.view.html" />
         <option value="$PROJECT_DIR$/public/project/views/details/details.view.html" />
         <option value="$PROJECT_DIR$/public/project/views/track/track.view.html" />
         <option value="$PROJECT_DIR$/public/project/views/track/search/search.view.html" />
+        <option value="$PROJECT_DIR$/public/project/views/home/home.view.html" />
+        <option value="$PROJECT_DIR$/public/project/css/dashboard.css" />
+        <option value="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/grayscale.css" />
+        <option value="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/index.html" />
       </list>
     </option>
   </component>
@@ -420,7 +440,185 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grayscale_medhavi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grayscale_medhavi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grayscale_medhavi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webdev2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portfolio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grayscale_medhavi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,11 +645,11 @@
       <recent name="$PROJECT_DIR$/public/assignment/views/admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img" />
+      <recent name="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/resource" />
+      <recent name="$PROJECT_DIR$/public/experiment/Portfolio" />
       <recent name="$PROJECT_DIR$/public/project/images" />
       <recent name="$PROJECT_DIR$/public/project" />
-      <recent name="$PROJECT_DIR$/public/project/services" />
-      <recent name="$PROJECT_DIR$/public/project/views/home" />
-      <recent name="$PROJECT_DIR$/public/project/views" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.profile.html">
@@ -570,70 +768,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/experiment/Jose/public/experiments/angularjs/courses2/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Jose/public/experiments/angularjs/courses2/courses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.76125246">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/users/login.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52837574">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/users/profile.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20547946">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/users/register.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26418787">
-          <caret line="9" column="29" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Jose/public/experiments/angularjs/courses2/courses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326087">
-          <caret line="71" column="46" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/views/forms/forms.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24640657">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/services/forms.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93933463">
-          <caret line="52" column="9" selection-start-line="44" selection-start-column="8" selection-end-line="52" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/views/forms/forms.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5870842">
@@ -879,30 +1013,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6185567">
-          <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36462882">
-          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.280083">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/project/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2691552">
@@ -915,38 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33187774">
           <caret line="37" column="76" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/artist/search/search.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.708333">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/details/details.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.833333">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/project/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.791667">
-          <caret line="51" column="77" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -969,8 +1047,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/project/services/chart.service.client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5304519">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26522595">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/home/home.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12371134">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/details/details.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06185567">
+          <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/views/artist/search/search.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43092784">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="42.5">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/css/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9375">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale/img/map-marker.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale/img/intro-bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale/img/downloads-bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="59.705883">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3846154">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/project/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/css/grayscale.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.509804">
+          <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34020618">
+          <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
           <folding />
         </state>
       </provider>
