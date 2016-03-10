@@ -24,6 +24,9 @@
 
         <div id="navbar" class="navbar-collapse collapse ng-scope">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="https://docs.google.com/document/d/1yR4FKBg1WxTPJKaEz8K0LxTHvty7N3FH78vj9XiLFnc/edit?usp=sharing">Documentation</a>
+                </li>
 
                 <li ng-if="loggedIn" ng-class="{'active':$location.url()== '/profile/{{user.username}}'}">
                     <a href="#/profile/{{user.username}}">Hi {{user.username}}!</a>
