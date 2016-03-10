@@ -1,5 +1,5 @@
 <h2>Tracks</h2>
-<div ng-controller="DetailsController" class="detail">
+<div ng-controller="DetailsController" class="table-responsive detail">
     <table class="table table-striped ng-scope">
         <thead>
         <tr>
@@ -12,7 +12,8 @@
         <tr ng-repeat="tracks in model.details" class="ng-scope">
             <td>
                 <a href="#/details/{{tracks.mbid}}">
-                    <img class="media-object" src="{{tracks.image.medium}}"</a>
+                    <img class="media-object" ng-src="{{tracks.image.medium}}" alt="No Image!">
+                </a>
             </td>
             <td>
                 <a href="{{tracks.url}}">{{tracks.name}}</a>

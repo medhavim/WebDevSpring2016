@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("TrackController", TrackController);
 
-    function TrackController($scope, $http, $routeParams, artistService) {
+    function TrackController($scope, $http, $routeParams, artistService, displayService) {
         var vm = this;
 
         var mbId = $routeParams.mb_id;
@@ -19,7 +19,7 @@
         }
 
         function renderDetails(response) {
-            vm.details = artistService.displayTrackImage(response);
+            vm.details = displayService.displayTrackImage(response.toptracks);
         }
     }
 

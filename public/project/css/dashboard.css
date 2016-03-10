@@ -116,11 +116,157 @@ body {
 }
 
 a {
-    color: #990000;
+    /*color: #990000;*/
+    color: #EA63CB;
+    font-size: large;
     text-decoration: none;
     cursor: pointer;
 }
 
+.thumbnail {
+    background-color: transparent;
+    border: snow;
+}
+
+.thumbnail > div > a {
+    color: #EA63CB;
+    font-size: x-large;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table{
+    background-color: rgba(0,0,0,0.9);
+}
+
+.table.table-striped>tbody>tr:nth-of-type(odd){background-color:rgba(0,0,0,0.25)}
+.table-hover>tbody>tr:hover{background-color:rgba(10,0,140,0.5)}
+
+/*.fanpageCarousel{
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    max-width: 800px;
+    max-height: 450px;
+    border-radius: 4px;
+}
+
+.fanpageCarousel img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.fanpageCarousel li {
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}*/
+
+/*.carousel{
+    overflow:hidden;
+    width:100%;
+}
+.panes{
+    list-style:none;
+    position:relative;
+    width:500%; !* Number of panes * 100% *!
+    overflow:hidden; !* This is used solely to clear floats, it does not add functionality. *!
+
+    -moz-animation:carousel 30s infinite;
+    -webkit-animation:carousel 30s infinite;
+    animation:carousel 30s infinite;
+}
+.panes > li{
+    position:relative;
+    float:left;
+    width:20%; !* 100 / number of panes *!
+}
+.carousel img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+.carousel h2{
+    font-size:1em;
+    padding:0.5em;
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    left:10px;
+    text-align:right;
+    color:#fff;
+    background-color:rgba(0,0,0,0.75);
+}
+@-moz-keyframes carousel{
+    0%    { left:0; }
+    11%   { left:0; }
+    12.5% { left:-100%; }
+    23.5% { left:-100%; }
+    25%   { left:-200%; }
+    36%   { left:-200%; }
+    37.5% { left:-300%; }
+    48.5% { left:-300%; }
+    50%   { left:-400%; }
+    61%   { left:-400%; }
+    62.5% { left:-300%; }
+    73.5% { left:-300%; }
+    75%   { left:-200%; }
+    86%   { left:-200%; }
+    87.5% { left:-100%; }
+    98.5% { left:-100%; }
+    100%  { left:0; }
+}
+
+@-webkit-keyframes carousel{
+    0%    { left:0; }
+    11%   { left:0; }
+    12.5% { left:-100%; }
+    23.5% { left:-100%; }
+    25%   { left:-200%; }
+    36%   { left:-200%; }
+    37.5% { left:-300%; }
+    48.5% { left:-300%; }
+    50%   { left:-400%; }
+    61%   { left:-400%; }
+    62.5% { left:-300%; }
+    73.5% { left:-300%; }
+    75%   { left:-200%; }
+    86%   { left:-200%; }
+    87.5% { left:-100%; }
+    98.5% { left:-100%; }
+    100%  { left:0; }
+}
+@keyframes carousel{
+    0%    { left:0; }
+    11%   { left:0; }
+    12.5% { left:-100%; }
+    23.5% { left:-100%; }
+    25%   { left:-200%; }
+    36%   { left:-200%; }
+    37.5% { left:-300%; }
+    48.5% { left:-300%; }
+    50%   { left:-400%; }
+    61%   { left:-400%; }
+    62.5% { left:-300%; }
+    73.5% { left:-300%; }
+    75%   { left:-200%; }
+    86%   { left:-200%; }
+    87.5% { left:-100%; }
+    98.5% { left:-100%; }
+    100%  { left:0; }
+}*/
 /*.navbar-inverse{background-color:#222222;border-color:#080808;}
 .navbar-inverse .navbar-brand{color:#ffffff}
 .navbar-inverse .navbar-brand:hover,.navbar-inverse .navbar-brand:focus{color:#ffffff;background-color:transparent}

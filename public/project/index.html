@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="music.ico">
+    <link rel="icon" href="img/music.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="https://bootswatch.com/cyborg/bootstrap.min.css" rel="stylesheet">
@@ -35,12 +35,15 @@
     <script src="views/users/register.controller.js"></script>
     <script src="views/users/profile.controller.js"></script>
     <script src="views/admin/admin.controller.js"></script>
+    <script src="views/home/home.controller.js"></script>
 
 
 
     <!-- Services -->
     <script src="services/artist.service.js"></script>
     <script src="services/user.service.client.js"></script>
+    <script src="services/chart.service.client.js"></script>
+    <script src="services/display.service.client.js"></script>
 
 </head>
 <!--<body ng-controller="MainController" class="ng-scope">-->
@@ -50,7 +53,7 @@
 <!--    <div class="col-sm-3 col-md-2 sidebar"
          ng-include="'views/sidebar/sidebar.view.html'">
     </div>-->
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main ng-scope" ng-view></div>
+    <div class="main ng-scope" ng-view></div>
 </div>
 
 <!-- Bootstrap core JavaScript

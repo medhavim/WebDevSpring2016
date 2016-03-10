@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("ArtistController", ArtistController);
 
-    function ArtistController($scope, $http, $routeParams, $location, artistService) {
+    function ArtistController($scope, $http, $routeParams, $location, artistService, displayService) {
 
         function init() {
             var artistTitle = $routeParams.title;
@@ -20,7 +20,7 @@
         }
 
         function renderArtists(response) {
-            $scope.data = artistService.displayArtistImage(response);
+            $scope.data = displayService.displayArtistImage(response.results.artistmatches);
         }
     }
 })();

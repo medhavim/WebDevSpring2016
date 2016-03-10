@@ -11,10 +11,10 @@
         var api = {
             findArtistByMbId: findArtistByMbId,
             findArtistsByTitle: findArtistsByTitle,
-            findTracksByMbId: findTracksByMbId,
+            findTracksByMbId: findTracksByMbId /*,
             displayArtistImage: displayArtistImage,
             displayTrackImage: displayTrackImage,
-            displayImage: displayImage
+            displayImage: displayImage */
         };
 
         return api;
@@ -40,7 +40,7 @@
                 .success(callback);
         }
 
-        function displayImage (images){
+/*        function displayImage (images){
             for (var i in images){
                 images[images[i]['size']] = images[i]['#text'];
             }
@@ -58,7 +58,7 @@
             for (var t in tracks)
                 displayImage(tracks[t].image);
             return res.toptracks.track;
-        }
+        }*/
     }
 
 })();

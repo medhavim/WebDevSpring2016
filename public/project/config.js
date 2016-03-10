@@ -6,7 +6,7 @@
     function Config($routeProvider) {
         $routeProvider
             .when("/home", {
-                templateUrl: "views/home/home.html"
+                templateUrl: "views/home/home.view.html"
             })
             .when("/artist", {
                 templateUrl: "views/artist/search/search.view.html",
@@ -21,7 +21,7 @@
                 controller: "DetailsController as model"
             })
             .when("/track", {
-                templateUrl: "views/track/track.view.html",
+                templateUrl: "views/track/search/search.view.html",
                 controller: "TrackController as model"
             })
             .when("/track/:mb_id", {

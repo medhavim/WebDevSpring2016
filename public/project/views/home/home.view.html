@@ -1,0 +1,38 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 page-header text-center ng-scope">
+    <h1>Welcome to Prismatic Music!</h1>
+</div>
+
+<div ng-controller="HomeController" class="ng-scope">
+
+    <div ng-if="topTracks.length">
+        <h3>Trending Tracks</h3>
+        <div class="row">
+            <div ng-repeat="track in topTracks">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class = "thumbnail">
+                        <img class="media-object" ng-src="{{track.image.large}}" alt = "No Image!">
+                        <div class = "caption">
+                            <a href="{{track.url}}">{{track.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="topArtists.length">
+        <h3>Trending Artists</h3>
+        <div class="row">
+            <div ng-repeat="artist in topArtists">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class = "thumbnail">
+                        <img class="media-object" ng-src="{{artist.image.large}}" alt = "No Image!">
+                        <div class = "caption">
+                            <a href="{{artist.url}}">{{artist.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
