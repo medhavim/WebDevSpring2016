@@ -2,14 +2,16 @@
 <h2>{{model.details.artist.name}}</h2>
 <div ng-controller="DetailsController" class="detail">
     <div>
+        <p>
             {{model.details.artist.bio.summary}}
+        </p>
     </div>
     <p>
-<a href="{{model.details.artist.url}}">Last.fm link</a></p>
+        <a href="{{model.details.artist.url}}">Last.fm link</a></p>
     <h3>Similar artists</h3>
-<ul>
-    <li ng-repeat="similarArtist in model.details.artist.similar.artist">
-        <a href="{{similarArtist.url}}"> {{similarArtist.name}} </a>
-    </li>
-</ul>
+    <ul>
+        <li ng-repeat="similarArtist in model.details.artist.similar.artist">
+            <a href="{{similarArtist.url}}"> {{similarArtist.name}} </a>
+        </li>
+    </ul>
 </div>

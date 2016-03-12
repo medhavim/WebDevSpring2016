@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>second sc exp</title>
+    <script src="underscore-min.js"></script>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+</head>
+
+<body>
+<h1>My Amazing Underscore project</h1>
+
+<div id="content">
+</div>
+
+<script>
+    console.log("initialized");
+    SC.initialize({
+        client_id: '98f35e5571e2edb9a137bf54910e57a1'
+    });
+    // SC.get('/users/reginaspektor/tracks', function(tracks) {
+    //    console.log(tracks)
+    //  });
+    SC.stream("/tracks/63061619", function(sound){
+        console.log("playing sound");
+        sound.play();
+    });
+</script>
+</body>
+</html>

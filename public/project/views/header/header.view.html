@@ -28,7 +28,7 @@
                     <a href="https://docs.google.com/document/d/1yR4FKBg1WxTPJKaEz8K0LxTHvty7N3FH78vj9XiLFnc/edit?usp=sharing">Documentation</a>
                 </li>
 
-                <li ng-if="loggedIn" ng-class="{'active':$location.url()== '/profile/{{user.username}}'}">
+                <li ng-if="loggedIn">
                     <a href="#/profile/{{user.username}}">Hi {{user.username}}!</a>
                 </li>
 
@@ -45,9 +45,9 @@
                     <a href="#/artist">Artists</a>
                 </li>
 
-                <li ng-class="{'active' : $location.url() =='/track' }">
+                <!--<li ng-class="{'active' : $location.url() =='/track' }">
                     <a href="#/track">Tracks</a>
-                </li>
+                </li>-->
 
                 <li ng-if="loggedIn && user.roles.indexOf('admin')>=0"
                     ng-class="{'active' : $location.url() =='/admin'}">

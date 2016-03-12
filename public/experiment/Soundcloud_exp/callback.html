@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Callback</title>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+    <script>
+        SC.initialize({
+            client_id: '98f35e5571e2edb9a137bf54910e57a1'
+        });
+    </script>
+
+</head>
+<body onload="window.setTimeout(opener.SC.connectCallback, 1);">
+<p>
+    This page should close soon
+</p>
+</body>
+</html>

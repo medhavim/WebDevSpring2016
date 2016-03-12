@@ -20,6 +20,7 @@
 
         function renderTopTracks(response) {
             $scope.topTracks = displayService.displayTrackImage(response.tracks);
+            console.log("topTracks");
             console.log($scope.topTracks);
         }
 

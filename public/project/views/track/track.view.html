@@ -11,11 +11,11 @@
         <tbody>
         <tr ng-repeat="tracks in model.details" class="ng-scope">
             <td>
-                <a href="#/details/{{tracks.mbid}}">
+                <a href="#/details/{{tracks.artist.mbid}}">
                     <img class="media-object" ng-src="{{tracks.image.medium}}" alt="No Image!">
                 </a>
             </td>
-            <td>
+            <td ng-controller="TrackController">
                 <a href="{{tracks.url}}">{{tracks.name}}</a>
             </td>
         </tr>

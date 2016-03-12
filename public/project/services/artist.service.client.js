@@ -21,7 +21,7 @@
 
         function findArtistByMbId(mbId, callback) {
             var url = MBID_URL.replace("MBID", mbId);
-            console.log(url);
+            //console.log(url);
             $http.get(url)
                 .success(callback);
         }
@@ -35,7 +35,7 @@
 
         function findTracksByMbId(mbId, callback) {
             var url = TRACK_URL.replace("MBID", mbId);
-            console.log(url);
+            //console.log(url);
             $http.get(url)
                 .success(callback);
         }

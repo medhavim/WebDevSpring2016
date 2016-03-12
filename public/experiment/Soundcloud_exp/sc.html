@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SC experiment</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <!--   <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <link rel="stylesheet" href="runnable.css" />
+
+    <script>
+        SC.initialize({
+            client_id: '98f35e5571e2edb9a137bf54910e57a1'
+        });
+
+        $("#stream").live("click", function(){
+            SC.stream("/tracks/293", {autoPlay: true});
+        });
+
+
+        /*SC.stream("/tracks/298", function(sound){
+            $("audio-test").attr("src", sound.uri);
+        });*/
+        /*SC.get("/tracks/75868018", {}, function(sound){
+            alert("Sound URI: "+sound.uri);
+            $("#audio-test").attr("src", sound.uri);
+        });*/
+
+        // initialize soundcloud API with key
+        /*SC.initialize({
+            // This is the sample client_id. you should replace this with your own
+            client_id: "98f35e5571e2edb9a137bf54910e57a1"
+        });
+
+        // This is the track that will play
+        var TRACK = "http://api.soundcloud.com/tracks/82470378";
+
+        // Volume Manager
+        function VolMan(currentTrack) {
+            var track = currentTrack; // holds sound object
+            var vol = 50; // holds current volume level
+            // Sets volume based on volume level
+            this.updateVolume  = function () {
+                $("#volume").html("Current Volume: " + vol);
+                track.setVolume(vol);
+            };
+            // Increases volume level
+            this.volUp = function () {
+                if (vol >= 100) return;
+                vol += 10;
+                this.updateVolume();
+            };
+            // Decrease volume level
+            this.volDown = function () {
+                if (vol <= 0) return;
+                vol -= 10;
+                this.updateVolume();
+            };
+            // Mutes volume
+            this.mute = function () {
+                track.mute();
+                $("#mState").html("MUTE");
+            };
+            // Unmutes volume
+            this.unmute = function () {
+                track.unmute();
+                $("#mState").html("");
+            };
+            // Initial volume update
+            this.updateVolume();
+        }
+
+        // Manages play state
+        function StateMan(currentTrack) {
+            var track = currentTrack; // holds sound object
+            var state = ""; // holds current playing state
+            // Start playback if not already playing
+            this.play = function () {
+                if (state == "play" ) return;
+                state = "play";
+                track.play();
+                $("#state").html("State: Playing");
+            };
+            // Stop playback if not already stopped
+            this.stop = function () {
+                if (state == "stop" ) return;
+                state = "stop";
+                track.stop();
+                $("#state").html("State: Stopped");
+            };
+            // Pause playback if not already Paused
+            this.pause = function  () {
+                if (state == "pause" ) return;
+                state = "pause";
+                track.pause();
+                $("#state").html("State: Paused");
+            };
+            // Initial state update
+            this.stop();
+        }
+
+        $(document).ready(
+                function () {
+                    // Grab sound object of stream
+                    SC.stream(TRACK, function(sound){
+                        stateMan = new StateMan(sound);
+                        volMan = new VolMan(sound);
+                    });
+                }
+        );*/
+    </script>-->
+
+
+
+</head>
+
+<!--<audio id="audio-test" controls></audio>-->
+<body>
+
+<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+
+<script>
+    SC.initialize({
+        client_id: "15c5a12b5d640af73b16bd240753ffbb"
+    });
+
+    /*$("#stream").live("click", function(){
+        SC.stream("/tracks/293", {autoPlay: true});
+    });*/
+    var track_url = 'http://soundcloud.com/forss/flickermood';
+    SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
+        console.log('oEmbed response: ', oEmbed);
+        oEmbed.html;
+    });
+
+    SC.stream('/tracks/293').then(function(player){
+        player.play();
+    });
+</script>
+
+<input type="button" href="#" id="stream" class="big button" value="Stream It Again, Sam" />
+
+
+<!--<h1>Sound Controler</h1>
+<hr>
+
+<h1 id="state">State: Stopped</h1>
+<button id="play" onclick="stateMan.play()"> Play </button>
+<button id="stop" onclick="stateMan.stop()"> Stop </button>
+<button id="pause" onclick="stateMan.pause()"> Pause </button>
+<br>
+
+<h1 id="volume">Current Volume: 50</h1>
+<h2 id="mState"></h2>
+<button id="volUp" onclick="volMan.volUp()"> Volume Up </button>
+<button id="volDown" onclick="volMan.volDown()"> Volume Down </button>
+<button id="mute" onclick="volMan.mute()"> mute </button>
+<button id="unmute" onclick="volMan.unmute()"> unmute </button>-->
+</body>
+
+</html>

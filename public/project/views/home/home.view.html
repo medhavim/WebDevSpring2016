@@ -10,6 +10,7 @@
             <div ng-repeat="track in topTracks">
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
                     <div class = "thumbnail">
+                        <a href="#/details/{{track.artist.mbid}}">
                         <img class="media-object" src="{{track.image.large}}" alt = "No Image!">
                         <div class = "caption">
                             <a href="{{track.url}}">{{track.name}}</a>
@@ -26,9 +27,10 @@
             <div ng-repeat="artist in topArtists">
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
                     <div class = "thumbnail">
-                        <img class="media-object" src="{{artist.image.large}}" alt = "No Image!">
+                        <a href="#/details/{{artist.mbid}}">
+                        <img class="media-object" src="{{artist.image.large}}" alt = "No Image!"> </a>
                         <div class = "caption">
-                            <a href="{{artist.url}}">{{artist.name}}</a>
+                            <a href="#/track/{{artist.mbid}}">{{artist.name}}</a>
                         </div>
                     </div>
                 </div>
