@@ -74,7 +74,7 @@ module.exports = function() {
         return null;
     }
 
-    function createField(field, formId) {
+    function createField(formId, field) {
         for (var f in mock) {
             if (mock[f]._id === formId) {
                 field._id = (new Date()).getTime();
@@ -92,7 +92,7 @@ module.exports = function() {
         return null;
     }
 
-    function findFieldByFieldAndFormId(fieldId, formId) {
+    function findFieldByFieldAndFormId(formId, fieldId) {
         for (var f in mock) {
             if(mock[f]._id === formId) {
                 for (var ff in mock[f].fields) {
@@ -105,7 +105,7 @@ module.exports = function() {
         return null;
     }
 
-    function deleteFieldByFieldAndFormId(fieldId, formId) {
+    function deleteFieldByFieldAndFormId(formId, fieldId) {
         for (var f in mock) {
             if(mock[f]._id === formId) {
                 for (var ff in mock[f].fields) {
@@ -117,7 +117,7 @@ module.exports = function() {
         }
     }
 
-    function updateFieldByFieldAndFormId(fieldId, formId, field) {
+    function updateFieldByFieldAndFormId(formId, fieldId, field) {
         for (var f in mock) {
             if(mock[f]._id === formId) {
                 for (var ff in mock[f].fields) {

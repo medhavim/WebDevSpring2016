@@ -15,26 +15,26 @@ module.exports = function(app, formModel, userModel) {
     function findFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var field = formModel.findFieldByFieldAndFormId(fieldId, formId);
+        var field = formModel.findFieldByFieldAndFormId(formId, fieldId);
         res.json(field);
     }
 
     function deleteFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        formModel.deleteFieldByFieldAndFormId(fieldId, formId);
+        formModel.deleteFieldByFieldAndFormId(formId, fieldId);
     }
 
     function createField(req, res) {
         var formId = req.params.formId;
         var field = req.body;
-        formModel.createField(field, formId);
+        formModel.createField(formId, field);
     }
 
     function updateFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
         var field = req.body;
-        formModel.updateFieldByFieldAndFormId(fieldId, formId, field);
+        formModel.updateFieldByFieldAndFormId(formId, fieldId, field);
     }
 };
