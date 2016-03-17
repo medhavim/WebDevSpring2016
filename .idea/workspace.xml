@@ -2,38 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a7accdd-a783-41a8-be49-4fcf4dfc6d5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/server/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/server/models/user.mock.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/server/models/user.model.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/app.js" afterPath="$PROJECT_DIR$/public/assignment/client/app.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/config.js" afterPath="$PROJECT_DIR$/public/assignment/client/config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/css/dashboard.css" afterPath="$PROJECT_DIR$/public/assignment/client/css/dashboard.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/favicon.ico" afterPath="$PROJECT_DIR$/public/assignment/client/img/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/index.html" afterPath="$PROJECT_DIR$/public/assignment/client/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/services/forms.service.client.js" afterPath="$PROJECT_DIR$/public/assignment/client/services/forms.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/services/user.service.client.js" afterPath="$PROJECT_DIR$/public/assignment/client/services/user.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/admin/admin.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/admin/admin.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/forms/fields.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/forms/fields.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/forms/forms.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/forms/forms.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/forms/forms.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/forms/forms.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/header/header.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/header/header.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/header/header.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/header/header.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/home/home.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/home/home.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/main/main.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/main/main.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/sidebar/sidebar.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/sidebar/sidebar.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/sidebar/sidebar.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/sidebar/sidebar.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/login.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/login.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/login.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/login.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/profile.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/profile.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/profile.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/profile.view.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/register.controller.js" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/register.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/assignment/views/users/register.view.html" afterPath="$PROJECT_DIR$/public/assignment/client/views/users/register.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/img/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/css/dashboard.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/services/forms.service.client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/services/user.service.client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/admin/admin.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/forms/fields.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/forms/forms.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/forms/forms.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/header/header.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/header/header.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/home/home.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/main/main.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/sidebar/sidebar.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/sidebar/sidebar.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/login.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/login.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/profile.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/profile.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/register.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/backup/assignment2/client/views/users/register.view.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/server/models/form.mock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assignment/server/models/form.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/Jose" afterPath="$PROJECT_DIR$/public/experiment/Jose" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/guity" afterPath="$PROJECT_DIR$/public/experiment/guity" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/juketube" afterPath="$PROJECT_DIR$/public/experiment/juketube" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/experiment/lastfm" afterPath="$PROJECT_DIR$/public/experiment/lastfm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assignment/server/app.js" afterPath="$PROJECT_DIR$/public/assignment/server/app.js" />
     </list>
     <ignored path="webdev2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,48 +52,7 @@
     <favorites_list name="webdev2016" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assignment/server/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20547946">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/client/css/dashboard.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/client/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assignment/client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,8 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/assignment/views/forms/forms.controller.js" />
-        <option value="$PROJECT_DIR$/public/project/services/user.service.client.js" />
         <option value="$PROJECT_DIR$/public/project/views/admin/admin.controller.js" />
         <option value="$PROJECT_DIR$/public/project/views/sidebar/sidebar.view.html" />
         <option value="$PROJECT_DIR$/public/experiment/lastfm/html/list.html" />
@@ -158,10 +114,12 @@
         <option value="$PROJECT_DIR$/public/project/views/track/track.view.html" />
         <option value="$PROJECT_DIR$/public/project/views/header/header.view.html" />
         <option value="$PROJECT_DIR$/public/assignment/client/index.html" />
-        <option value="$PROJECT_DIR$/public/assignment/server/app.js" />
         <option value="$PROJECT_DIR$/public/assignment/server/models/user.model.server.js" />
         <option value="$PROJECT_DIR$/public/assignment/server/models/user.model.js" />
         <option value="$PROJECT_DIR$/public/assignment/server/models/user.mock.json" />
+        <option value="$PROJECT_DIR$/public/assignment/server/app.js" />
+        <option value="$PROJECT_DIR$/public/assignment/server/models/form.mock.json" />
+        <option value="$PROJECT_DIR$/public/assignment/server/models/form.model.js" />
       </list>
     </option>
   </component>
@@ -270,32 +228,6 @@
               <option name="myItemId" value="assignment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webdev2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webdev2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -315,11 +247,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assignment/backup/assignment2" />
       <recent name="$PROJECT_DIR$/public/project/images" />
       <recent name="$PROJECT_DIR$/public/project/services" />
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/experiment/Portfolio/grayscale_medhavi/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assignment/client/img" />
@@ -405,9 +337,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24543288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24543288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -445,26 +377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/images/watch.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/images/slider/bg3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/experiment/Project_template/images/event/event2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -714,33 +626,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/client/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/client/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/client/img/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assignment/server/models/user.mock.json">
@@ -751,10 +639,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assignment/server/models/user.model.js">
+    <entry file="file://$PROJECT_DIR$/public/assignment/client/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32289627">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.17612524">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/client/css/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40041068">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -763,6 +667,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20547946">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/backup/assignment2/client/css/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/client/services/user.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/server/models/form.mock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7084189">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/server/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2661448">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assignment/server/models/form.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2661448">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding />
         </state>
       </provider>
