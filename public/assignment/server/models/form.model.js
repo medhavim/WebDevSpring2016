@@ -21,9 +21,14 @@ module.exports = function(app) {
     };
     return api;
 
-    function createForm(form) {
+    function createForm(form, userId) {
+        var form = {
+            _id: (new Date()).getTime().toString(),
+            title: form.title,
+            userId: userId
+        };
         mock.push(form);
-        return mock;
+        return form;
     }
 
     function findAllForms() {
@@ -49,9 +54,11 @@ module.exports = function(app) {
     }
 
     function findFormByUserId(userId) {
+        var forms = [];
         for (var f in mock) {
             if(mock[f].userId === userId) {
-                return mock[f];
+                forms.push(mock[f]);
+                return forms;
             }
         }
         return null;
@@ -61,6 +68,7 @@ module.exports = function(app) {
         for(var f in mock) {
             if (mock[f]._id === formId) {
                 mock.splice(f,1);
+                return mock[f];
             }
         }
     }
@@ -68,7 +76,9 @@ module.exports = function(app) {
     function updateFormById(formId, form) {
         for(var f in mock) {
             if (mock[f]._id === formId) {
-                mock[f]=form;
+                var updatedForm = mock[f];
+                updatedForm.title = form.title;
+                return updatedForm;
             }
         }
         return null;
@@ -79,6 +89,7 @@ module.exports = function(app) {
             if (mock[f]._id === formId) {
                 field._id = (new Date()).getTime();
                 mock[f].fields.push(field);
+                return mock[f].fields;
             }
         }
     }
@@ -97,7 +108,7 @@ module.exports = function(app) {
             if(mock[f]._id === formId) {
                 for (var ff in mock[f].fields) {
                     if(ff._id === fieldId) {
-                        return ff;
+                        return mock[f].fields;
                     }
                 }
             }
@@ -111,10 +122,12 @@ module.exports = function(app) {
                 for (var ff in mock[f].fields) {
                     if(ff._id === fieldId) {
                         delete ff;
+                        return mock[f].fields;
                     }
                 }
             }
         }
+        return null;
     }
 
     function updateFieldByFieldAndFormId(formId, fieldId, field) {
@@ -123,9 +136,11 @@ module.exports = function(app) {
                 for (var ff in mock[f].fields) {
                     if(ff._id === fieldId) {
                         ff = field;
+                        return mock[f].fields;
                     }
                 }
             }
         }
+        return null;
     }
 };

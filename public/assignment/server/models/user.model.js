@@ -38,7 +38,6 @@ module.exports = function(app) {
     function findUserByUsername(username) {
         for(var u in mock) {
             if (mock[u].username === username) {
-                console.log(mock[u]);
                 return mock[u];
             }
         }
@@ -47,7 +46,6 @@ module.exports = function(app) {
 
 
     function findUserByCredentials(credentials) {
-        console.log("in server user model");
         for(var u in mock) {
             if (mock[u].username === credentials.username && mock[u].password === credentials.password) {
                 return mock[u];

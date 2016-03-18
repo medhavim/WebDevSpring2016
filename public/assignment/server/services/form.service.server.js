@@ -6,31 +6,34 @@ module.exports = function(app, formModel) {
     app.put('/api/assignment/form/:formId', updateFormById);
 
     function findFormByUserId(req, res) {
-        var userId = req.params.userId;
-        var forms = formModel.findFormByUserId(userId);
-        res.json(forms);
+        var userId = Number(req.params.userId);
+        var formResponse = formModel.findFormByUserId(userId);
+        res.json(formResponse);
     }
 
     function findFormById(req, res) {
         var formId = req.params.formId;
-        var form = formModel.findFormById(formId);
-        res.json(form);
+        var formResponse = formModel.findFormById(formId);
+        res.json(formResponse);
     }
 
     function deleteFormById(req, res) {
         var formId = req.params.formId;
-        formModel.deleteFormById(formId);
+        var formResponse = formModel.deleteFormById(formId);
+        res.json(formResponse);
     }
 
     function createForm(req, res) {
-        var userId = req.params.userId;
+        var userId = Number(req.params.userId);
         var form = req.body;
-        formModel.createForm(form, userId);
+        var formResponse = formModel.createForm(form, userId);
+        res.json(formResponse);
     }
 
     function updateFormById(req, res) {
         var formId = req.params.formId;
         var form = req.body;
-        formModel.updateFormById(formId, form);
+        var formResponse = formModel.updateFormById(formId, form);
+        res.json(formResponse);
     }
 };

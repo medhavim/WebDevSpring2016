@@ -1,11 +1,11 @@
 <!-- This file displays the Forms page -->
 
-<div ng-controller="FormController">
+<div>
     <h1 class="page-header">Forms</h1>
     <nav>
         <ul class="nav nav-tabs">
             <li class="active"><a href="#/forms">Forms</a></li>
-            <li><a href="#/fields">Fields</a></li>
+            <li><a href="">Fields</a></li>
         </ul>
     </nav>
 
@@ -24,7 +24,7 @@
                     <tr>
                         <td>
                             <!-- Form Name input -->
-                            <input ng-model="formName"
+                            <input ng-model="model.formName"
                                    class="form-control"
                                    type="text"
                                    name="userName"
@@ -32,12 +32,12 @@
                         </td>
                         <td class="table-content-nowrap">
                             <!-- Button to update an existing form -->
-                            <button ng-click="updateForm()" class="btn btn-success">
+                            <button ng-click="model.updateForm(model, $index)" class="btn btn-success">
                                 <scan class="glyphicon glyphicon-ok"></scan>
                             </button>
 
                             <!-- Button to add a new form -->
-                            <button ng-click="addForm()" class="btn btn-primary">
+                            <button ng-click="model.addForm(model)" class="btn btn-primary">
                                 <scan class="glyphicon glyphicon-plus"></scan>
                             </button>
                         </td>
@@ -45,16 +45,16 @@
                     </thead>
 
                     <tbody>
-                    <tr ng-repeat="form in forms">
-                        <td>{{form.title}}</td>
+                    <tr ng-repeat="form in model.forms">
+                        <td><a href="#/form/{{form._id}}/fields">{{form.title}}</a></td>
                         <td class="table-content-nowrap">
                             <!-- Button to select a form to update -->
-                            <a ng-click="selectForm($index)" class="btn btn-warning">
+                            <a ng-click="model.selectForm($index)" class="btn btn-warning">
                                 <scan class="glyphicon glyphicon-pencil"></scan>
                             </a>
 
                             <!-- Button to delete an existing form -->
-                            <a ng-click="deleteForm($index)" class="btn btn-danger">
+                            <a ng-click="model.deleteForm($index)" class="btn btn-danger">
                                 <scan class="glyphicon glyphicon-remove"></scan>
                             </a>
                         </td>

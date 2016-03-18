@@ -8,33 +8,36 @@ module.exports = function(app, formModel) {
 
     function findFieldsByFormId(req, res) {
         var formId = req.params.formId;
-        var fields = formModel.findFieldsByFormId(formId);
-        res.json(fields);
+        var fieldResponse = formModel.findFieldsByFormId(formId);
+        res.json(fieldResponse);
     }
 
     function findFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var field = formModel.findFieldByFieldAndFormId(formId, fieldId);
-        res.json(field);
+        var fieldResponse = formModel.findFieldByFieldAndFormId(formId, fieldId);
+        res.json(fieldResponse);
     }
 
     function deleteFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        formModel.deleteFieldByFieldAndFormId(formId, fieldId);
+        var fieldResponse = formModel.deleteFieldByFieldAndFormId(formId, fieldId);
+        res.json(fieldResponse);
     }
 
     function createField(req, res) {
         var formId = req.params.formId;
         var field = req.body;
-        formModel.createField(formId, field);
+        var fieldResponse = formModel.createField(formId, field);
+        res.json(fieldResponse);
     }
 
     function updateFieldByFieldAndFormId(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
         var field = req.body;
-        formModel.updateFieldByFieldAndFormId(formId, fieldId, field);
+        var fieldResponse = formModel.updateFieldByFieldAndFormId(formId, fieldId, field);
+        res.json(fieldResponse);
     }
 };
