@@ -11,7 +11,7 @@
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Username: </label>
             <div class="col-sm-10">
-                <input type="text" ng-model="model.user.username"
+                <input type="text" ng-model="model.username"
                        class="form-control" id="username"
                        placeholder="janedoe">
             </div>
@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="password" class="col-sm-2 control-label">Password: </label>
             <div class="col-sm-10">
-                <input type="password" ng-model="model.user.password"
+                <input type="password" ng-model="model.password"
                        class="form-control" id="password"
                        placeholder="p@ssw0rd">
             </div>
@@ -31,7 +31,7 @@
         <div class="form-group">
             <label for="password2" class="col-sm-2 control-label">Verify Password: </label>
             <div class="col-sm-10">
-                <input type="password" ng-model="model.user.password2"
+                <input type="password" ng-model="model.password2"
                        class="form-control" id="password2"
                        placeholder="p@ssw0rd">
             </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Email: </label>
             <div class="col-sm-10">
-                <input type="email" ng-model="model.user.email"
+                <input type="email" ng-model="model.email"
                        class="form-control" id="email"
                        placeholder="j_doe@abc.com">
             </div>
@@ -50,7 +50,7 @@
         <!-- Button for the registration of the user to happen -->
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-2">
-                <button ng-click="model.register(model.user);" class="btn btn-primary btn-sm">Register</button>
+                <button type="submit" ng-click="model.register(model);" class="btn btn-primary btn-sm">Register</button>
             </div>
         </div>
     </form>

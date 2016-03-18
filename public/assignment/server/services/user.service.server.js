@@ -32,6 +32,7 @@ module.exports = function(app, userModel) {
     }
 
     function findUserByUsername(req, res) {
+        console.log(req.query);
         var username = req.query.username;
         var userResponse = userModel.findUserByUsername(username);
         res.json(userResponse);
@@ -46,11 +47,6 @@ module.exports = function(app, userModel) {
     }
 
     function updateUser(req, res) {
-        console.log("updateUser is server user service");
-        console.log(req.params);
-        console.log(req.body);
-        console.log(req.query);
-        //console.log(req);
         var userId = req.params.id;
         var user = req.body;
         var userResponse = userModel.updateUser(userId, user);

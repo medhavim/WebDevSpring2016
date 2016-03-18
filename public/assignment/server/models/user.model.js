@@ -38,6 +38,7 @@ module.exports = function(app) {
     function findUserByUsername(username) {
         for(var u in mock) {
             if (mock[u].username === username) {
+                console.log(mock[u]);
                 return mock[u];
             }
         }

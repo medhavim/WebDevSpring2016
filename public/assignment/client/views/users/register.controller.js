@@ -8,13 +8,9 @@
         var vm = this;
         vm.register = register;
         vm.message = null;
-        //vm.username = null;
-
-        console.log("In register controller");
 
         function init() {
 
-            console.log("In init register controller");
         } init();
         // This function registers a user
         // It checks if all the required fields are present and if both the password entered are same.
@@ -22,9 +18,7 @@
         // Appropriate error messages are sent if any error occurs.
         // It registers the user and logs them in if no error is encountered.
         function register(user) {
-            console.log("In register register controller");
-            console.log("user");
-            console.log(user);
+            vm.message = null;
             // Username input is mandatory
             if (user === null) {
                 vm.message = "Please fill in the required fields";
@@ -47,32 +41,28 @@
             }
 
             // checks if the username is entered is present in the system
-            var checkUser = UserService.findUserByUsername(user.username);
+            UserService.findUserByUsername(user.username)
+                .then(function(response){
+                    vm.message = null;
+                    if(response.data !== "null") {
+                        vm.message = "User already exists";
+                        return ;
+                    } else {
+                        var newUser = {"firstName": "",
+                            "lastName": "",
+                            "username": user.username,
+                            "password": user.password,
+                            "email": user.email};
 
-            // if the username entered is present, then an error message is displayed
-            if (checkUser !== null) {
-                vm.message = "User already exists";
-                return;
-            }
-
-            // New user is created with the valid entered data
-            var newUser = {"firstName": "",
-                "lastName": "",
-                "username": user.username,
-                "password": user.password,
-                "email": user.email};
-
-            UserService.createUser(newUser)
-                .then(function(response) {
-                    $rootScope.data = response;
-                    var createdUser = response.data;
-                    console.log(createdUser);
-                    UserService.setCurrentUser(createdUser[createdUser.length - 1]);
-                    $location.url("/profile/"+createdUser[createdUser.length - 1].username);
-                //$rootScope.user = response;
-                //$rootScope.loggedIn = true;
-                //$location.path("profile/"+response.username);
-            });
+                        UserService.createUser(newUser)
+                            .then(function(response) {
+                                $rootScope.data = response;
+                                var createdUser = response.data;
+                                UserService.setCurrentUser(createdUser[createdUser.length - 1]);
+                                $location.url("/profile/" + createdUser[createdUser.length - 1].username);
+                            });
+                    }
+                });
         }
     }
 })();
