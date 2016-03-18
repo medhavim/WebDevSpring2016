@@ -1,6 +1,6 @@
 var mock = require("./form.mock.json");
 
-module.exports = function() {
+module.exports = function(app) {
     var api={
 
         // forms
@@ -128,4 +128,4 @@ module.exports = function() {
             }
         }
     }
-}
+};

@@ -6,7 +6,9 @@
 
     function UserService($http, $rootScope){
         var model = {
-            getProfile: getProfile,
+            setCurrentUser: setCurrentUser,
+            //getProfile: getProfile,
+            //getUserProfile: getUserProfile,
             createUser: createUser,
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
@@ -17,33 +19,40 @@
 
         return model;
 
-        function getProfile() {
-            return $http.get("/api/project/omdb/profile/"+$rootScope.currentUser._id);
+        function setCurrentUser(user) {
+            $rootScope.currentUser = user;
         }
 
+/*        function getProfile() {
+            return $http.get("/api/assignment/profile/"+$rootScope.currentUser._id);
+        }
+
+        function getUserProfile(username) {
+            return $http.get("/api/assignment/profile/" + username);
+        }*/
+
         function createUser(user) {
-            return $http.post('/api/assignment/user', user);
+            return $http.post("/api/assignment/user", user);
         }
 
         function deleteUserById(userId) {
-            return $http.delete('/api/assignment/user/' + userId);
+            return $http.delete("/api/assignment/user/" + userId);
         }
 
-        function findAllUsers(callback) {
-            return $http.get('/api/assignment/user');
+        function findAllUsers() {
+            return $http.get("/api/assignment/user");
         }
 
-        function findUserByCredentials(username, password) {
-            return $http.get("/api/assignment/user?username=" + username + "&password=" + password);
+        function findUserByCredentials(credentials) {
+            return $http.get("/api/assignment/user?username=" + credentials.username + "&password=" + credentials.password);
         }
 
         function findUserByUsername(username) {
-            return $http.get('/api/assignment/user?username=' + username);
+            return $http.get("/api/assignment/user?username=" + username);
         }
 
-        function updateUser(userId, user)
-        {
-            return $http.put('/api/assignment/user/' + userId, user);
+        function updateUser(userId, user) {
+            return $http.put("/api/assignment/user/" + userId, user);
         }
     }
 })();

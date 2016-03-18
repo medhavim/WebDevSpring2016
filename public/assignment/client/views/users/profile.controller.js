@@ -4,14 +4,16 @@
         .module("FormBuilderApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($scope, $location, $rootScope, $routeParams, UserService) {
-        $scope.update = update;
-        $scope.user = $rootScope.user;
+    function ProfileController($location, $rootScope, $routeParams, UserService) {
+        var vm = this;
+        vm.update=update;
+        var currentUser = $rootScope.user;
 
-        // appends the username to the Url
-        if($scope.user) {
-            $location.url('/profile/'+$scope.user.username);
-        }
+        function init() {
+            if(currentUser) {
+                $location.url('/profile/'+currentUser.username);
+            }
+        } init();
 
         // This function updates the details of a particular user ID
         function update(user) {

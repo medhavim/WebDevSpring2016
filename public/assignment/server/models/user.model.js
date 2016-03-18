@@ -1,6 +1,6 @@
 var mock = require("./user.mock.json");
 
-module.exports = function() {
+module.exports = function(app) {
 
     var api = {
         createUser: createUser,
@@ -46,6 +46,7 @@ module.exports = function() {
 
 
     function findUserByCredentials(credentials) {
+        console.log("in server user model");
         for(var u in mock) {
             if (mock[u].username === credentials.username && mock[u].password === credentials.password) {
                 return mock[u];
@@ -70,4 +71,4 @@ module.exports = function() {
         }
         return null;
     }
-}
+};
