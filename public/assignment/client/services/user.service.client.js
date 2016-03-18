@@ -7,8 +7,6 @@
     function UserService($http, $rootScope){
         var model = {
             setCurrentUser: setCurrentUser,
-            //getProfile: getProfile,
-            //getUserProfile: getUserProfile,
             createUser: createUser,
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
@@ -23,24 +21,16 @@
             $rootScope.currentUser = user;
         }
 
-/*        function getProfile() {
-            return $http.get("/api/assignment/profile/"+$rootScope.currentUser._id);
-        }
-
-        function getUserProfile(username) {
-            return $http.get("/api/assignment/profile/" + username);
-        }*/
-
         function createUser(user) {
-            return $http.post("/api/assignment/user", user);
+            return $http.post('/api/assignment/user', user);
         }
 
         function deleteUserById(userId) {
-            return $http.delete("/api/assignment/user/" + userId);
+            return $http.delete('/api/assignment/user/' + userId);
         }
 
         function findAllUsers() {
-            return $http.get("/api/assignment/user");
+            return $http.get('/api/assignment/user');
         }
 
         function findUserByCredentials(credentials) {
@@ -48,11 +38,11 @@
         }
 
         function findUserByUsername(username) {
-            return $http.get("/api/assignment/user?username=" + username);
+            return $http.get('/api/assignment/user?username=' + username);
         }
 
         function updateUser(userId, user) {
-            return $http.put("/api/assignment/user/" + userId, user);
+            return $http.put('/api/assignment/user/' + userId, user);
         }
     }
 })();

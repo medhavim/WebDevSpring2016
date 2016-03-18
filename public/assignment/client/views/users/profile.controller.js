@@ -4,20 +4,40 @@
         .module("FormBuilderApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($location, $rootScope, $routeParams, UserService) {
+    function ProfileController($rootScope, UserService) {
         var vm = this;
-        vm.update=update;
-        var currentUser = $rootScope.user;
+        vm.update = update;
+        vm.failureMessage = null;
+        vm.successMessage = null;
+        var currUser = $rootScope.currentUser;
+        vm.user = currUser;
 
         function init() {
-            if(currentUser) {
-                $location.url('/profile/'+currentUser.username);
-            }
+
         } init();
 
         // This function updates the details of a particular user ID
-        function update(user) {
-            UserService.updateUser($routeParams.userid, user, function(response) {
+        function update(modelUser) {
+            var id = currUser._id;
+            var userDetails = {
+                "username": modelUser.username,
+                "password": modelUser.password,
+                "firstName": modelUser.firstName,
+                "lastName": modelUser.lastName,
+                "email": modelUser.email
+            };
+            UserService.updateUser(id, userDetails)
+                .then(function(response) {
+                    if(response.data)
+                    {
+                        $rootScope.data = response;
+                        //vm.user = response.data;
+                        //UserService.setCurrentUser(response.config.data);
+                        vm.successMessage = "Profile updated successfully.";
+                        //$location.path("/profile/" + vm.user.username);
+                    } else {
+                        vm.failureMessage = "Unable to update profile. Please try again.";
+                    }
             });
         }
     }

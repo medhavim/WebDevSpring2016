@@ -1,6 +1,6 @@
 <!-- This file displays the Header of the dashboard -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="HeaderController">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="HeaderController as model">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -22,17 +22,17 @@
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li ng-if="!(loggedIn)" ng-class="{'active':$location.url()== '/register'}">
+                <li ng-hide="currentUser"  ng-class="{'active':model.$location.url()== '/register'}">
                     <a href="#/register">Register</a>
                 </li>
-                <li ng-if="!(loggedIn)" ng-class="{'active':$location.url()== '/login'}">
+                <li ng-hide="currentUser"  ng-class="{'active':model.$location.url()== '/login'}">
                     <a href="#/login">Login</a>
                 </li>
-                <li ng-if="loggedIn" ng-class="{'active':$location.url()== '/profile/{{user.username}}'}">
-                    <a href="#/profile/{{user.username}}">{{user.username}}</a>
+                <li ng-show="currentUser" ng-class="{'active':model.$location.url()== '/profile/{{user.username}}'}">
+                    <a href="#/profile/{{currentUser.username}}">{{currentUser.username}}</a>
                 </li>
-                <li ng-if="loggedIn">
-                    <a href="#/home" ng-click="logout()">Logout</a>
+                <li ng-show="currentUser">
+                    <a href="#/home" ng-click="model.logout()">Logout</a>
                 </li>
             </ul>
         </div>

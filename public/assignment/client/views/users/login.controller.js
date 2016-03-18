@@ -4,7 +4,7 @@
         .module("FormBuilderApp")
         .controller("LoginController", LoginController);
 
-    function LoginController ($location, UserService) {
+    function LoginController ($rootScope, $location, UserService) {
 
         var vm = this;
         vm.login = login;
@@ -20,12 +20,10 @@
                 vm.message = "Enter Login";
                 return vm.message;
             }
-            console.log(user);
             UserService.findUserByCredentials({username:user.username, password:user.password})
                 .then(function(response) {
-                    console.log(response);
                     if (response.data !== "null") {
-                        vm.loggedIn = true;
+                        $rootScope.loggedIn = true;
                         vm.user = response.data;
                         UserService.setCurrentUser(vm.user);
                         $location.path("/profile/" + vm.user.username);

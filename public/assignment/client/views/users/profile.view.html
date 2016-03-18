@@ -1,54 +1,59 @@
 <!-- This file displays the Profile page -->
+<!--<div ng-controller="ProfileController" class="ng-scope">-->
 <div>
     <h1 class="page-header">Profile</h1>
+
+    <!-- Displays an error message -->
+    <div ng-show="model.failureMessage" class="alert alert-danger" role="alert">{{model.failureMessage}}</div>
+    <div ng-show="model.successMessage" class="alert alert-success" role="alert">{{model.successMessage}}</div>
 
     <form role="form" class="form-horizontal">
         <!-- Username input -->
         <div class="form-group">
-            <label for="inputUsername3" class="col-sm-2 control-label">Username: </label>
+            <label for="username" class="col-sm-2 control-label">Username: </label>
             <div class="col-sm-10">
                 <input type="text" ng-model="model.user.username"
-                       class="form-control" id="inputUsername3"
+                       class="form-control" id="username"
                        placeholder="Username">
             </div>
         </div>
 
         <!-- Password input -->
         <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Password: </label>
+            <label for="password" class="col-sm-2 control-label">Password: </label>
             <div class="col-sm-10">
                 <input type="password" ng-model="model.user.password"
-                       class="form-control" id="inputPassword3"
+                       class="form-control" id="password"
                        placeholder="Password">
             </div>
         </div>
 
         <!-- First Name input -->
         <div class="form-group">
-            <label for="inputFirstName3" class="col-sm-2 control-label">First Name: </label>
+            <label for="firstName" class="col-sm-2 control-label">First Name: </label>
             <div class="col-sm-10">
                 <input type="text" ng-model="model.user.firstName"
-                       class="form-control" id="inputFirstName3"
+                       class="form-control" id="firstName"
                        placeholder="First Name">
             </div>
         </div>
 
         <!-- Last Name input -->
         <div class="form-group">
-            <label for="inputLastName3" class="col-sm-2 control-label">Last Name: </label>
+            <label for="lastName" class="col-sm-2 control-label">Last Name: </label>
             <div class="col-sm-10">
                 <input type="text" ng-model="model.user.lastName"
-                       class="form-control" id="inputLastName3"
+                       class="form-control" id="lastName"
                        placeholder="Last Name">
             </div>
         </div>
 
         <!-- Email input -->
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Email: </label>
+            <label for="email" class="col-sm-2 control-label">Email: </label>
             <div class="col-sm-10">
                 <input type="email" ng-model="model.user.email"
-                       class="form-control" id="inputEmail3"
+                       class="form-control" id="email"
                        placeholder="Email">
             </div>
         </div>
@@ -56,7 +61,7 @@
         <!-- Button for the profile update of the user to happen -->
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-2">
-                <button ng-click="model.update(model.user)" class="btn btn-primary btn-sm">Update</button>
+                <button type="submit" ng-click="model.update(model.user);" class="btn btn-primary btn-sm">Update</button>
             </div>
         </div>
     </form>

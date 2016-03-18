@@ -2,9 +2,9 @@ module.exports = function(app, userModel) {
     app.get("/api/assignment/user?username=:username&password=:password", findUserByCredentials);
     app.get("/api/assignment/user?username=:username", findUserByUsername);
     app.get("/api/assignment/user/:id", findUserById);
-    app.put("/api/assignment/user/:id", updateUserById);
-    app.post("/api/assignment/user", createUser);
     app.get("/api/assignment/user", findAllUsers);
+    app.put("/api/assignment/user/:id", updateUser);
+    app.post("/api/assignment/user", createUser);
     app.delete("/api/assignment/user/:id", deleteUserById);
 
     function createUser(req, res) {
@@ -14,8 +14,11 @@ module.exports = function(app, userModel) {
     }
 
     function findAllUsers(req, res) {
-        if (req.query) {
+        if (req.query.username && req.query.password) {
             findUserByCredentials(req, res);
+        }
+        else if (req.query.username) {
+            findUserByUsername(req, res);
         } else {
             var userResponse = userModel.findAllUsers();
             res.json(userResponse);
@@ -29,7 +32,7 @@ module.exports = function(app, userModel) {
     }
 
     function findUserByUsername(req, res) {
-        var username = req.params.username;
+        var username = req.query.username;
         var userResponse = userModel.findUserByUsername(username);
         res.json(userResponse);
     }
@@ -42,10 +45,15 @@ module.exports = function(app, userModel) {
         res.json(userResponse);
     }
 
-    function updateUserById(req, res) {
+    function updateUser(req, res) {
+        console.log("updateUser is server user service");
+        console.log(req.params);
+        console.log(req.body);
+        console.log(req.query);
+        //console.log(req);
         var userId = req.params.id;
         var user = req.body;
-        var userResponse = userModel.updateUserById(userId, user);
+        var userResponse = userModel.updateUser(userId, user);
         res.json(userResponse);
     }
 

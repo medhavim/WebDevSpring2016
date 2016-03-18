@@ -4,14 +4,15 @@
         .module("FormBuilderApp")
         .controller("HeaderController", HeaderController);
 
-    function HeaderController($scope, $rootScope) {
-        $scope = $rootScope;
-        $scope.logout = logout;
+    function HeaderController($rootScope, $location, UserService) {
+        var vm = this;
+        vm.$location = $location;
+        vm.logout = logout;
 
         // This function logs the current user out
         function logout() {
-            $scope.loggedIn = false;
-            $rootScope.user = null;
+            UserService.setCurrentUser(null);
+            $location.url("/home");
         }
     }
 })();

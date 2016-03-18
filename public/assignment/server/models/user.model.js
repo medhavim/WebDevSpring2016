@@ -9,7 +9,7 @@ module.exports = function(app) {
         findUserByUsername: findUserByUsername,
         findUserByCredentials: findUserByCredentials,
         deleteUserById: deleteUserById,
-        updateUserById: updateUserById
+        updateUser: updateUser
     };
     return api;
 
@@ -27,7 +27,7 @@ module.exports = function(app) {
     // use user model find by id
     function findUserById(userId) {
         for(var u in mock) {
-            if (mock[u]._id === userID) {
+            if (mock[u]._id === userId) {
                 return mock[u];
             }
         }
@@ -57,16 +57,18 @@ module.exports = function(app) {
 
     function deleteUserById(userId) {
         for(var u in mock) {
-            if (mock[u]._id === userID) {
+            if (mock[u]._id === userId) {
                 mock.splice(u,1);
             }
         }
+        return (mock);
     }
 
-    function updateUserById(userId, user) {
+    function updateUser(userId, user) {
         for(var u in mock) {
-            if (mock[u]._id === userID) {
+            if (mock[u]._id === userId) {
                 mock[u]=user;
+                return (mock[u]);
             }
         }
         return null;
