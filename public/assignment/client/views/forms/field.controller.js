@@ -7,12 +7,14 @@
         var vm = this;
         var formId = $routeParams.formId;
 
-        FieldService
-            .getFieldsForForm(formId)
-            .then(function(response) {
-                console.log(response.data);
-                vm.fields = response.data;
-            });
+        function init() {
+            FieldService
+                .getFieldsForForm(formId)
+                .then(function (response) {
+                    console.log(response.data);
+                    vm.fields = response.data;
+                });
+        } init();
 
         vm.addField = addField;
 
@@ -35,6 +37,7 @@
                         vm.fields.push(response.data[response.data.length - 1]);
                     });
             }
+
             else if(fieldType === "Date") {
                 field = {"_id": null, "label": "New Date Field", "type": "DATE"};
                 FieldService
@@ -69,6 +72,7 @@
                         vm.fields.push(response.data[response.data.length - 1]);
                     });
             }
+
             else if(fieldType === "Radio buttons") {
                 field = {"_id": null, "label": "New Radio Buttons", "type": "RADIOS", "options": [
                     {"label": "Option X", "value": "OPTION_X"},
@@ -95,7 +99,6 @@
                 });
         }
 
-
         vm.textPop = textPop;
 
         function textPop() {
@@ -106,6 +109,7 @@
         }
 
         vm.textAreaPop = textAreaPop;
+
         function textAreaPop() {
             var modalInstance = $uibModal.open({
                 templateUrl: '/assignment/client/views/forms/modal/singleLineField.html'
@@ -141,6 +145,7 @@
         }
 
         vm.radioPop = radioPop;
+
         function radioPop() {
             var modalInstance = $uibModal.open({
                 templateUrl: '/assignment/client/views/forms/modal/options.html'
@@ -148,12 +153,17 @@
             });
         }
 
+        vm.sortableFields = {
+            axis : 'y'
+        };
 
         /*  angular.module('FormBuilderApp')
          .controller('ModalInstanceCtrl', function ($uibModalInstance) {
+
          vm.ok = function () {
          $uibModalInstance.close();
          };
+
          vm.cancel = function () {
          $uibModalInstance.dismiss('cancel');
          };
