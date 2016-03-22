@@ -44,11 +44,13 @@
             UserService.findUserByUsername(user.username)
                 .then(function(response){
                     vm.message = null;
-                    if(response.data !== "null") {
+                    console.log(response);
+                    if(response.data !== null) {
                         vm.message = "User already exists";
                         return ;
                     } else {
-                        var newUser = {"firstName": "",
+                        var newUser = {"_id": null,
+                            "firstName": "",
                             "lastName": "",
                             "username": user.username,
                             "password": user.password,

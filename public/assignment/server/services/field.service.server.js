@@ -1,43 +1,85 @@
-module.exports = function(app, formModel) {
-    app.get('/api/assignment/form/:formId/field', findFieldsByFormId);
-    app.get('/api/assignment/form/:formId/field/:fieldId', findFieldByFieldAndFormId);
-    app.delete('/api/assignment/form/:formId/field/:fieldId', deleteFieldByFieldAndFormId);
-    app.post('/api/assignment/form/:formId/field', createField);
-    app.put('/api/assignment/form/:formId/field/:fieldId', updateFieldByFieldAndFormId);
+var forms = require("../models/form.mock.json");
 
+module.exports = function(app, formModel){
+    app.get("/api/assignment/form/:formId/field", findFieldsByFormId);
+    app.get("/api/assignment/form/:formId/field/:fieldId", findFieldById);
+    app.delete("/api/assignment/form/:formId/field/:fieldId" , deleteFieldById);
+    app.post('/api/assignment/form/:formId/field' , createField);
+    app.put("/api/assignment/form/:formId/field/:fieldId", updateFieldById);
 
-    function findFieldsByFormId(req, res) {
+    function findFieldsByFormId(req, res){
         var formId = req.params.formId;
-        var fieldResponse = formModel.findFieldsByFormId(formId);
-        res.json(fieldResponse);
+        var selectedFields = [];
+        for(var i = 0; i<forms.length ; i++){
+            if (forms[i]._id == formId){
+                selectedFields = forms[i].fields;
+                res.send(selectedFields);
+            }
+        }
+        return null;
     }
 
-    function findFieldByFieldAndFormId(req, res) {
+    function findFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var fieldResponse = formModel.findFieldByFieldAndFormId(formId, fieldId);
-        res.json(fieldResponse);
+        var selectedFields = [];
+        for(var i = 0; i<forms.length ; i++){
+            if (forms[i]._id == formId){
+                for (var j = 0 ; j < forms[i].fields.length ; j++){
+                    if (forms[i].fields[j]._id == fieldId){
+                        selectedFields = forms[i].fields[j];
+                        return selectedFields;
+                    }
+                }
+
+            }
+        }
+        return null;
     }
 
-    function deleteFieldByFieldAndFormId(req, res) {
+    function deleteFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var fieldResponse = formModel.deleteFieldByFieldAndFormId(formId, fieldId);
-        res.json(fieldResponse);
+        for(var i = 0; i<forms.length ; i++){
+            if (forms[i]._id == formId){
+                for (var j = 0 ; j < forms[i].fields.length ; j++){
+                    if (forms[i].fields[j]._id == fieldId){
+                        break;
+                    }
+                }
+                forms[i].fields.splice(j,1);
+                res.send(forms[i].fields);
+            }
+        }
     }
 
     function createField(req, res) {
-        var formId = req.params.formId;
         var field = req.body;
-        var fieldResponse = formModel.createField(formId, field);
-        res.json(fieldResponse);
+        var formId = req.params.formId;
+        field._id = (new Date()).getTime().toString();
+        for(var i = 0; i<forms.length ; i++){
+            if (forms[i]._id == formId){
+                forms[i].fields.push(field);
+            }
+        }
+        res.send(forms);
     }
 
-    function updateFieldByFieldAndFormId(req, res) {
+    function updateFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var field = req.body;
-        var fieldResponse = formModel.updateFieldByFieldAndFormId(formId, fieldId, field);
-        res.json(fieldResponse);
+        var updatedForm = req.body;
+        for(var i = 0; i<forms.length ; i++){
+            if (forms[i]._id == formId){
+                for (var j = 0 ; j < forms[i].fields.length ; j++){
+                    if (forms[i].fields[j]._id == fieldId){
+                        forms[i].fields[j] = updatedForm;
+                        break;
+                    }
+                }
+            }
+        }
+        res.send(forms[i].fields);
     }
+
 };

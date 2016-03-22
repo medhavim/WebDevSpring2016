@@ -1,172 +1,98 @@
-(function(){
+(function () {
     angular
         .module("FormBuilderApp")
-        .controller("FieldController", fieldController);
+        .controller("FieldController", FieldController);
 
-    function fieldController(FieldService, $routeParams, $uibModal) {
+    function FieldController($routeParams, FieldService) {
         var vm = this;
-        var formId = $routeParams.formId;
-
-        function init() {
-            FieldService
-                .getFieldsForForm(formId)
-                .then(function (response) {
-                    console.log(response.data);
-                    vm.fields = response.data;
-                });
-        } init();
-
-        vm.addField = addField;
-
-        function addField(fieldType) {
-            var field;
-            if(fieldType === "Single Line Text") {
-                field = {"_id": null, "label": "New Text Field", "type": "TEXT", "placeholder": "New Field"};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-
-            else if(fieldType === "Multiline Text") {
-                field = {"_id": null, "label": "New Text Field", "type": "TEXTAREA", "placeholder": "New Field"};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-
-            else if(fieldType === "Date") {
-                field = {"_id": null, "label": "New Date Field", "type": "DATE"};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-
-            else if(fieldType === "Dropdown") {
-                field = {"_id": null, "label": "New Dropdown", "type": "OPTIONS", "options": [
-                    {"label": "Option 1", "value": "OPTION_1"},
-                    {"label": "Option 2", "value": "OPTION_2"},
-                    {"label": "Option 3", "value": "OPTION_3"}
-                ]};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-
-            else if(fieldType === "Checkboxes") {
-                field = {"_id": null, "label": "New Checkboxes", "type": "CHECKBOXES", "options": [
-                    {"label": "Option A", "value": "OPTION_A"},
-                    {"label": "Option B", "value": "OPTION_B"},
-                    {"label": "Option C", "value": "OPTION_C"}
-                ]};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-
-            else if(fieldType === "Radio buttons") {
-                field = {"_id": null, "label": "New Radio Buttons", "type": "RADIOS", "options": [
-                    {"label": "Option X", "value": "OPTION_X"},
-                    {"label": "Option Y", "value": "OPTION_Y"},
-                    {"label": "Option Z", "value": "OPTION_Z"}
-                ]};
-                FieldService
-                    .createFieldForForm(formId, field)
-                    .then(function(response) {
-                        vm.fields.push(response.data[response.data.length - 1]);
-                    });
-            }
-        }
 
         vm.removeField = removeField;
-
-        function removeField(index) {
-            var fieldId = vm.fields[index]._id;
-            console.log(fieldId);
-            FieldService
-                .deleteFieldFromForm(formId, fieldId)
-                .then(function(response) {
-                    vm.fields.splice(index,1);
-                });
-        }
-
-        vm.textPop = textPop;
-
-        function textPop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/singleLineField.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
-
-        vm.textAreaPop = textAreaPop;
-
-        function textAreaPop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/singleLineField.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
-
-        vm.datePop = datePop;
-
-        function datePop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/date.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
-
-        vm.optionsPop = optionsPop;
-
-        function optionsPop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/options.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
-
-        vm.checkboxPop = checkboxPop;
-
-        function checkboxPop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/options.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
-
-        vm.radioPop = radioPop;
-
-        function radioPop() {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/assignment/client/views/forms/modal/options.html'
-                /*controller: 'ModalInstanceCtrl'*/
-            });
-        }
+        vm.addField = addField;
+        vm.edit = edit;
 
         vm.sortableFields = {
             axis : 'y'
         };
 
-        /*  angular.module('FormBuilderApp')
-         .controller('ModalInstanceCtrl', function ($uibModalInstance) {
+        function init() {
+            toRender();
+        } init();
 
-         vm.ok = function () {
-         $uibModalInstance.close();
-         };
+        function toRender(){
+            FieldService.getFieldsForForm($routeParams.formId)
+                .then(function (response){
+                    vm.fields = response.data;
+                    console.log(vm.fields);
+                });
 
-         vm.cancel = function () {
-         $uibModalInstance.dismiss('cancel');
-         };
-         });*/
+        }
+
+        function removeField(fieldId) {
+            console.log(fieldId);
+            FieldService.deleteFieldFromForm($routeParams.formId, fieldId)
+                .then(function(response){
+                    vm.fields = response.data;
+                })
+        }
+
+        function addField(type) {
+            var newField = {
+                _id: null,
+                label: "",
+                type: type,
+                placeholder: ""
+            };
+            if (type == "TEXT"){
+                newField.label = "New Text Field";
+                newField.placeholder = "New Field";
+            }
+            else if(type == "TEXTAREA"){
+                newField.label = "New Text Field";
+                newField.placeholder = "New Field";
+            }
+            else if(type == "DATE"){
+                newField.label = "New Date Field";
+            }
+            else if(type == "DROPDOWN"){
+                newField.label = "New Dropdown";
+                newField.options = [
+                    {"label": "Option 1", "value": "OPTION_1"},
+                    {"label": "Option 2", "value": "OPTION_2"},
+                    {"label": "Option 3", "value": "OPTION_3"}
+                ];
+            }
+            else if(type == "CHECKBOXES"){
+                newField.label = "New Checkboxes";
+                newField.options = [
+                    {"label": "Option A", "value": "OPTION_A"},
+                    {"label": "Option B", "value": "OPTION_B"},
+                    {"label": "Option C", "value": "OPTION_C"}
+                ];
+            }
+            else if(type == "RADIOS"){
+                newField.label = "New Radio Buttons";
+                newField.options = [
+                    {"label": "Option X", "value": "OPTION_X"},
+                    {"label": "Option Y", "value": "OPTION_Y"},
+                    {"label": "Option Z", "value": "OPTION_Z"}
+                ];
+            }
+            console.log(newField);
+            FieldService.createFieldForForm($routeParams.formId, newField)
+                .then(function (response){
+                    vm.forms = response.data;
+                    toRender();
+                });
+        }
+
+        function edit(field) {
+            vm.selectedField = field;
+            if (field.options){
+                vm.option = '';
+                for(var i = 0; i< field.options.length ; i++){
+                    vm.option += field.options[i].label + ":" + field.options[i].value + "\n";
+                }
+            }
+        }
     }
-})();
+}) ();

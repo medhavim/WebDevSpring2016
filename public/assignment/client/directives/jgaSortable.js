@@ -1,6 +1,6 @@
 (function(){
     angular
-        .module("jgaSortable", [])
+        .module("FormBuilderApp", [])
         .directive("jgaSortable", jgaSortable);
 
     function jgaSortable() {
@@ -15,9 +15,9 @@
                 },
                 stop: function(event, ui) {
                     end = ui.item.index();
-                    var temp = scope.users[start];
-                    scope.users[start] = scope.users[end];
-                    scope.users[end] = temp;
+                    var temp = scope.fields[start];
+                    scope.fields[start] = scope.fields[end];
+                    scope.fields[end] = temp;
                     scope.$apply();
                 }
             });

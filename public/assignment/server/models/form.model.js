@@ -1,6 +1,6 @@
 var mock = require("./form.mock.json");
 
-module.exports = function(app) {
+module.exports = function() {
     var api={
 
         // forms
@@ -84,12 +84,12 @@ module.exports = function(app) {
         return null;
     }
 
-    function createField(formId, field) {
-        for (var f in mock) {
-            if (mock[f]._id === formId) {
-                field._id = (new Date()).getTime();
-                mock[f].fields.push(field);
-                return mock[f].fields;
+    function createField(field, formId) {
+        for (var u in mock) {
+            if (mock[u]._id === formId) {
+                field._id = (new Date()).getTime().toString();
+                mock[u].fields.push(field);
+                return mock[u].fields;
             }
         }
     }
