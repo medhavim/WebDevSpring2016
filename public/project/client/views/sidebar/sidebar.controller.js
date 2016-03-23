@@ -4,7 +4,8 @@
         .module("PrismaticMusicApp")
         .controller("SidebarController", SidebarController);
 
-    function SidebarController($scope, $rootScope) {
-        $scope = $rootScope;
+    function SidebarController($location) {
+        var vm = this;
+        vm.$location= $location;
     }
 })();

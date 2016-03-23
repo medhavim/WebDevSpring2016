@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PrismaticMusicApp" class="ng-scope">
+<html lang="en" ng-app="PrismaticMusicApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +13,8 @@
     <link href="https://bootswatch.com/assets/css/custom.min.css" rel="stylesheet">
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
 
     <title>Prismatic Music</title>
 
@@ -36,6 +36,7 @@
     <script src="views/users/profile.controller.js"></script>
     <script src="views/admin/admin.controller.js"></script>
     <script src="views/home/home.controller.js"></script>
+    <script src="views/main/main.controller.js"></script>
 
 
 
@@ -49,13 +50,13 @@
 
 </head>
 <!--<body ng-controller="MainController" class="ng-scope">-->
-<body>
+<body ng-controller="MainController">
 <div class="container ng-scope">
-    <div ng-include="'views/header/header.view.html'" class="ng-scope"></div>
+    <div ng-include="'views/header/header.view.html'"></div>
 <!--    <div class="col-sm-3 col-md-2 sidebar"
          ng-include="'views/sidebar/sidebar.view.html'">
     </div>-->
-    <div class="main ng-scope" ng-view></div>
+    <div class="main" ng-view></div>
 </div>
 
 <!-- Bootstrap core JavaScript

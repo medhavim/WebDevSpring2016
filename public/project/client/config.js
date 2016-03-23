@@ -18,35 +18,43 @@
             })
             .when("/details/:mb_id", {
                 templateUrl: "views/details/details.view.html",
-                controller: "DetailsController as model"
+                controller: "DetailsController",
+                controllerAs: "model"
             })
             .when("/track", {
                 templateUrl: "views/track/search/search.view.html",
-                controller: "TrackController as model"
+                controller: "TrackController",
+                controllerAs: "model"
             })
             .when("/track/:mb_id", {
                 templateUrl: "views/track/track.view.html",
-                controller: "TrackController as model"
+                controller: "TrackController",
+                controllerAs: "model"
             })
             .when("/profile", {
                 templateUrl: "views/users/profile.view.html",
-                controller: "ProfileController"
+                controller: "ProfileController",
+                controllerAs: "model"
             })
             .when("/profile/:userid", {
                 templateUrl: "views/users/profile.view.html",
-                controller: "ProfileController"
+                controller: "ProfileController",
+                controllerAs: "model"
             })
             .when("/register", {
                 templateUrl: "views/users/register.view.html",
-                controller: "RegisterController"
+                controller: "RegisterController",
+                controllerAs: "model"
             })
             .when("/login", {
                 templateUrl: "views/users/login.view.html",
-                controller: "LoginController"
+                controller: "LoginController",
+                controllerAs: "model"
             })
             .when("/admin", {
                 templateUrl: "views/admin/admin.view.html",
-                controller: "AdminController"
+                controller: "AdminController"//,
+                //controllerAs: "model"
             })
             .otherwise({
                 redirectTo: "/home"
