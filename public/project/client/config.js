@@ -6,7 +6,9 @@
     function Config($routeProvider) {
         $routeProvider
             .when("/home", {
-                templateUrl: "views/home/home.view.html"
+                templateUrl: "views/home/home.view.html",
+                controller: "HomeController",
+                controllerAs: "model"
             })
             .when("/artist", {
                 templateUrl: "views/artist/search/search.view.html",

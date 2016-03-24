@@ -4,16 +4,19 @@
 
 <div ng-controller="HomeController">
 
-    <div ng-if="topTracks.length">
+    <div ng-show="model.topTracks.length">
         <h3>Trending Tracks</h3>
         <div class="row">
-            <div ng-repeat="track in topTracks">
+            <div ng-repeat="track in model.topTracks">
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+
                     <div class = "thumbnail">
-                        <a href="#/details/{{track.artist.mbid}}">
-                        <img class="media-object" src="{{track.image.large}}" alt = "No Image!">
-                        <div class = "caption">
-                            <a href="{{track.url}}">{{track.name}}</a>
+                        <div class="row">
+                            <a href="#/details/{{track.artist.mbid}}">
+                                <img class="media-object img-responsive" src="{{track.image.large}}" alt = "No Image Found!"> </a>
+                            <div class = "caption">
+                                <a href="{{track.url}}">{{track.name}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -21,16 +24,18 @@
         </div>
     </div>
 
-    <div ng-if="topArtists.length">
+    <div ng-show="model.topArtists.length">
         <h3>Trending Artists</h3>
         <div class="row">
-            <div ng-repeat="artist in topArtists">
+            <div ng-repeat="artist in model.topArtists">
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
                     <div class = "thumbnail">
-                        <a href="#/details/{{artist.mbid}}">
-                        <img class="media-object" src="{{artist.image.large}}" alt = "No Image!"> </a>
-                        <div class = "caption">
-                            <a href="#/track/{{artist.mbid}}">{{artist.name}}</a>
+                        <div class="row">
+                            <a href="#/details/{{artist.mbid}}">
+                                <img class="media-object img-responsive" src="{{artist.image.large}}" alt = "No Image Found!"> </a>
+                            <div class = "caption">
+                                <a href="#/track/{{artist.mbid}}">{{artist.name}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
