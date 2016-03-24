@@ -12,15 +12,17 @@
             })
             .when("/artist", {
                 templateUrl: "views/artist/search/search.view.html",
-                controller: "ArtistController"
+                controller: "ArtistController",
+                controllerAs: "model"
             })
             .when("/artist/:title", {
                 templateUrl: "views/artist/search/search.view.html",
-                controller: "ArtistController"
+                controller: "ArtistController",
+                controllerAs: "model"
             })
-            .when("/details/:mb_id", {
-                templateUrl: "views/details/details.view.html",
-                controller: "DetailsController",
+            .when("/artist/details/:mb_id", {
+                templateUrl: "views/artist/details/details.view.html",
+                controller: "ArtistDetailsController",
                 controllerAs: "model"
             })
             .when("/track", {

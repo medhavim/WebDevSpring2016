@@ -21,7 +21,7 @@
 
         function renderArtists(response) {
             $scope.data = displayService.displayArtistImage(response.results.artistmatches);
-            //console.log($scope.data);
+            console.log($scope.data);
         }
     }
 })();

@@ -1,0 +1,67 @@
+<div class="container-fuild" ng-controller="DetailsController">
+    <div  class="detail">
+        <h2>{{model.details.name}}</h2>
+        <div id="tag" class="container-fluid">
+            <div class="row">
+                <ul id="tags" ng-repeat="artistTags in model.tags">
+                    <li>
+                        <a href="">{{artistTags.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br/>
+        <!--        <ul class="nav nav-pills">
+                    &lt;!&ndash; Hidden li included to remove active class from about link when scrolled up past about section &ndash;&gt;
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#tags">Tags</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#stats">Stats</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#similar">Similar Artists</a>
+                    </li>
+                </ul>-->
+
+        <div class="container-fluid">
+            <div id="about">
+                <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{model.details.image.large}}" alt = "No Image Found!">
+                <!--<div ng-show="artistImage.size.indexOf('mega')>=0">
+                <img class="media-object pull-left img-responsive" src="{{artistImage.#text}}" alt = "No Image Found!">
+                </div>-->
+            </div>
+            <div class="col-sm-offset-1">
+                <p>
+                    {{model.details.bio.summary}}
+                </p>
+            </div>
+            <p><b>Listeners: </b>{{model.stats.listeners}}</p>
+            <p><b>Play Count: </b>{{model.stats.playcount}}</p>
+        </div>
+
+            <div id="similar" class="container-fluid">
+                <h4>Similar artists</h4>
+                <div ng-repeat="similarArtist in model.similar">
+                    <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                        <div class="row container-fluid">
+                            <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
+                            <div>
+                                <a href="#/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <a href="{{model.details.url}}">Read more on Last.fm</a>
+            </footer>
+        </div>
+    </div>
+</div>
