@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("ArtistDetailsController", ArtistDetailsController);
 
-    function ArtistDetailsController($scope, $http, $routeParams, artistService, displayService) {
+    function ArtistDetailsController($routeParams, artistService, displayService) {
         var vm = this;
 
         var mbId = $routeParams.mb_id;

@@ -11,15 +11,27 @@
         var api = {
             findArtistByMbId: findArtistByMbId,
             findArtistsByTitle: findArtistsByTitle,
-            findTracksByMbId: findTracksByMbId /*,
-            displayArtistImage: displayArtistImage,
-            displayTrackImage: displayTrackImage,
-            displayImage: displayImage */
+            findTracksByMbId: findTracksByMbId
         };
 
         return api;
 
-        function findArtistByMbId(mbId, callback) {
+        function findArtistByMbId(mbId) {
+            var url = MBID_URL.replace("MBID", mbId);
+            return $http.get(url);
+        }
+
+        function findArtistsByTitle(title) {
+            var url = ARTIST_URL.replace("ARTIST", title);
+            return $http.get(url);
+        }
+
+        function findTracksByMbId(mbId) {
+            var url = TRACK_URL.replace("MBID", mbId);
+            return $http.get(url);
+        }
+
+/*        function findArtistByMbId(mbId, callback) {
             var url = MBID_URL.replace("MBID", mbId);
             //console.log(url);
             $http.get(url)
@@ -38,26 +50,6 @@
             //console.log(url);
             $http.get(url)
                 .success(callback);
-        }
-
-/*        function displayImage (images){
-            for (var i in images){
-                images[images[i]['size']] = images[i]['#text'];
-            }
-        }
-
-        function displayArtistImage(res) {
-            var artists = res.results.artistmatches.artist;
-            for (var a in artists)
-                displayImage(artists[a].image);
-            return res.results.artistmatches.artist;
-        }
-
-        function displayTrackImage(res) {
-            var tracks = res.toptracks.track;
-            for (var t in tracks)
-                displayImage(tracks[t].image);
-            return res.toptracks.track;
         }*/
     }
 
