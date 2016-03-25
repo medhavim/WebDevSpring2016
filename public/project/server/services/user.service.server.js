@@ -6,6 +6,7 @@ module.exports = function(app, userModel) {
     app.get("/api/project/user", findAllUsers);
     app.put("/api/project/user/:id", updateUser);
     app.delete("/api/project/user/:id", deleteUserById);
+    app.put("/api/project/user/:id/music", userFavoritesMusic);
 
     function createUser(req, res) {
         console.log("in createUser");
@@ -29,8 +30,8 @@ module.exports = function(app, userModel) {
 
     function findUserById(req, res) {
         console.log("in findUserById");
-        var userId = req.params.id;
-        var userResponse = userModel.findUserById(userid);
+        var userId = Number(req.params.id);
+        var userResponse = userModel.findUserById(userId);
         res.json(userResponse);
     }
 
@@ -61,5 +62,13 @@ module.exports = function(app, userModel) {
         var userId = req.params.id;
         var userResponse = userModel.deleteUserById(userId);
         res.json(userResponse);
+    }
+
+    function userFavoritesMusic(req, res) {
+        var userId = Number(req.params.id);
+        var music = req.body;
+        console.log(music);
+        var favoriteMusic = userModel.userFavoritesMusic(userId, music);
+        res.json(favoriteMusic);
     }
 };

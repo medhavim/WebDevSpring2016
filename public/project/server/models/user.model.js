@@ -9,7 +9,8 @@ module.exports = function () {
         findUserByUsername: findUserByUsername,
         findUserByCredentials: findUserByCredentials,
         deleteUserById: deleteUserById,
-        updateUser: updateUser
+        updateUser: updateUser,
+        userFavoritesMusic : userFavoritesMusic
     };
     return api;
 
@@ -81,5 +82,15 @@ module.exports = function () {
             }
         }
         return null;
+    }
+
+    function userFavoritesMusic(userId, music) {
+        for (var u in mock) {
+            if (mock[u]._id === userId) {
+                mock[u].favoriteMusic.push(music);
+                console.log(mock[u]);
+                return mock[u].favoriteMusic;
+            }
+        }
     }
 };

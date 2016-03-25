@@ -4,18 +4,43 @@
         .factory("musicService", musicService);
 
     function musicService($http) {
+
+        var comments = [];
+
         var api = {
-            userLikesMusic: userLikesMusic,
-            findUserLikes: findUserLikes
+            findComments: findComments,
+            postComment: postComment,
+            findFavoritedUsers: findFavoritedUsers,
+            postFavoritedUser: postFavoritedUser
         };
         return api;
 
-        function findUserLikes (mbId) {
-            return $http.get("/api/project/music/"+mbId+"/user");
+        function findComments(mbId) {
+            var commentsForMusic = [];
+            for (var com in comments) {
+                if (comments[com].mbId === mbId)
+                {
+                    commentsForMusic.push(comments[com]);
+                }
+            }
+
+            return commentsForMusic;
         }
 
-        function userLikesMusic(userId, music) {
-            return $http.post("/api/project/user/"+userId+"/music/"+music.mbId, music);
+        function postComment(comment) {
+            comments.push(comment);
+            return comment;
         }
+
+        function findFavoritedUsers(mbId) {
+            console.log("findFavoritedUsers");
+            console.log(mbId);
+            return $http.get('/api/project/music/' + mbId + '/favuser');
+        }
+
+        function postFavoritedUser(mbId, userId) {
+            return $http.put('/api/project/music/' + mbId + '/favuser/' + userId);
+        }
+
     }
 })();

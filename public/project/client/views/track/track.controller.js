@@ -15,11 +15,11 @@
         init();
 
         function fetchTracks(mbId) {
-            console.log("in TrackController fetchTracks()");
+            //console.log("in TrackController fetchTracks()");
             artistService.findTracksByMbId(mbId)
                 .then(function(response) {
                     vm.details = displayService.displayTrackImage(response.data.toptracks);
-                    console.log(vm.details);
+                    //console.log(vm.details);
                 });
         }
 
@@ -28,7 +28,7 @@
             trackService.findTracksByMbId(mbId)
                 .then(function(response) {
                     vm.details = displayService.displayTrackImage(response.data.toptracks);
-                    console.log(vm.details);
+                    //console.log(vm.details);
                 });
         }
     }

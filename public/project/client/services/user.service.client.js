@@ -13,8 +13,9 @@
             findAllUsers: findAllUsers,
             findUserByCredentials: findUserByCredentials,
             findUserByUsername: findUserByUsername,
-            updateUser: updateUser//,
-            //updateUserByUsername: updateUserByUsername//,
+            updateUser: updateUser,
+            userFavoritesMusic: userFavoritesMusic,
+            findUserById:findUserById
             //logout: logout
         };
 
@@ -56,6 +57,14 @@
         // This function updates the details of a user
         function updateUser(userId, user) {
             return $http.put('/api/project/user/' + userId, user);
+        }
+
+        function userFavoritesMusic(userId, music) {
+            return $http.put('/api/project/user/' + userId + '/music', music);
+        }
+
+        function findUserById(userId) {
+            return $http.get('/api/project/user/' + userId);
         }
 
         /*function logout() {

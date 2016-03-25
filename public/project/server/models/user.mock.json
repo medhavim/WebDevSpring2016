@@ -4,34 +4,72 @@
     "firstName": "Alice",
     "lastName": "Wonderland",
     "username": "alice",
-    "password": "alice"
+    "password": "alice",
+    "dob": "10/10/1990",
+    "roles": [
+      "user"
+    ],
+    "favoriteMusic" : [
+      {
+        "mbId" : "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+        "musicTitle" : "Coldplay"
+      }
+    ]
   },
   {
     "_id": 234,
     "firstName": "Bob",
     "lastName": "Hope",
     "username": "bob",
-    "password": "bob"
-  },
+    "password": "bob",
+    "dob": "09/09/1990",
+    "roles": [
+      "admin"
+    ],
+    "favoriteMusic" : [
+
+      ]
+      },
   {
     "_id": 345,
     "firstName": "Charlie",
     "lastName": "Brown",
     "username": "charlie",
-    "password": "charlie"
+    "password": "charlie",
+    "dob": "11/11/1990",
+    "roles": [
+      "user"
+    ],
+    "favoriteMusic" : [
+
+    ]
   },
   {
     "_id": 456,
     "firstName": "Dan",
     "lastName": "Craig",
     "username": "dan",
-    "password": "dan"
+    "password": "dan",
+    "dob": "12/12/1990",
+    "roles": [
+      "user"
+    ],
+    "favoriteMusic" : [
+
+    ]
   },
   {
     "_id": 567,
     "firstName": "Edward",
     "lastName": "Norton",
     "username": "ed",
-    "password": "ed"
+    "password": "ed",
+    "dob": "08/08/1990",
+    "roles": [
+      "user"
+    ],
+    "favoriteMusic" : [
+
+    ]
   }
 ]

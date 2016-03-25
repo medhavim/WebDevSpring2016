@@ -1,6 +1,17 @@
 <div class="container-fuild" ng-controller="ArtistDetailsController">
     <div  class="detail">
-        <h2>{{model.details.name}}</h2>
+        <h2>
+            <div class="container-fluid">
+                {{model.details.name}}
+
+                <button class="btn btn-warning" ng-click="model.userFavoritesMusic(model.details)">
+                <span ng-show="model.details.likes.indexOf(currentUser._id) > -1"
+                      class="glyphicon glyphicon-heart"></span>
+                <span ng-show="!model.details || !model.details.likes || model.details.likes.indexOf(currentUser._id) == -1"
+                      class="glyphicon glyphicon-heart-empty"></span>
+                </button>
+            </div>
+        </h2>
         <div id="tag" class="container-fluid">
             <div class="row">
                 <ul id="tags" ng-repeat="artistTags in model.tags">
@@ -43,32 +54,75 @@
                 </p>
             </div>
 
-            <button class="btn btn-primary" ng-click="model.favorite(model.data)">
-                <span ng-show="model.music.likes.indexOf(currentUser._id) > -1"
-                        class="glyphicon glyphicon-heart"></span>
-                <span ng-show="!model.music || !model.music.likes || model.music.likes.indexOf(currentUser._id) == -1"
-                        class="glyphicon glyphicon-heart-empty"></span>
-            </button>
-
             <p><b>Listeners: </b>{{model.stats.listeners}}</p>
             <p><b>Play Count: </b>{{model.stats.playcount}}</p>
         </div>
 
-            <div id="similar" class="container-fluid">
-                <h4>Similar artists</h4>
-                <div ng-repeat="similarArtist in model.similar">
-                    <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
-                        <div class="row container-fluid">
-                            <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
-                            <div>
-                                <a href="#/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
-                            </div>
+        <div id="similar" class="container-fluid">
+            <h4>Similar artists</h4>
+            <div ng-repeat="similarArtist in model.similar">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class="row container-fluid">
+                        <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
+                        <div>
+                            <a href="#/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-        <div ng-if="model.music.userLikes">
+        <div id="fav" class="container-fluid">
+            <h4>Users who have favorited this:</h4>
+            <p ng-hide="currentUser">Login to see users who have favorited this</p>
+            <ul ng-repeat = "user in model.favoritedUsers track by $index" ng-show="currentUser">
+                <li>{{user}}</li>
+            </ul>
+        </div>
+
+        <div id="review" class="container-fluid">
+            <h4 id="reviews">Reviews</h4>
+            <p ng-hide="currentUser">Sign in to post reviews</p>
+            <div class="row" ng-show="currentUser">
+
+                <div class="col-md-6">
+                    <div class="widget-area no-padding blank">
+                        <div class="status-upload">
+                            <form>
+                                <textarea placeholder="What are your thoughts about this music?" ng-model="model.commentBox"></textarea>
+                                <ul>
+                                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+                                </ul>
+                                <button type="submit" class="btn btn-success green" ng-click="model.postComment()"><i class="fa fa-share"></i> Share</button>
+                            </form>
+                        </div><!-- Status Upload  -->
+                    </div><!-- Widget Area -->
+                </div>
+
+            </div>
+
+            <!-- Displaying comments -->
+            <div ng-repeat="comment in model.comments">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div><!-- /thumbnail -->
+                    </div><!-- /col-sm-1 -->
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#/profile"><strong>{{comment.username}}</strong></a> <span class="text-muted">{{comment.timestamp}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="glyphicon glyphicon-remove" ng-click="model.deleteComment($index)"></span>
+                            </div>
+                            <div class="panel-body">
+                                {{comment.comment}}
+                            </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                    </div><!-- /col-sm-5 -->
+                </div>
+            </div>
+        </div>
+        <!--<div ng-if="model.music.userLikes">
             <h4>Other Users that Like This</h4>
             <ul>
                 <li ng-repeat="user in model.music.userLikes">
@@ -77,12 +131,12 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div>-->
 
 
-            <footer>
-                <a href="{{model.details.url}}">Read more on Last.fm</a>
-            </footer>
-        </div>
+        <footer>
+            <a href="{{model.details.url}}">Read more on Last.fm</a>
+        </footer>
     </div>
+</div>
 </div>
