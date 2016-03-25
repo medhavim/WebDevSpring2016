@@ -7,13 +7,15 @@
     function UserService($rootScope, $http){
         var model = {
             setCurrentUser: setCurrentUser,
+            //getCurrentUser: getCurrentUser,
             createUser: createUser,
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
             findUserByCredentials: findUserByCredentials,
             findUserByUsername: findUserByUsername,
-            updateUser: updateUser,
-            updateUserByUsername: updateUserByUsername
+            updateUser: updateUser//,
+            //updateUserByUsername: updateUserByUsername//,
+            //logout: logout
         };
 
         return model;
@@ -21,6 +23,10 @@
         function setCurrentUser(user) {
             $rootScope.currentUser = user;
         }
+
+        /*function getCurrentUser() {
+            return $http.get("/api/project/loggedin");
+        }*/
 
         // This function creates a new user
         function createUser(user) {
@@ -52,8 +58,12 @@
             return $http.put('/api/project/user/' + userId, user);
         }
 
+        /*function logout() {
+            return $http.post("/api/project/logout");
+        }*/
 
-        function updateUserByUsername(userName, user, callback) {
+
+        /*function updateUserByUsername(userName, user, callback) {
             var updateUser = null;
             var ind = 0;
             for(ind in model.users) {
@@ -69,6 +79,6 @@
                 }
             }
             callback(updateUser);
-        }
+        }*/
     }
 })();

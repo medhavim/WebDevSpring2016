@@ -11,26 +11,18 @@
         var api = {
             findTracksByMbId: findTracksByMbId,
             findTracksByTitle: findTracksByTitle
-            /*,
-            displayArtistImage: displayArtistImage,
-            displayTrackImage: displayTrackImage,
-            displayImage: displayImage */
         };
 
         return api;
 
-        function findTracksByTitle(title, callback) {
-            var url = TRACK_URL
-                .replace("TRACK", title);
-            $http.get(url)
-                .success(callback);
+        function findTracksByTitle(title) {
+            var url = TRACK_URL.replace("TRACK", title);
+            return $http.get(url);
         }
 
-        function findTracksByMbId(mbId, callback) {
+        function findTracksByMbId(mbId) {
             var url = INFO_URL.replace("MBID", mbId);
-            //console.log(url);
-            $http.get(url)
-                .success(callback);
+            return $http.get(url);
         }
     }
 

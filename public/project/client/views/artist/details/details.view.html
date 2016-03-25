@@ -1,4 +1,4 @@
-<div class="container-fuild" ng-controller="DetailsController">
+<div class="container-fuild" ng-controller="ArtistDetailsController">
     <div  class="detail">
         <h2>{{model.details.name}}</h2>
         <div id="tag" class="container-fluid">
@@ -42,6 +42,14 @@
                     {{model.details.bio.summary}}
                 </p>
             </div>
+
+            <button class="btn btn-primary" ng-click="model.favorite(model.data)">
+                <span ng-show="model.music.likes.indexOf(currentUser._id) > -1"
+                        class="glyphicon glyphicon-heart"></span>
+                <span ng-show="!model.music || !model.music.likes || model.music.likes.indexOf(currentUser._id) == -1"
+                        class="glyphicon glyphicon-heart-empty"></span>
+            </button>
+
             <p><b>Listeners: </b>{{model.stats.listeners}}</p>
             <p><b>Play Count: </b>{{model.stats.playcount}}</p>
         </div>
@@ -59,6 +67,19 @@
                     </div>
                 </div>
             </div>
+
+        <div ng-if="model.music.userLikes">
+            <h4>Other Users that Like This</h4>
+            <ul>
+                <li ng-repeat="user in model.music.userLikes">
+                    <a href="#/profile/{{user.username}}">
+                        {{user.username}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
             <footer>
                 <a href="{{model.details.url}}">Read more on Last.fm</a>
             </footer>

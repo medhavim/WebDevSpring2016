@@ -14,17 +14,14 @@
         init();
 
         function fetchTopChart() {
-            chartService.findTopTracks(renderTopTracks);
-            chartService.findTopArtists(renderTopArtists);
+            chartService.findTopTracks()
+                .then(function(response) {
+                    vm.topTracks = displayService.displayTrackImage(response.data.tracks);
+                });
+            chartService.findTopArtists()
+                .then(function(response) {
+                    vm.topArtists = displayService.displayArtistImage(response.data.artists);
+                });
         }
-
-        function renderTopTracks(response) {
-            vm.topTracks = displayService.displayTrackImage(response.tracks);
-        }
-
-        function renderTopArtists(response) {
-            vm.topArtists = displayService.displayArtistImage(response.artists);
-        }
-
     }
 })();

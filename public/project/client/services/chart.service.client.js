@@ -14,17 +14,14 @@
 
         return api;
 
-        function findTopTracks(callback) {
+        function findTopTracks() {
             var url = TOP_TRACK_URL;
-            //console.log(url);
-            $http.get(url)
-                .success(callback);
+            return $http.get(url);
         }
 
-        function findTopArtists(callback) {
+        function findTopArtists() {
             var url = TOP_ARTIST_URL;
-            $http.get(url)
-                .success(callback);
+            return $http.get(url);
         }
     }
 

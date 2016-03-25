@@ -28,7 +28,7 @@
                     <a href="https://docs.google.com/document/d/1yR4FKBg1WxTPJKaEz8K0LxTHvty7N3FH78vj9XiLFnc/edit?usp=sharing">Documentation</a>
                 </li>
 
-                <li ng-show="currentUser">
+                <li ng-show="currentUser" ng-class="active">
                     <a href="#/profile/{{currentUser.username}}">Hi {{currentUser.username}}!</a>
                 </li>
 

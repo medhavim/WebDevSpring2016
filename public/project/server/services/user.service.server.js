@@ -51,7 +51,6 @@ module.exports = function(app, userModel) {
     }
 
     function updateUser(req, res) {
-        console.log("in updateUser");
         var userId = req.params.id;
         var user = req.body;
         var userResponse = userModel.updateUser(userId, user);
@@ -59,7 +58,6 @@ module.exports = function(app, userModel) {
     }
 
     function deleteUserById(req, res) {
-        console.log("in deleteUserById");
         var userId = req.params.id;
         var userResponse = userModel.deleteUserById(userId);
         res.json(userResponse);
