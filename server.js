@@ -8,6 +8,19 @@ var multer = require('multer');
 var uuid = require('node-uuid');
 var cookieParser  = require('cookie-parser');
 
+var mongoose = require('mongoose');
+var connectionString = 'mongodb://127.0.0.1:27017/formmaker';
+
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+    connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+        process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+        process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+        process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+        process.env.OPENSHIFT_APP_NAME;
+}
+
+var db = mongoose.connect(connectionString);
+
 //app.set('view engine', 'ejs');
 
 //console.log("secret");
@@ -39,7 +52,7 @@ app.get('/hello', function(req, res){
 
 // for services
 require("./public/project/server/app.js")(app);
-require("./public/assignment/server/app.js")(app);
+require("./public/assignment/server/app.js")(app, db, mongoose);
 
 app.listen(port, ipaddress, function() {
  console.log("May the Force be with you!!");

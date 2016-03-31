@@ -24,7 +24,7 @@
                 "password": modelUser.password,
                 "firstName": modelUser.firstName,
                 "lastName": modelUser.lastName,
-                "email": modelUser.email
+                "emails": modelUser.email
             };
             UserService.updateUser(id, userDetails)
                 .then(function(response) {

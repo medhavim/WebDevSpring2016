@@ -45,7 +45,7 @@
                 .then(function(response){
                     vm.message = null;
                     console.log(response);
-                    if(response.data !== null) {
+                    if(response.data.length !== 0) {
                         vm.message = "User already exists";
                         return ;
                     } else {
@@ -54,14 +54,14 @@
                             "lastName": "",
                             "username": user.username,
                             "password": user.password,
-                            "email": user.email};
+                            "emails": user.email};
 
                         UserService.createUser(newUser)
                             .then(function(response) {
                                 $rootScope.data = response;
                                 var createdUser = response.data;
-                                UserService.setCurrentUser(createdUser[createdUser.length - 1]);
-                                $location.url("/profile/" + createdUser[createdUser.length - 1].username);
+                                UserService.setCurrentUser(createdUser);
+                                $location.url("/profile/" + createdUser.username);
                             });
                     }
                 });
