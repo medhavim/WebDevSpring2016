@@ -18,7 +18,8 @@
 
         // This function updates the details of a particular user ID
         function update(modelUser) {
-            var id = currUser._id;
+            var id = $rootScope.currentUser._id;
+
             var userDetails = {
                 "username": modelUser.username,
                 "password": modelUser.password,
@@ -30,11 +31,9 @@
                 .then(function(response) {
                     if(response.data)
                     {
-                        $rootScope.data = response;
-                        //vm.user = response.data;
-                        //UserService.setCurrentUser(response.config.data);
+                        //$rootScope.data = response;
+                        $rootScope.currentUser = response.data;
                         vm.successMessage = "Profile updated successfully.";
-                        //$location.path("/profile/" + vm.user.username);
                     } else {
                         vm.failureMessage = "Unable to update profile. Please try again.";
                     }

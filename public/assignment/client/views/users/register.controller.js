@@ -49,12 +49,12 @@
                         vm.message = "User already exists";
                         return ;
                     } else {
-                        var newUser = {"_id": null,
+                        var newUser = {
                             "firstName": "",
                             "lastName": "",
                             "username": user.username,
                             "password": user.password,
-                            "emails": user.email};
+                            "emails": [user.email]};
 
                         UserService.createUser(newUser)
                             .then(function(response) {

@@ -7,20 +7,41 @@ module.exports = function(app, formModel) {
 
     function findFormByUserId(req, res) {
         var userId = Number(req.params.userId);
-        var formResponse = formModel.findFormByUserId(userId);
-        res.json(formResponse);
+        var formResponse = formModel.findFormByUserId(userId).then(
+            function(doc) {
+                res.json(doc);
+            },
+
+            function(err) {
+                res.status(400).send(err);
+            }
+        );
     }
 
     function findFormById(req, res) {
         var formId = req.params.formId;
-        var formResponse = formModel.findFormById(formId);
-        res.json(formResponse);
+        var formResponse = formModel.findFormById(formId).then(
+            function(doc) {
+                res.json(doc);
+            },
+
+            function(err) {
+                res.status(400).send(err);
+            }
+        );
     }
 
     function deleteFormById(req, res) {
         var formId = req.params.formId;
-        var formResponse = formModel.deleteFormById(formId);
-        res.json(formResponse);
+        var formResponse = formModel.deleteFormById(formId).then(
+            function(doc) {
+                res.json(doc);
+            },
+
+            function(err) {
+                res.status(400).send(err);
+            }
+        );
     }
 
     function createForm(req, res) {
@@ -33,7 +54,14 @@ module.exports = function(app, formModel) {
     function updateFormById(req, res) {
         var formId = req.params.formId;
         var form = req.body;
-        var formResponse = formModel.updateFormById(formId, form);
-        res.json(formResponse);
+        var formResponse = formModel.updateFormById(formId, form).then(
+            function(doc) {
+                res.json(doc);
+            },
+
+            function(err) {
+                res.status(400).send(err);
+            }
+        );
     }
 };
