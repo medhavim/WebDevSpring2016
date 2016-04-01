@@ -11,7 +11,7 @@
         vm.deleteForm = deleteForm;
         vm.selectForm = selectForm;
         vm.updateForm = updateForm;
-        var selectedForm = null;
+        vm.selectedForm = null;
 
         function init() {
             // This function searches all the forms related to a user ID
@@ -45,21 +45,21 @@
         // This function selects an existing form
         function selectForm(index) {
             vm.formName = vm.forms[index].title;
-            selectedForm = vm.forms[index];
+            vm.selectedForm = vm.forms[index];
         }
 
         // This function updates the details of an existing form
         function updateForm(form, index) {
             var newForm = {"title": form.formName};
-            if(selectedForm) {
-                FormService.updateFormById(selectedForm._id, newForm)
+            if(vm.selectedForm) {
+                FormService.updateFormById(vm.selectedForm._id, newForm)
                     .then(function (response) {
-                        selectedForm.title = vm.formName;
+                        vm.selectedForm.title = vm.formName;
                         vm.forms[index] = response.data;
                         vm.formName = "";
                 });
             } else {
-                console.log("else of if(selectedForm)");
+                console.log("else of if(vm.selectedForm)");
             }
         }
     }

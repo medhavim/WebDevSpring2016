@@ -53,7 +53,7 @@
             else if(type == "DATE"){
                 newField.label = "New Date Field";
             }
-            else if(type == "DROPDOWN"){
+            else if(type == "OPTIONS"){
                 newField.label = "New Dropdown";
                 newField.options = [
                     {"label": "Option 1", "value": "OPTION_1"},

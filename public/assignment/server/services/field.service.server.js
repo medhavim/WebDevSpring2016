@@ -1,6 +1,6 @@
-var forms = require("../models/form.mock.json");
+//var forms = require("../models/form.mock.json");
 
-module.exports = function(app, formModel){
+module.exports = function(app, fieldModel){
     app.get("/api/assignment/form/:formId/field", findFieldsByFormId);
     app.get("/api/assignment/form/:formId/field/:fieldId", findFieldById);
     app.delete("/api/assignment/form/:formId/field/:fieldId" , deleteFieldById);
@@ -9,77 +9,69 @@ module.exports = function(app, formModel){
 
     function findFieldsByFormId(req, res){
         var formId = req.params.formId;
-        var selectedFields = [];
-        for(var i = 0; i<forms.length ; i++){
-            if (forms[i]._id == formId){
-                selectedFields = forms[i].fields;
-                res.send(selectedFields);
-            }
-        }
-        return null;
+        fieldModel.findFieldsByFormId(formId)
+            .then(
+                function(form) {
+                    res.json(form.fields);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function findFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var selectedFields = [];
-        for(var i = 0; i<forms.length ; i++){
-            if (forms[i]._id == formId){
-                for (var j = 0 ; j < forms[i].fields.length ; j++){
-                    if (forms[i].fields[j]._id == fieldId){
-                        selectedFields = forms[i].fields[j];
-                        return selectedFields;
-                    }
-                }
-
-            }
-        }
-        return null;
+        var fieldResponse = fieldModel.findFieldById(fieldId, formId);
+        res.json(fieldResponse);
     }
 
     function deleteFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        for(var i = 0; i<forms.length ; i++){
-            if (forms[i]._id == formId){
-                for (var j = 0 ; j < forms[i].fields.length ; j++){
-                    if (forms[i].fields[j]._id == fieldId){
-                        break;
-                    }
+        fieldModel.deleteFieldById(fieldId, formId)
+            .then(
+                function(stat) {
+                    res.send(200);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
                 }
-                forms[i].fields.splice(j,1);
-                res.send(forms[i].fields);
-            }
-        }
+            );
     }
 
     function createField(req, res) {
         var field = req.body;
         var formId = req.params.formId;
-        field._id = (new Date()).getTime().toString();
-        for(var i = 0; i<forms.length ; i++){
-            if (forms[i]._id == formId){
-                forms[i].fields.push(field);
-            }
-        }
-        res.send(forms);
+        fieldModel.createField(field, formId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function updateFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
         var updatedForm = req.body;
-        for(var i = 0; i<forms.length ; i++){
-            if (forms[i]._id == formId){
-                for (var j = 0 ; j < forms[i].fields.length ; j++){
-                    if (forms[i].fields[j]._id == fieldId){
-                        forms[i].fields[j] = updatedForm;
-                        break;
-                    }
+        fieldModel.updateFieldById(fieldId, updatedForm, formId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
                 }
-            }
-        }
-        res.send(forms[i].fields);
+            );
     }
 
 };

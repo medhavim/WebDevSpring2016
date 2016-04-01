@@ -6,62 +6,74 @@ module.exports = function(app, formModel) {
     app.put('/api/assignment/form/:formId', updateFormById);
 
     function findFormByUserId(req, res) {
-        var userId = Number(req.params.userId);
-        var formResponse = formModel.findFormByUserId(userId).then(
-            function(doc) {
-                res.json(doc);
-            },
-
-            function(err) {
-                res.status(400).send(err);
-            }
-        );
+        var userId = req.params.userId;
+        var formResponse = formModel.findFormByUserId(userId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function findFormById(req, res) {
         var formId = req.params.formId;
-        var formResponse = formModel.findFormById(formId).then(
-            function(doc) {
-                res.json(doc);
-            },
-
-            function(err) {
-                res.status(400).send(err);
-            }
-        );
+        var formResponse = formModel.findFormById(formId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function deleteFormById(req, res) {
         var formId = req.params.formId;
-        var formResponse = formModel.deleteFormById(formId).then(
-            function(doc) {
-                res.json(doc);
-            },
-
-            function(err) {
-                res.status(400).send(err);
-            }
-        );
+        var formResponse = formModel.deleteFormById(formId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function createForm(req, res) {
-        var userId = Number(req.params.userId);
+        var userId = req.params.userId;
         var form = req.body;
-        var formResponse = formModel.createForm(form, userId);
-        res.json(formResponse);
+        var formResponse = formModel.createForm(form, userId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function updateFormById(req, res) {
         var formId = req.params.formId;
         var form = req.body;
-        var formResponse = formModel.updateFormById(formId, form).then(
-            function(doc) {
-                res.json(doc);
-            },
-
-            function(err) {
-                res.status(400).send(err);
-            }
-        );
+        var formResponse = formModel.updateFormById(formId, form)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 };

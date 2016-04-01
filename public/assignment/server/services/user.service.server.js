@@ -34,7 +34,7 @@ module.exports = function(app, userModel) {
                     function(doc) {
                         res.json(doc);
                     },
-
+                    // send error if promise rejected
                     function(err) {
                         res.status(400).send(err);
                     }
@@ -44,12 +44,12 @@ module.exports = function(app, userModel) {
 
     function findUserById(req, res) {
         var userId = req.params.id;
-        var userResponse = userModel.findUserById(userid)
+        var userResponse = userModel.findUserById(userId)
             .then(
                 function(doc) {
                     res.json(doc);
                 },
-
+                // send error if promise rejected
                 function(err) {
                     res.status(400).send(err);
                 }
@@ -63,7 +63,7 @@ module.exports = function(app, userModel) {
                 function(doc) {
                     res.json(doc);
                 },
-
+                // send error if promise rejected
                 function(err) {
                     res.status(400).send(err);
                 }
@@ -79,7 +79,7 @@ module.exports = function(app, userModel) {
                 function(doc) {
                     res.json(doc);
                 },
-
+                // send error if promise rejected
                 function(err) {
                     res.status(400).send(err);
                 }
@@ -94,7 +94,7 @@ module.exports = function(app, userModel) {
                 function(doc) {
                     res.json(doc);
                 },
-
+                // send error if promise rejected
                 function(err) {
                     res.status(400).send(err);
                 }
@@ -108,7 +108,7 @@ module.exports = function(app, userModel) {
                 function(doc) {
                     res.json(doc);
                 },
-
+                // send error if promise rejected
                 function(err) {
                     res.status(400).send(err);
                 }
