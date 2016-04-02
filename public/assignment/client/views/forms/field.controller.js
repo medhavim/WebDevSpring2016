@@ -3,11 +3,12 @@
         .module("FormBuilderApp")
         .controller("FieldController", FieldController);
 
-    function FieldController($routeParams, FieldService, $rootScope) {
+    function FieldController($routeParams, FieldService, FormService) {
         var vm = this;
 
         vm.eField = null;
         vm.removeField = removeField;
+        vm.reorder = reorder;
         vm.addField = addField;
         vm.edit = edit;
         vm.update = updateField;
@@ -19,6 +20,10 @@
         };
 
         function init() {
+            FormService.findFormById(formId)
+                .then(function (response) {
+                    vm.form = response.data;
+                });
             toRender();
         } init();
 
@@ -29,6 +34,15 @@
                     vm.fields = response.data;
                     console.log(vm.fields);
                 });
+
+        }
+
+        function reorder() {
+            console.log(vm);
+            console.log(vm.form);
+            vm.form.fields = vm.fields;
+            FormService.updateFormById(formId, vm.form)
+                .then(init);
 
         }
 

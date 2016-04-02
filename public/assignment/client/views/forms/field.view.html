@@ -24,7 +24,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -48,7 +48,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -75,7 +75,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -101,7 +101,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -128,7 +128,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -151,7 +151,7 @@
                                 <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
                                     <span class="glyphicon glyphicon-remove incrsize"></span>
                                 </a>
-                                <a href="" class="btn btn-info">
+                                <a href="" class="btn btn-info" ng-click="model.reorder()">
                                     <span class="glyphicon glyphicon-align-justify incrsize"></span>
                                 </a>
                             </div>
@@ -248,6 +248,7 @@
                                    placeholder="Edit Radio Label">
                             <br>
                             <label>Options</label>
+                            <p>{{model.optionText}}</p>
                             <textarea ng-model="model.optionText" class="form-control" type="text" placeholder="Edit Radio options"
                                       ng-list="&#10;" ng-trim="false">{{model.optionText}}</textarea>
                         </form>
@@ -265,23 +266,6 @@
                         </form>
                     </div>
                 </div>
-                <!--<div class="modal-body">
-                    Label: <br>
-                    <input type="text" ng-model="model.selectedField.label">
-                    <div ng-show="model.selectedField.placeholder">
-                        Placeholder: <br>
-                        <input ng-model="model.selectedField.placeholder"
-                               class="form-control"
-                               type="text">
-                    </div>
-                    <div ng-show="model.selectedField.options">
-                        Options: <br>
-                                    <textarea>
-                                        {{model.option}}
-                                    </textarea>
-                    </div>
-
-                </div>-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button" ng-click="model.update(model.eField)" class="btn btn-default" data-dismiss="modal">Ok</button>

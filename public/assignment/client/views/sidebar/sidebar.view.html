@@ -19,7 +19,8 @@
     </li>
 
     <li ng-show="currentUser"
-        ng-class="{'active' : model.$location.url() =='/forms' || model.$location.url() =='/fields'}">
+        ng-class="{'active' : model.$location.url().search('/form') >= 0}">
+        <!--ng-class="{'active' : model.$location.url() =='/forms' || model.$location.url() =='/fields'}">-->
         <a href="#/forms">Forms</a>
     </li>
 </ul>
