@@ -5,18 +5,19 @@ var q = require("q");
 module.exports = function(db, mongoose, formModel) {
 
     // load field schema
-    var FieldSchema = require('./field.schema.server.js')(mongoose);
+    //var FieldSchema = require('./field.schema.server.js')(mongoose);
 
     // create form model from schema
     var FormModel = formModel.getFormModel();
+    //var FieldModel = mongoose.model("FieldModel", FieldSchema);
     //var FormModel = mongoose.model("FormModel", FormSchema);
 
     var api={
         createField:createField,
         findFieldsByFormId:findFieldsByFormId,
-        findFieldByFieldAndFormId:findFieldByFieldAndFormId,
-        deleteFieldByFieldAndFormId:deleteFieldByFieldAndFormId,
-        updateFieldByFieldAndFormId:updateFieldByFieldAndFormId
+        findFieldById:findFieldById,
+        deleteFieldById:deleteFieldById,
+        updateFieldById:updateFieldById
     };
     return api;
 
@@ -35,26 +36,34 @@ module.exports = function(db, mongoose, formModel) {
         return FormModel.findById(formId).select("fields");
     }
 
-    function findFieldByFieldAndFormId(formId, fieldId) {
+    function findFieldById(fieldId, formId) {
         return FormModel.findById(formId)
             .then(
-                function(form){
+                function(doc){
+                    var form = doc;
                     return form.fields._id(fieldId);
                 }
             );
     }
 
-    function deleteFieldByFieldAndFormId(formId, fieldId) {
+    function deleteFieldById(fieldId, formId) {
+        /*return FormModel.update(
+         {_id: formId},
+         {$pull: {'fields': {_id: fieldId}}}
+         );*/
         return FormModel.findById(formId)
             .then(
-                function(form){
+                function(doc) {
+                    var form = doc;
+                    console.log("after find form by id");
+                    console.log(form.fields);
                     form.fields.id(fieldId).remove();
                     return form.save();
                 }
             );
     }
 
-    function updateFieldByFieldAndFormId(formId, fieldObj, fieldId) {
+    function updateFieldById(fieldId, fieldObj, formId) {
         return FormModel.findById(formId)
             .then(
                 function(form){

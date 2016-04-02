@@ -4,7 +4,7 @@
     <li role="presentation" class="active"><a href="#formFields">Fields</a></li>
 </ul>
 <br>
-<div class="container" id="formFields">
+<div class="container-fluid" id="formFields">
     <div ui-sortable="sortableFields" ng-model="model.fields">
         <div ng-repeat="field in model.fields">
             <div ng-switch="field.type">
@@ -16,13 +16,17 @@
                                 <input type="text" class="form-control" id="inputName" placeholder="field.placeholder">
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                 ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -36,13 +40,17 @@
                                 <input type="date" class="form-control" id="inputDate" placeholder="field.placeholder">
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                                         ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -59,13 +67,17 @@
                                 </select>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                 ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -81,13 +93,17 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                 ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -104,13 +120,17 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                 ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -123,13 +143,17 @@
                                 <textarea class="form-control" rows="4" id="comment"></textarea>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <a href="" class="btn btn-warning"><span class="glyphicon glyphicon-pencil incrsize"
-                                                 ng-click="model.edit(field)" data-toggle="modal"
-                                                                         data-target="#myModal"></span></a>
+                                <a href="" class="btn btn-warning" ng-click="model.edit(field)" data-toggle="modal"
+                                   data-target="#myModal">
+                                    <span class="glyphicon glyphicon-pencil incrsize"></span>
+                                </a>
                                 <a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"></span></a>
-                                <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove incrsize"
-                                                 ng-click="model.removeField(field._id)"></span></a>
-                                <a href="" class="btn btn-info"><span class="glyphicon glyphicon-align-justify incrsize"></span></a>
+                                <a href="" class="btn btn-danger" ng-click="model.removeField($index)">
+                                    <span class="glyphicon glyphicon-remove incrsize"></span>
+                                </a>
+                                <a href="" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-align-justify incrsize"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -154,8 +178,10 @@
                     </select>
                 </div>
                 <div class="col-xs-4 col-sm-6">
-                    <span>&nbsp;</span><a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus incrsize"
-                                                        ng-click="model.addField(model.fieldType)"></span></a>
+                    <span>&nbsp;</span>
+                    <a href="" class="btn btn-primary" ng-click="model.addField(model.fieldType)">
+                        <span class="glyphicon glyphicon-plus incrsize"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -169,7 +195,77 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">{{model.selectedField.label}}</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" ng-switch on="model.eField.type">
+                    <div ng-switch-when="TEXT">
+                        <h3>Single Line Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text"
+                                   placeholder="Edit Label">
+                            <br>
+                            <label>Placeholder</label>
+                            <input ng-model="model.eField.placeholder" class="form-control" type="text"
+                                   placeholder="Edit Placeholder">
+                        </form>
+                    </div>
+                    <div ng-switch-when="TEXTAREA">
+                        <h3>Multi Line Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text"
+                                   placeholder="Edit Label">
+                            <br>
+                            <label>Placeholder</label>
+                            <textarea ng-model="model.eField.placeholder" class="form-control"
+                                      placeholder="Edit Placeholder"></textarea>
+                        </form>
+                    </div>
+                    <div ng-switch-when="OPTIONS">
+                        <h3>Dropdown Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text"
+                                   placeholder="Edit Dropdown Label">
+                            <br>
+                            <label>Options</label>
+                            <textarea ng-model="model.optionText" class="form-control"
+                                      placeholder="Edit Dropdown options" ng-list="&#10;" ng-trim="false"></textarea>
+                        </form>
+                    </div>
+                    <div ng-switch-when="DATE">
+                        <h3>Date Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text">
+                            <br>
+                        </form>
+                    </div>
+                    <div ng-switch-when="RADIOS">
+                        <h3>Radio Buttons Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text"
+                                   placeholder="Edit Radio Label">
+                            <br>
+                            <label>Options</label>
+                            <textarea ng-model="model.optionText" class="form-control" type="text" placeholder="Edit Radio options"
+                                      ng-list="&#10;" ng-trim="false">{{model.optionText}}</textarea>
+                        </form>
+                    </div>
+                    <div ng-switch-default>
+                        <h3>Checkbox Field</h3>
+                        <form>
+                            <label>Label</label>
+                            <input ng-model="model.eField.label" class="form-control" type="text"
+                                   placeholder={{model.option}}>
+                            <br>
+                            <label>Options</label>
+                            <textarea ng-model="model.optionText" class="form-control"
+                                      placeholder="Edit Checkbox options" ng-list="&#10;" ng-trim="false"></textarea>
+                        </form>
+                    </div>
+                </div>
+                <!--<div class="modal-body">
                     Label: <br>
                     <input type="text" ng-model="model.selectedField.label">
                     <div ng-show="model.selectedField.placeholder">
@@ -185,10 +281,10 @@
                                     </textarea>
                     </div>
 
-                </div>
+                </div>-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" ng-click="model.update(model.updatedField)" class="btn btn-default" data-dismiss="modal">Ok</button>
+                    <button type="button" ng-click="model.update(model.eField)" class="btn btn-default" data-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>

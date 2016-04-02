@@ -34,10 +34,12 @@ module.exports = function(app, fieldModel){
         fieldModel.deleteFieldById(fieldId, formId)
             .then(
                 function(stat) {
-                    res.send(200);
+                    res.json(200);
+                    //findFieldsByFormId(req, res);
                 },
                 // send error if promise rejected
                 function(err) {
+                    console.log(err);
                     res.status(400).send(err);
                 }
             );
@@ -61,8 +63,8 @@ module.exports = function(app, fieldModel){
     function updateFieldById(req, res) {
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
-        var updatedForm = req.body;
-        fieldModel.updateFieldById(fieldId, updatedForm, formId)
+        var updatedField = req.body;
+        fieldModel.updateFieldById(fieldId, updatedField, formId)
             .then(
                 function(doc) {
                     res.json(doc);
