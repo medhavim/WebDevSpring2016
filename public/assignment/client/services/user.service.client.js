@@ -7,18 +7,25 @@
     function UserService($http, $rootScope){
         var model = {
             setCurrentUser: setCurrentUser,
+            getCurrentUser: getCurrentUser,
             createUser: createUser,
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
             findUserByCredentials: findUserByCredentials,
             findUserByUsername: findUserByUsername,
-            updateUser: updateUser
+            updateUser: updateUser,
+            logout: logout
         };
 
         return model;
 
         function setCurrentUser(user) {
             $rootScope.currentUser = user;
+            //$http.get('/api/assignment/loggedin');
+        }
+
+        function getCurrentUser () {
+            return $http.get("/api/assignment/loggedin");
         }
 
         function createUser(user) {
@@ -43,6 +50,10 @@
 
         function updateUser(userId, user) {
             return $http.put('/api/assignment/user/' + userId, user);
+        }
+
+        function logout() {
+            return $http.post('/api/assignment/logout');
         }
     }
 })();

@@ -11,8 +11,13 @@
 
         // This function logs the current user out
         function logout() {
-            UserService.setCurrentUser(null);
-            $location.url("/home");
+            //UserService.setCurrentUser(null);
+            //$location.url("/home");
+            UserService.logout()
+                .then(function(){
+                    UserService.setCurrentUser(null);
+                    $location.url("/home");
+                });
         }
     }
 })();

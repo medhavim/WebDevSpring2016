@@ -9,16 +9,22 @@
         vm.update = update;
         vm.failureMessage = null;
         vm.successMessage = null;
-        var currUser = $rootScope.currentUser;
-        vm.user = currUser;
+        //var currUser = $rootScope.currentUser;
+        //vm.user = currUser;
 
         function init() {
-
+            UserService
+                .getCurrentUser()
+                .then(function(response){
+                    //console.log(response.data);
+                    vm.user = response.data;
+                });
         } init();
 
         // This function updates the details of a particular user ID
         function update(modelUser) {
-            var id = $rootScope.currentUser._id;
+            //var id = $rootScope.currentUser._id;
+            var id=modelUser._id;
 
             var userDetails = {
                 "username": modelUser.username,
@@ -31,8 +37,10 @@
                 .then(function(response) {
                     if(response.data)
                     {
-                        //$rootScope.data = response;
-                        $rootScope.currentUser = response.data;
+                        //console.log(response.data);
+                        UserService.setCurrentUser(response.data);
+                        UserService.getCurrentUser();
+                        //$rootScope.currentUser = response.data;
                         vm.successMessage = "Profile updated successfully.";
                     } else {
                         vm.failureMessage = "Unable to update profile. Please try again.";

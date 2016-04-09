@@ -58,10 +58,16 @@
 
                         UserService.createUser(newUser)
                             .then(function(response) {
-                                $rootScope.data = response;
-                                var createdUser = response.data;
-                                UserService.setCurrentUser(createdUser);
-                                $location.url("/profile/" + createdUser.username);
+                                if (response.data) {
+                                    //$rootScope.data = response;
+                                    var createdUser = response.data;
+                                    UserService.setCurrentUser(createdUser);
+                                    UserService.getCurrentUser();
+                                    $location.url("/profile/" + createdUser.username);
+                                } else {
+                                    console.log(response);
+                                    vm.message = "Error in registration";
+                                }
                             });
                     }
                 });

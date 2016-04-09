@@ -1,11 +1,23 @@
 module.exports = function(app, userModel) {
-    app.post("/api/assignment/user", createUser);
-    app.get("/api/assignment/user?username=:username&password=:password", findUserByCredentials);
-    app.get("/api/assignment/user?username=:username", findUserByUsername);
-    app.get("/api/assignment/user/:id", findUserById);
+    var passport = require('passport');
+    var auth = authorized;
+    app.post("/api/assignment/user", auth, createUser);
+    app.get("/api/assignment/user?username=:username&password=:password", passport.authenticate('local'), findUserByCredentials);
+    app.get("/api/assignment/user?username=:username", auth, findUserByUsername);
+    app.get("/api/assignment/user/:id", auth, findUserById);
     app.get("/api/assignment/user", findAllUsers);
-    app.put("/api/assignment/user/:id", updateUser);
-    app.delete("/api/assignment/user/:id", deleteUserById);
+    app.put("/api/assignment/user/:id", auth, updateUser);
+    app.delete("/api/assignment/user/:id", auth, deleteUserById);
+    app.get("/api/assignment/loggedin", loggedin);
+    app.post("/api/assignment/logout", logout);
+
+    function authorized (req, res, next) {
+        if (!req.isAuthenticated()) {
+            res.send(401);
+        } else {
+            next();
+        }
+    };
 
     function createUser(req, res) {
         var user = req.body;
@@ -77,6 +89,7 @@ module.exports = function(app, userModel) {
         var userResponse = userModel.findUserByCredentials(credentials)
             .then(
                 function(doc) {
+                    req.session.currentUser = doc;
                     res.json(doc);
                 },
                 // send error if promise rejected
@@ -113,5 +126,14 @@ module.exports = function(app, userModel) {
                     res.status(400).send(err);
                 }
             );
+    }
+
+    function logout(req, res) {
+        req.session.destroy();
+        res.send(200);
+    }
+
+    function loggedin(req, res) {
+        res.json(req.session.currentUser);
     }
 };
