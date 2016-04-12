@@ -44,7 +44,6 @@
             UserService.register(user)
                 .then(function(response){
                     vm.message = null;
-                    console.log(response);
                     if(response.data === null) {
                         vm.message = "User already exists";
                         return ;
@@ -59,13 +58,11 @@
                         UserService.createUser(newUser)
                             .then(function(response) {
                                 if (response.data) {
-                                    //$rootScope.data = response;
                                     var createdUser = response.data;
                                     UserService.setCurrentUser(createdUser);
                                     UserService.getCurrentUser();
                                     $location.url("/profile/" + createdUser.username);
                                 } else {
-                                    console.log(response);
                                     vm.message = "Error in registration";
                                 }
                             },

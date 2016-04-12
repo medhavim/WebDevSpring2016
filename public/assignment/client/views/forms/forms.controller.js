@@ -12,11 +12,10 @@
         vm.selectForm = selectForm;
         vm.updateForm = updateForm;
         vm.selectedForm = null;
+        vm.message = null;
 
         function init() {
             // This function searches all the forms related to a user ID
-            console.log(user);
-            console.log($rootScope.currentUser);
             FormService.findAllFormsForUser(user._id)
                 .then(function (response) {
                     vm.forms = response.data;
@@ -61,7 +60,7 @@
                         vm.formName = "";
                 });
             } else {
-                console.log("else of if(vm.selectedForm)");
+                vm.message = "No form selected";
             }
         }
     }

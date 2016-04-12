@@ -29,18 +29,14 @@
         } init();
 
         function toRender(){
-            //console.log($routeParams);
             FieldService.getFieldsForForm(formId)
                 .then(function (response){
                     vm.fields = response.data;
-                    console.log(vm.fields);
                 });
 
         }
 
-        function reorder() {
-            console.log(vm);
-            console.log(vm.form);
+        function reorder() {;
             vm.form.fields = vm.fields;
             FormService.updateFormById(formId, vm.form)
                 .then(init);
@@ -48,10 +44,7 @@
         }
 
         function removeField(index) {
-            //console.log(fieldId);
             var fieldId = vm.fields[index]._id;
-            console.log("Inside removeField " + fieldId);
-            console.log(formId);
             FieldService.deleteFieldFromForm(formId, fieldId)
                 .then(function(response){
                     vm.fields.splice(index,1);
@@ -60,7 +53,6 @@
 
         function addField(type) {
             var newField = {
-               // _id: null,
                 label: "",
                 type: type,
                 placeholder: ""
@@ -100,12 +92,8 @@
                     {"label": "Option Z", "value": "OPTION_Z"}
                 ];
             }
-            console.log(newField);
             FieldService.createFieldForForm(formId, newField)
                 .then(function (response){
-                    //vm.forms = response.data;
-                    //console.log(vm.forms);
-                    //toRender();
                     var fields = response.data["fields"];
                     vm.fields.push(fields[fields.length - 1]);
                 });

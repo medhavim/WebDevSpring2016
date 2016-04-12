@@ -67,20 +67,6 @@
             });
     }
 
-    /*function getLoggedIn(UserService, $q) {
-        var deferred = $q.defer();
-
-        UserService
-            .getCurrentUser()
-            .then(function(response){
-                var currentUser = response.data;
-                UserService.setCurrentUser(currentUser);
-                deferred.resolve();
-            });
-
-        return deferred.promise;
-    }*/
-
     var checkCurrentUser = function($q, $timeout, $http, $location, $rootScope)
     {
         var deferred = $q.defer();

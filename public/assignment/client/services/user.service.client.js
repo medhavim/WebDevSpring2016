@@ -12,8 +12,6 @@
             register: register,
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
-            //findUserByCredentials: findUserByCredentials,
-            //findUserByUsername: findUserByUsername,
             findUserById : findUserById,
             updateUser: updateUser,
             updateUserById: updateUserById,
@@ -25,7 +23,6 @@
 
         function setCurrentUser(user) {
             $rootScope.currentUser = user;
-            //$http.get('/api/assignment/loggedin');
         }
 
         function getCurrentUser () {
@@ -51,14 +48,6 @@
         function findUserById(userId) {
             return $http.get('/api/assignment/admin/user/' + userId);
         }
-
-        /*function findUserByCredentials(credentials) {
-            return $http.get("/api/assignment/user?username=" + credentials.username + "&password=" + credentials.password);
-        }
-
-        function findUserByUsername(username) {
-            return $http.get('/api/assignment/user?username=' + username);
-        }*/
 
         function updateUser(userId, user) {
             return $http.put('/api/assignment/user/' + userId, user);

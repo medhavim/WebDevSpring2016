@@ -9,6 +9,9 @@
         </ul>
     </nav>
 
+    <!-- Displays an error message -->
+    <div ng-show="model.message" class="alert alert-danger" role="alert">{{model.message}}</div>
+
     <div class="tab-content">
         <div id="form" class="tab-pane fade in active">
             <div class="table-responsive">

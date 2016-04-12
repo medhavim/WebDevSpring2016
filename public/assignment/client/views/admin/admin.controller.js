@@ -9,6 +9,12 @@
         var vm = this;
 
         function init() {
+            UserService
+                .getCurrentUser()
+                .then(function(response) {
+                    vm.user = response.data;
+                    UserService.setCurrentUser(response.data);
+                });
             vm.remove = remove;
             vm.update = update;
             vm.add    = add;

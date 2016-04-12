@@ -4,13 +4,8 @@ var q = require("q");
 // pass db and mongoose reference to model and also the formModel to reference the form
 module.exports = function(db, mongoose, formModel) {
 
-    // load field schema
-    //var FieldSchema = require('./field.schema.server.js')(mongoose);
-
     // create form model from schema
     var FormModel = formModel.getFormModel();
-    //var FieldModel = mongoose.model("FieldModel", FieldSchema);
-    //var FormModel = mongoose.model("FormModel", FormSchema);
 
     var api={
         createField:createField,
@@ -47,10 +42,6 @@ module.exports = function(db, mongoose, formModel) {
     }
 
     function deleteFieldById(fieldId, formId) {
-        /*return FormModel.update(
-         {_id: formId},
-         {$pull: {'fields': {_id: fieldId}}}
-         );*/
         return FormModel.findById(formId)
             .then(
                 function(doc) {

@@ -4,7 +4,7 @@
         .module("FormBuilderApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($rootScope, UserService) {
+    function ProfileController(UserService) {
         var vm = this;
         vm.update = update;
         vm.failureMessage = null;
@@ -14,17 +14,14 @@
             UserService
                 .getCurrentUser()
                 .then(function(response){
-                    console.log(response.data);
-                    console.log($rootScope.currentUser);
                     vm.user = response.data;
                     UserService.setCurrentUser(response.data);
-                    console.log($rootScope.currentUser);
                 });
         } init();
 
         // This function updates the details of a particular user ID
         function update(modelUser) {
-            //var id = $rootScope.currentUser._id;
+
             var id=modelUser._id;
 
             var userDetails = {
@@ -38,10 +35,8 @@
                 .then(function(response) {
                     if(response.data)
                     {
-                        //console.log(response.data);
                         UserService.setCurrentUser(response.data);
                         UserService.getCurrentUser();
-                        //$rootScope.currentUser = response.data;
                         vm.successMessage = "Profile updated successfully.";
                     } else {
                         vm.failureMessage = "Unable to update profile. Please try again.";
