@@ -9,8 +9,6 @@
         vm.update = update;
         vm.failureMessage = null;
         vm.successMessage = null;
-        //var currUser = $rootScope.currentUser;
-        //vm.user = currUser;
 
         function init() {
             UserService

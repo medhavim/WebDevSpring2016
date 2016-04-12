@@ -4,7 +4,7 @@
         .module("FormBuilderApp")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController($location, $rootScope, UserService) {
+    function RegisterController($location, UserService) {
         var vm = this;
         vm.register = register;
         vm.message = null;
@@ -41,7 +41,7 @@
             }
 
             // checks if the username is entered is present in the system
-            UserService.findUserByUsername(user.username)
+            UserService.register(user)
                 .then(function(response){
                     vm.message = null;
                     console.log(response);
@@ -68,9 +68,15 @@
                                     console.log(response);
                                     vm.message = "Error in registration";
                                 }
-                            });
+                            },
+                                function(err) {
+                                    vm.error = err;
+                                });
                     }
-                });
+                },
+                    function(err) {
+                        vm.error = err;
+                    });
         }
     }
 })();
