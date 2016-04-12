@@ -107,9 +107,11 @@
         {
             $rootScope.errorMessage = null;
             // User is Authenticated
+            console.log(user);
             if (user !== '0')
             {
-                $rootScope.currentUser = user[0];
+                //$rootScope.currentUser = user[0];
+                $rootScope.currentUser = user;
                 deferred.resolve();
             }
             // User is Not Authenticated
@@ -131,10 +133,10 @@
 
         $http.get('/api/assignment/loggedin').success(function(user)
         {
-            console.log(user[0]);
+            console.log(user);
             $rootScope.errorMessage = null;
             // User is Authenticated
-            if (user !== '0' && user[0].roles.indexOf('admin') != -1)
+            if (user !== '0' && user.roles.indexOf('admin') != -1)
             {
                 $rootScope.currentUser = user[0];
                 deferred.resolve();

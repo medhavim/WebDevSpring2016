@@ -14,8 +14,11 @@
             UserService
                 .getCurrentUser()
                 .then(function(response){
-                    //console.log(response.data);
+                    console.log(response.data);
+                    console.log($rootScope.currentUser);
                     vm.user = response.data;
+                    UserService.setCurrentUser(response.data);
+                    console.log($rootScope.currentUser);
                 });
         } init();
 

@@ -45,7 +45,7 @@
                 .then(function(response){
                     vm.message = null;
                     console.log(response);
-                    if(response.data.length !== 0) {
+                    if(response.data === null) {
                         vm.message = "User already exists";
                         return ;
                     } else {

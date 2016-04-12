@@ -15,6 +15,8 @@
 
         function init() {
             // This function searches all the forms related to a user ID
+            console.log(user);
+            console.log($rootScope.currentUser);
             FormService.findAllFormsForUser(user._id)
                 .then(function (response) {
                     vm.forms = response.data;
