@@ -17,7 +17,7 @@ module.exports = function (db, mongoose) {
         findUserByUsername: findUserByUsername,
         findUserByCredentials: findUserByCredentials,
         deleteUserById: deleteUserById,
-        updateUser: updateUser
+        updateUserById: updateUserById
     };
     return api;
 
@@ -84,7 +84,7 @@ module.exports = function (db, mongoose) {
 
     function findUserByUsername(username) {
         // use q to defer the response
-        var deferred = q.defer();
+        /*var deferred = q.defer();
 
         // find with mongoose user model's find()
         UserModel.find({username: username}, function (err, doc) {
@@ -95,9 +95,11 @@ module.exports = function (db, mongoose) {
                 // resolve promise
                 deferred.resolve(doc);
             }
+
         });
         // return a promise
-        return deferred.promise;
+        return deferred.promise;*/
+        return UserModel.findOne({username : username});
     }
 
 
@@ -141,7 +143,7 @@ module.exports = function (db, mongoose) {
         return deferred.promise;
     }
 
-    function updateUser(userId, user) {
+    function updateUserById(userId, user) {
         // use q to defer the response
         var deferred = q.defer();
 
