@@ -15,6 +15,11 @@
         vm.message = null;
 
         function init() {
+            //console.log(user);
+            user = $rootScope.currentUser;
+            //console.log(user);
+            vm.sortType = 'formName';
+            vm.sortReverse = false;
             // This function searches all the forms related to a user ID
             FormService.findAllFormsForUser(user._id)
                 .then(function (response) {
@@ -35,8 +40,8 @@
         }
 
         // This function deletes a form based on the form ID
-        function deleteForm(index) {
-            var formId = vm.forms[index]._id;
+        function deleteForm(form, index) {
+            var formId = form._id;
             FormService.deleteFormById(formId)
                 .then(function (response) {
                     vm.forms.splice(index,1);
@@ -44,9 +49,9 @@
         }
 
         // This function selects an existing form
-        function selectForm(index) {
-            vm.formName = vm.forms[index].title;
-            vm.selectedForm = vm.forms[index];
+        function selectForm(form) {
+            vm.formName = form.title;
+            vm.selectedForm = form;
         }
 
         // This function updates the details of an existing form

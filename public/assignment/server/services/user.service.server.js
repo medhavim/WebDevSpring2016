@@ -1,11 +1,12 @@
-var passport         = require('passport');
-var LocalStrategy    = require('passport-local').Strategy;
+var passport        = require('passport');
+var LocalStrategy   = require('passport-local').Strategy;
+var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function(app, userModel) {
     var auth = authorized;
     var loggedInUser;
 
-    app.post('/api/assignment/login', passport.authenticate('assignment'), login);
+    app.post('/api/assignment/login', passport.authenticate('local'), login);
     app.post('/api/assignment/logout', logout);
     app.post('/api/assignment/register', register);
     app.post('/api/assignment/admin/user', isAdmin, createUser);
@@ -17,17 +18,20 @@ module.exports = function(app, userModel) {
     app.put('/api/assignment/admin/user/:id', isAdmin, updateUserById);
     app.delete('/api/assignment/admin/user/:id', isAdmin, deleteUserById);
 
-    passport.use('assignment', new LocalStrategy(localStrategy));
+    passport.use(new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
 
     function localStrategy(username, password, done) {
         userModel
-            .findUserByCredentials({username: username, password: password})
+            .findUserByUsername(username)
             .then(
                 function(user) {
-                    if (!user) { return done(null, false); }
-                    return done(null, user);
+                    if(user && bcrypt.compareSync(password, user.password)) {
+                        return done(null, user);
+                    } else {
+                        return done(null, false);
+                    }
                 },
                 function(err) {
                     if (err) { return done(err); }
@@ -36,6 +40,7 @@ module.exports = function(app, userModel) {
     }
 
     function serializeUser(user, done) {
+        delete user.password;
         done(null, user);
     }
 
@@ -44,6 +49,7 @@ module.exports = function(app, userModel) {
             .findUserById(user._id)
             .then(
                 function(user){
+                    delete user.password;
                     done(null, user);
                 },
                 function(err){
@@ -116,6 +122,7 @@ module.exports = function(app, userModel) {
                     if(user) {
                         res.json(null);
                     } else {
+                        newUser.password = bcrypt.hashSync(newUser.password);
                         return userModel.createUser(newUser);
                     }
                 },
@@ -178,6 +185,7 @@ module.exports = function(app, userModel) {
         var userResponse = userModel.findUserByUsername(username)
             .then(
                 function(doc) {
+                    delete doc.password;
                     res.json(doc);
                 },
                 // send error if promise rejected
@@ -233,6 +241,7 @@ module.exports = function(app, userModel) {
 
     function isAdmin(req, res, next) {
         if(req.isAuthenticated()) {
+            loggedInUser = req.user;
             if(loggedInUser.roles.indexOf("admin") >= 0) {
                 next();
             }

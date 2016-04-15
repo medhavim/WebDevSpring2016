@@ -25,6 +25,7 @@
   "dependencies": {
     "angular-ui-bootstrap": "^1.2.4",
     "angular-ui-sortable": "^0.13.4",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "ejs": "^2.4.1",

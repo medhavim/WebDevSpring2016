@@ -13,6 +13,7 @@ var mongoose = require('mongoose');
 var connectionString = 'mongodb://127.0.0.1:27017/formmaker';
 //var connectionString = 'mongodb://127.0.0.1:27017/prismaticmusic';
 
+//console.log(process.env);
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
     connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
         process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
@@ -35,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
 app.use(cookieParser());
 
-app.use(session({ secret: "Medhavi" ,
+app.use(session({ secret: process.env.SESSION_SECRET ,
     resave : true,
     saveUninitialized : true}));
 

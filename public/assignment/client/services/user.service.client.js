@@ -53,12 +53,12 @@
             return $http.put('/api/assignment/user/' + userId, user);
         }
 
-        function updateUserById(userId, user)
-        {
+        function updateUserById(userId, user) {
             return $http.put('/api/assignment/admin/user/' + userId, user);
         }
 
         function login(user) {
+            console.log("in client login");
             return $http.post('/api/assignment/login', user);
         }
 
