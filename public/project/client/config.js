@@ -78,6 +78,11 @@
                 controller: "PlayController",
                 controllerAs: "model"*/
             })
+            .when("/tag/:tagValue", {
+                templateUrl: "views/tag/tag.view.html",
+                 controller: "TagController",
+                 controllerAs: "model"
+            })
             .otherwise({
                 redirectTo: "/home"
             });

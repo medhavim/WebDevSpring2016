@@ -12,7 +12,7 @@
         <tr ng-repeat="track in model.details" class="ng-scope">
             <td>
                 <a href="#/artist/details/{{track.artist.mbid}}">
-                    <img class="media-object" ng-src="{{tracks.image.medium}}" alt="No Image!">
+                    <img class="media-object" ng-src="{{track.image.medium}}" alt="No Image!">
                 </a>
             </td>
             <td ng-controller="TrackController">

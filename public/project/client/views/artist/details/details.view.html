@@ -1,22 +1,24 @@
 <div class="container-fuild" ng-controller="ArtistDetailsController">
     <div  class="detail">
-        <h2>
-            <div class="container-fluid">
-                {{model.details.name}}
+        <div class="container-fluid">
+            <h1 class="page-header"> {{model.details.name}}
 
-                <button class="btn btn-warning" ng-click="model.userFavoritesMusic(model.details)">
+                <button class="btn btn-default" ng-click="model.userFavoritesMusic(model.details)">
                 <span ng-show="model.details.likes.indexOf(currentUser._id) > -1"
                       class="glyphicon glyphicon-heart"></span>
                 <span ng-show="!model.details || !model.details.likes || model.details.likes.indexOf(currentUser._id) == -1"
                       class="glyphicon glyphicon-heart-empty"></span>
                 </button>
-            </div>
-        </h2>
+            </h1>
+        </div>
         <div id="tag" class="container-fluid">
             <div class="row">
+                <label id="tagLabel">Tags</label>
                 <ul id="tags" ng-repeat="artistTags in model.tags">
                     <li>
-                        <a href="">{{artistTags.name}}</a>
+                        <div id="taglist" class="row">
+                            <a href="#/tag/{{artistTags.name}}">{{artistTags.name}}</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -36,17 +38,31 @@
                 </p>
             </div>
 
-            <p><b>Listeners: </b>{{model.stats.listeners}}</p>
-            <p><b>Play Count: </b>{{model.stats.playcount}}</p>
+            <label class="page-header">Listeners:
+                <p>{{model.stats.listeners}}</p>
+            </label>
+            <label class="col-sm-6 page-header">Play Count:
+                <p>{{model.stats.playcount}}</p>
+            </label>
+        </div>
+
+        <div class="container-fluid">
+            <!--<div ng-include="'views/track/track.view.html'"></div>-->
+            <h2>Tracks</h2>
+            <ul ng-repeat="track in model.tracks" class="ng-scope">
+                <li>
+                    <a href="#/player/{{track.name}}/{{track.artist.name}}">{{track.name}}</a>
+                </li>
+            </ul>
         </div>
 
         <div id="similar" class="container-fluid">
-            <h4>Similar artists</h4>
+            <h4 class="page-header">Similar artists</h4>
             <div ng-repeat="similarArtist in model.similar">
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
                     <div class="row container-fluid">
                         <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
-                        <div>
+                        <div class="container-fluid">
                             <a href="#/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
                         </div>
                     </div>
@@ -55,7 +71,7 @@
         </div>
 
         <div id="fav" class="container-fluid">
-            <h4>Users who have favorited this:</h4>
+            <h4 class="page-header">Users who have favorited this:</h4>
             <p ng-hide="currentUser">Login to see users who have favorited this</p>
             <ul ng-repeat = "user in model.favoritedUsers track by $index" ng-show="currentUser">
                 <li>{{user}}</li>
@@ -63,7 +79,7 @@
         </div>
 
         <div id="review" class="container-fluid">
-            <h4 id="reviews">Reviews</h4>
+            <h4 id="reviews" class="page-header">Reviews</h4>
             <p ng-hide="currentUser">Sign in to post reviews</p>
             <div class="row" ng-show="currentUser">
 
@@ -110,10 +126,10 @@
                 <li ng-repeat="user in model.music.userLikes">
                     <a href="#/profile/{{user.username}}">
                         {{user.username}}
-                    </a>
-                </li>
-            </ul>
-        </div>-->
+        </a>
+        </li>
+        </ul>
+    </div>-->
 
 
         <footer>

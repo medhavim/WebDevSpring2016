@@ -34,6 +34,7 @@
                     //console.log(vm.favoritedUsers);
 
                 });
+            console.log(vm);
         }
         init();
 
@@ -46,6 +47,8 @@
                     vm.similar = displayService.displayArtistImage(vm.details.similar);
                     vm.tags = vm.details.tags.tag;
                     vm.stats = vm.details.stats;
+                    console.log("fetchArtist");
+                    console.log(vm);
                 });
         }
 
@@ -54,6 +57,7 @@
             artistService.findTracksByMbId(mbId)
             .then(function(response){
                 vm.data = response.data;
+                vm.tracks = displayService.displayTrackImage(vm.data.toptracks)
             });
         }
 

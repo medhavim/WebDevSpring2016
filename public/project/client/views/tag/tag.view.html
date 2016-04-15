@@ -1,0 +1,52 @@
+<div class="container-fuild" ng-controller="TagController">
+    <div  class="detail">
+        <div class="container-fluid">
+            <h1 class="page-header"> {{model.tagName}}</h1>
+        </div>
+
+        <br/>
+
+        <div id="similar" class="container-fluid">
+            <!--<div ng-include="'views/track/track.view.html'"></div>-->
+            <h4 class="page-header">Related Tracks</h4>
+            <div ng-repeat="track in model.tracks">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class="row container-fluid">
+                        <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{track.image.medium}}" alt = "No Image Found!">
+                        <div class="container-fluid">
+                            <a href="#/player/{{track.name}}/{{track.artist.name}}"> {{track.name}} </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="similar" class="container-fluid">
+            <h4 class="page-header">Related Artists</h4>
+            <div ng-repeat="similarArtist in model.artists">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class="row container-fluid">
+                        <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
+                        <div class="container-fluid">
+                            <a href="#/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="model.albums" id="similar" class="container-fluid">
+            <h4 class="page-header">Related Albums</h4>
+            <div ng-repeat="album in model.albums">
+                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
+                    <div class="row container-fluid">
+                        <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{album.image.medium}}" alt = "No Image Found!">
+                        <div class="container-fluid">
+                            <a href=""> {{album.name}} </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

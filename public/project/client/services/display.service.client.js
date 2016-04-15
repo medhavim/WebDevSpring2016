@@ -9,6 +9,7 @@
         var api = {
             displayArtistImage: displayArtistImage,
             displayTrackImage: displayTrackImage,
+            displayAlbumImage: displayAlbumImage,
             displayImage: displayImage
         };
 
@@ -32,6 +33,13 @@
             var tracks = res.track;
             for (var t in tracks)
                 displayImage(tracks[t].image);
+            return res.track;
+        }
+
+        function displayAlbumImage(res) {
+            var albums = res.album;
+            for (var a in albums)
+                displayImage(albums[a].image);
             return res.track;
         }
     }

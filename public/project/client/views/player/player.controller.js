@@ -32,18 +32,10 @@
                 q: title+' '+artist
             }, function (tracks) {
 
-                console.log(tracks);
+                //console.log(tracks);
                 var played= false;
 
                 for(var i =0; i<tracks.length;i++) {
-
-                    console.log("in for ->if " + i);
-                    var PLbool = (tracks[i].permalink.indexOf(title) >= 0 && tracks[i].permalink.indexOf(artist) >= 0);
-                    var TLbool = (tracks[i].tag_list.indexOf(title) >= 0 && tracks[i].tag_list.indexOf(artist) >= 0 );
-                    var TitleBool = (tracks[i].title.indexOf(title) >= 0 && tracks[i].title.indexOf(artist) >= 0);
-                    console.log("PLbool " + PLbool);
-                    console.log("TLbool " + TLbool);
-                    console.log("TitleBool " + TitleBool);
 
                     if (((tracks[i].permalink.indexOf(title) >= 0 && tracks[i].permalink.indexOf(artist) >= 0) ||
                         (tracks[i].title.indexOf(title) >= 0 && tracks[i].title.indexOf(artist) >= 0) ||
@@ -75,6 +67,7 @@
                     }, document.getElementById('player'));
                 }
             });
+            console.log("playSong");
             console.log(vm);
         }
 

@@ -99,7 +99,10 @@ body {
     margin-top: 0;
 }
 
-
+.page-header {
+    border-bottom: 2px solid rgba(255, 20, 147, 0.31);
+}
+}
 /*
  * Placeholder dashboard ideas
  */
@@ -122,18 +125,39 @@ body {
 a {
     /*color: aquamarine;
     color: #EA63CB;*/
-    color: deeppink;
-    background-color: inherit;
-    font-size: large;
-    font-family: Calibri;
+    /*color: deeppink;*/
+    color: lightpink;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: medium;
+    font-family: "Tahoma";
     text-decoration: underline;
     cursor: pointer;
 }
 
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    font-family: cursive;
+    background-color: rgba(255, 20, 147, 0.35);
+}
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: rgba(255,255,255,0.65);
+}
+
+.media-object.img-thumbnail {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color:transparent;
+}
 a:hover {
     color: deeppink;
-    background-color: inherit;
-    font-size: large;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: medium;
     text-decoration: none;
     cursor: pointer;
 }
@@ -146,7 +170,23 @@ p {
 }
 
 label {
-    color: lightgrey;
+    color: plum;
+}
+
+.alert-danger {
+    background-color: rgba(191, 59, 59, 0.5);
+    border-color: rgba(189, 0, 31, 0.4);
+    text-align: center;
+}
+
+.alert-success {
+    background-color: rgba(35,99,70,0.5);
+    border-color: rgba(16, 128, 111, 0.4);
+    text-align: center;
+}
+
+.form-control {
+    color: black;
 }
 
 .btn {
@@ -154,6 +194,31 @@ label {
     font-size: medium;
     background-color: deeppink;
     border-color: #424242;
+}
+
+.footer {
+    border-top: 2px solid rgba(255, 20, 147, 0.31);
+    position: relative;
+    margin-top: -190px;
+    height: 190px;
+    clear: both;
+    min-height: 200px;
+    background: rgba(91, 9, 65, 0.67);
+    margin-bottom: 0px;
+    padding: 1px 1px 1px 1px;
+    z-index: -999;
+}
+
+.footer-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #1b1b1b;
+}
+.inverted-color {
+    color: #eee;
 }
 
 .btn-default:hover {
@@ -186,9 +251,15 @@ table{
     /* background-color: #181818; */
 }
 
-h1, .h1, h2, .h2, h3, .h3 {
+h1, .h1 {
     font-family: cursive;
+    color:deeppink;
 }
+
+h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family:"Marker Felt";
+}
+
 .container-fluid {
     padding-left: 30px;
     padding-right: 30px;
@@ -196,8 +267,19 @@ h1, .h1, h2, .h2, h3, .h3 {
     color:#1b1b1b;
 }
 
+.row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
 /*.table.table-striped>tbody>tr:nth-of-type(odd){background-color: rgba(230, 23, 230, 0.5)}*/
 .table-hover>tbody>tr:hover{background-color:rgba(230, 23, 230, 0.5)}
+
+#tags {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 ul#tags li {
     display: inline;
@@ -237,3 +319,56 @@ ul#tags
     background-color: black;
     text-decoration: none;
 }
+
+#taglist {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#taglist a:hover {
+    color: deeppink;
+}
+
+#tagLabel {
+
+}
+
+#similar {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#fav {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#review {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Player related */
+/*
+.sc-background-orange {
+    background-color: hotpink;
+    background-image: -webkit-linear-gradient(top,#ff1493 0%,#ffb6c1 100%);
+    background-image: linear-gradient(to bottom,#ff1493 0%,#ffb6c1 100%);
+}
+
+.soundHeader.visual .soundHeader__title {
+    width: 150px;
+    height: 80px;
+}
+
+.sc-media, .sc-media-content, .sc-media-body {
+    background-color: transparent;
+}
+
+
+circle {
+    color: deeppink;
+    stroke: #ff1493;
+}*/
