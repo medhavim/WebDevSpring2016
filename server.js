@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
 app.use(cookieParser());
 
-app.use(session({ secret: 'medhavi', //process.env.SESSION_SECRET ,
+app.use(session({ secret: process.env.SESSION_SECRET , //'medhavi',
     resave : true,
     saveUninitialized : true}));
 
