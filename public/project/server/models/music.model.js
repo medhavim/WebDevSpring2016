@@ -1,6 +1,10 @@
-var mock = require('./music.mock.json');
+var q = require("q");
 
-module.exports = function () {
+module.exports = function (db, mongoose) {
+
+    var ProjectMusicSchema = require('./music.schema.server.js')(mongoose);
+    var ProjectMusicModel = mongoose.model('ProjectMusic', ProjectMusicSchema);
+
     var api = {
         findFavoritedUsers: findFavoritedUsers,
         createFavoritedUser : createFavoritedUser
@@ -9,24 +13,28 @@ module.exports = function () {
     return api;
 
     function findFavoritedUsers(mbId) {
-        for (var l in mock) {
-            if (mock[l]._id === mbId) {
-                return mock[l].favoritedUsers;
-            }
-        }
-        return null;
+        var deferred = q.defer();
+
+        ProjectMusicModel.findOne({mbId : mbId},
+            function(err, doc) {
+                if(err) {
+                    deferred.reject(err);
+                }
+                else {
+                    deferred.resolve(doc);
+                }
+            });
+
+        return deferred.promise;
     }
 
-    function createFavoritedUser(mbId, userId) {
-        for (var l in mock) {
-            if (mock[l]._id === mbId) {
-                mock[l].favoritedUsers.push(userId);
-                return mock[l].favoritedUsers;
-            }
-                mock[l]._id = mbId;
-                mock[l].favoritedUsers = userId;
-                return mock[l].favoritedUsers;
-
-        }
+    function createFavoritedUser(mbId, user) {
+        return ProjectMusicModel.findOne({mbId: mbId})
+            .then(
+                function (music) {
+                    music.favoritedUsers.push(user);
+                    return music.save();
+                }
+            );
     }
 };

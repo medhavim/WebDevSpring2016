@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
     angular
         .module("PrismaticMusicApp")
         .factory("musicService", musicService);
@@ -33,13 +34,11 @@
         }
 
         function findFavoritedUsers(mbId) {
-            console.log("findFavoritedUsers");
-            console.log(mbId);
             return $http.get('/api/project/music/' + mbId + '/favuser');
         }
 
-        function postFavoritedUser(mbId, userId) {
-            return $http.put('/api/project/music/' + mbId + '/favuser/' + userId);
+        function postFavoritedUser(mbId, userId, username) {
+            return $http.put('/api/project/music/' + mbId + '/favuser/' + userId, username);
         }
 
     }

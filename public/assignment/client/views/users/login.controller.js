@@ -5,7 +5,6 @@
         .controller("LoginController", LoginController);
 
     function LoginController ($rootScope, $location, UserService) {
-
         var vm = this;
         vm.login = login;
         vm.message = null;

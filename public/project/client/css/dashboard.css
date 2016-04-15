@@ -4,7 +4,7 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 html {
-    background: url('../images/event-bg.jpg') no-repeat center center fixed;
+    background: url('../images/tables.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -77,6 +77,10 @@ body {
     background-color: #990000;
 }
 
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    color: deeppink;
+    background-color: transparent;
+}
 
 /*
  * Main content
@@ -116,10 +120,21 @@ body {
 }
 
 a {
-    color: aquamarine;
-    /*color: #EA63CB;*/
+    /*color: aquamarine;
+    color: #EA63CB;*/
+    color: deeppink;
+    background-color: inherit;
     font-size: large;
+    font-family: Calibri;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    color: deeppink;
+    background-color: inherit;
+    font-size: large;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -127,15 +142,35 @@ p {
     font-size: large;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
     text-decoration: none;
+    color: ivory;
+}
+
+label {
+    color: lightgrey;
+}
+
+.btn {
+    color: #ffffff;
+    font-size: medium;
+    background-color: deeppink;
+    border-color: #424242;
+}
+
+.btn-default:hover {
+    color: #ffffff;
+    font-size: medium;
+    background-color: deeppink;
+    border-color: #424242;
 }
 
 .thumbnail {
     background-color: transparent;
     border: snow;
+    font-size: x-large;
 }
 
 .thumbnail > div > a {
-    color: aquamarine;
+    color: deeppink;
     font-size: x-large;
     font-style: italic;
     text-decoration: underline;
@@ -143,11 +178,26 @@ p {
 }
 
 table{
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.4);
 }
 
-.table.table-striped>tbody>tr:nth-of-type(odd){background-color:rgba(0,0,0,0.25)}
-.table-hover>tbody>tr:hover{background-color:rgba(10,0,140,0.5)}
+.table-responsive>.table {
+    background-color: rgba(0,0,0,0.4);
+    /* background-color: #181818; */
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    font-family: cursive;
+}
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color:#1b1b1b;
+}
+
+/*.table.table-striped>tbody>tr:nth-of-type(odd){background-color: rgba(230, 23, 230, 0.5)}*/
+.table-hover>tbody>tr:hover{background-color:rgba(230, 23, 230, 0.5)}
 
 ul#tags li {
     display: inline;
@@ -176,7 +226,7 @@ ul#tags
 #tags a:link, #tags a:visited
 {
     color: #fff;
-    background-color: rgba(0,0,0,0.25);;
+    background-color: rgba(0,0,0,0.25);
     text-decoration: none;
     font-size: small;
 }

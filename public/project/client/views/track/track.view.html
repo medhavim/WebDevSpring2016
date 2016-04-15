@@ -1,6 +1,6 @@
 <h2>Tracks</h2>
 <div ng-controller="ArtistDetailsController" class="table-responsive detail">
-    <table class="table table-striped ng-scope">
+    <table class="table table-striped table-hover ng-scope">
         <thead>
         <tr>
             <!--<th>Poster</th>-->
@@ -9,14 +9,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="tracks in model.details" class="ng-scope">
+        <tr ng-repeat="track in model.details" class="ng-scope">
             <td>
-                <a href="#/artist/details/{{tracks.artist.mbid}}">
+                <a href="#/artist/details/{{track.artist.mbid}}">
                     <img class="media-object" ng-src="{{tracks.image.medium}}" alt="No Image!">
                 </a>
             </td>
             <td ng-controller="TrackController">
-                <a href="{{tracks.url}}">{{tracks.name}}</a>
+                <a href="#/player/{{track.name}}/{{track.artist.name}}">{{track.name}}</a>
             </td>
         </tr>
         </tbody>

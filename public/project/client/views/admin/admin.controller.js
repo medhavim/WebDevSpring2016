@@ -1,117 +1,86 @@
 (function() {
+    'use strict';
     angular
         .module("PrismaticMusicApp")
-        .controller("AdminController", AdminController);
+        .controller("AdminController", adminController);
 
-    function AdminController($scope, $location, $rootScope, UserService)
-    {
-        $scope.addUser = addUser;
-        $scope.removeUser = removeUser;
-        $scope.selectUser = selectUser;
-        $scope.modifyUser = modifyUser;
-        $scope.message = null;
+    function adminController(UserService) {
 
-        UserService.findAllUsers(function (response) {
-            $scope.users = response;
-        });
+        var vm = this;
 
-        function modifyUser(user) {
-            UserService.updateUserByUsername(user.username, user, function(response) {
-            });
+        function init() {
+            UserService
+                .getCurrentUser()
+                .then(function(response) {
+                    vm.user = response.data;
+                    UserService.setCurrentUser(response.data);
+                });
+            vm.remove = remove;
+            vm.update = update;
+            vm.add    = add;
+            vm.select = select;
+            vm.sortType = 'username';
+            vm.sortReverse = false;
+            UserService
+                .findAllUsers()
+                .then(handleSuccess, handleError);
         }
+        init();
 
-        function addUser(user) {
-        // Username input is mandatory
-        if (user === null) {
-            $scope.message = "Please fill in the required fields";
-            return;
-        }
-        // Username input is mandatory
-        if (!user.username) {
-            $scope.message = "Please provide a username";
-            return;
-        }
-        // Both Password field is mandatory
-        if (!user.password) {
-            $scope.message = "Please provide a password";
-            return;
-        }
-
-        // checks if the username is entered is present in the system
-        var checkUser = UserService.findUserByUsername(user.username);
-
-        // if the username entered is present, then an error message is displayed
-        if (checkUser !== null) {
-            $scope.message = "User already exists";
-            return;
-        }
-
-        // New user is created with the valid entered data
-        var newUser = {"firstName": "",
-            "lastName": "",
-            "username": user.username,
-            "password": user.password,
-            "email": "",
-            "roles": user.roles};
-
-            console.log(newUser);
-
-        UserService.createUser(newUser, function(response) {
-            $rootScope.user = response;
-            $rootScope.loggedIn = false;
-            //$location.path("profile/"+response.username);
-        });
-    }
-
-        function selectUser(index)
+        function remove(user, index)
         {
-            $scope.selectedUserIndex = index;
-            $scope.user = {
-                username: $scope.users[index].username,
-                password: $scope.users[index].password,
-                roles: $scope.users[index].roles
-            };
+            UserService
+                .deleteUserById(user._id)
+                .then(function(response) {
+                    vm.users.splice(index,1);
+                });
         }
 
-        function removeUser(index) {
-            UserService.deleteUserById($scope.users[index]._id, function (response) {
-                $scope.users.splice(index,1);
-            });
-        }
-
-/*        function modifyUser(user)
+        function update(user)
         {
-            $scope.users[$scope.selectedUserIndex] = {
-                title: user.title,
-                password: user.password,
-                registeredDate: user.registeredDate
-            };
+            if(user.roles) {
+                user.roles = user.roles.split(",");
+            }
+            UserService
+                .updateUserById(user._id, user)
+                .then(function(response) {
+                    for(var i in vm.users) {
+                        if(vm.users[i]._id === user._id) {
+                            user.roles = user.roles.toString();
+                            vm.users[i] = user;
+                        }
+                    }
+                });
         }
 
-        function selectUser(index)
+        function add(user)
         {
-            $scope.selectedUserIndex = index;
-            $scope.user = {
-                username: $scope.users[index].username,
-                password: $scope.users[index].password,
-                registeredDate: $scope.users[index].registeredDate
-            };
+            if(user.roles) {
+                user.roles = user.roles.split(",");
+            }
+            UserService
+                .createUser(user)
+                .then(function(response) {
+                    vm.users.push(response.data);
+                });
         }
 
-        function removeUser(user)
+        function select(user)
         {
-            var index = $scope.users.indexOf(user);
-            $scope.users.splice(index, 1);
+            user.roles = user.roles.toString();
+            vm.user = user;
         }
 
-        function addUser(user)
-        {
-            var newUser = {
-                username : user.username,
-                password : user.password,
-                registeredDate : user.registeredDate
-            };
-            $scope.users.push(newUser);
-        }*/
+        function handleSuccess(response) {
+            for(var i in response.data) {
+                response.data[i].roles = response.data[i].roles.toString();
+            }
+            vm.users = response.data;
+        }
+
+        function handleError(error) {
+            vm.error = error;
+        }
+
     }
 })();

@@ -4,14 +4,35 @@ module.exports = function(app, musicModel) {
 
     function  findFavoritedUsers(req, res) {
         var mbId = req.params.id;
-        var favoritedUsers = musicModel.findFavoritedUsers(mbId);
-        res.json(favoritedUsers);
+        musicModel.findFavoritedUsers(mbId)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 
     function createFavoritedUser(req, res) {
         var mbId = req.params.mbId;
-        var userId = Number(req.params.userid);
-        var favoritedUsers = musicModel.createFavoritedUser(mbId, userId);
-        res.json(favoritedUsers);
+        var userId = req.params.userid;
+        var username = req.body;
+        var user = {
+            userId : userId,
+            username : username
+        };
+        musicModel.createFavoritedUser(mbId, user)
+            .then(
+                function(doc) {
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 };

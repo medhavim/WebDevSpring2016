@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("LoginController", LoginController);
 
-    function LoginController ($location, UserService) {
+    function LoginController ($rootScope, $location, UserService) {
         var vm = this;
         vm.login = login;
         vm.message = null;
@@ -14,21 +14,34 @@
         } init();
         // This function verifys the credentials of a user and logs then in.
         // If the username or password is incorrect it sends an error message to be displayed.
-        function login(usr) {
-            if(!usr){
-                vm.message = "Enter login details.";
+        function login(user) {
+            vm.message = null;
+            if(!user || !user.password || !user.username) {
+                vm.message = "Enter Login Details";
                 return vm.message;
+            } else {
+                UserService.login(user)
+                    .then(function (response) {
+                        //console.log(response);
+                        if (response.data !== null) {
+                            $rootScope.data = response.data;
+                            vm.user = response.data;
+                            console.log(vm.user);
+                            UserService.setCurrentUser(vm.user);
+                            //$location.path("/profile/" + vm.user.username);
+
+                            if ($rootScope.currentUser.roles !== null
+                                && typeof($rootScope.currentUser.roles) !== 'undefined'
+                                && $rootScope.currentUser.roles.indexOf('admin') >= 0) {
+                                $location.path("/admin");
+                            } else {
+                                $location.path("/profile/" + vm.user.username);
+                            }
+                        } else {
+                            vm.message = "Wrong username and/or password.";
+                        }
+                    });
             }
-            UserService.findUserByCredentials({username:usr.username, password:usr.password})
-                .then(function(response) {
-                    if (response.data !== "null") {
-                        vm.usr = response.data;
-                        UserService.setCurrentUser(vm.usr);
-                        $location.path("/profile/" + vm.usr.username);
-                    } else {
-                        vm.message = "Wrong username and/or password.";
-                    }
-                });
         }
     }
 })();

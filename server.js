@@ -11,6 +11,7 @@ var session = require('express-session');
 
 var mongoose = require('mongoose');
 var connectionString = 'mongodb://127.0.0.1:27017/formmaker';
+//var connectionString = 'mongodb://127.0.0.1:27017/prismaticmusic';
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
     connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
@@ -49,9 +50,12 @@ app.get('/hello', function(req, res){
 });
 
 // for services
-require("./public/project/server/app.js")(app);
 require("./public/assignment/server/app.js")(app, db, mongoose);
+//require("./public/project/server/app.js")(app);
+require("./public/project/server/app.js")(app, db, mongoose);
 
 app.listen(port, ipaddress, function() {
- console.log("May the Force be with you!!");
+    console.log("Using ", connectionString);
+    console.log("May the Force be with you!!");
  });
+
