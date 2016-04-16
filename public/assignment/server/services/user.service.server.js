@@ -137,6 +137,7 @@ module.exports = function(app, userModel) {
                             if(err) {
                                 res.status(400).send(err);
                             } else {
+                                loggedInUser = user;
                                 res.json(user);
                             }
                         });
@@ -225,6 +226,7 @@ module.exports = function(app, userModel) {
     }
 
     function login(req, res) {
+        console.log("in server login");
         var user = req.user;
         loggedInUser = user;
         res.json(user);
@@ -242,7 +244,8 @@ module.exports = function(app, userModel) {
     function isAdmin(req, res, next) {
         if(req.isAuthenticated()) {
             loggedInUser = req.user;
-            if(loggedInUser.roles.indexOf("admin") >= 0) {
+            console.log(loggedInUser);
+            if(loggedInUser.roles.indexOf("admin") >= 0 || loggedInUser[0].roles.indexOf("admin") >= 0) {
                 next();
             }
         }

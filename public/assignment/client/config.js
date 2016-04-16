@@ -78,7 +78,7 @@
                 // User is Authenticated
                 if (user !== '0')
                 {
-                    //console.log("in checkCurrentUser");
+                    console.log("in checkCurrentUser");
                     //console.log(user);
                     $rootScope.currentUser = user;
                     //console.log($rootScope.currentUser);
@@ -102,7 +102,7 @@
             {
                 $rootScope.currentUser = user;
                 //$rootScope.currentUser = user[0];
-                //console.log("in checkLoggedin");
+                console.log("in checkLoggedin");
                 //console.log($rootScope.currentUser);
                 deferred.resolve();
             }
@@ -131,7 +131,7 @@
             if (user !== '0' && user.roles.indexOf('admin') != -1)
             {
                 $rootScope.currentUser = user;
-                //console.log("in checkAdmin");
+                console.log("in checkAdmin");
                 //console.log($rootScope.currentUser);
                 deferred.resolve();
             }
