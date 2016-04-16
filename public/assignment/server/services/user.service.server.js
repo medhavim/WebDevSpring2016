@@ -243,8 +243,9 @@ module.exports = function(app, userModel) {
 
     function isAdmin(req, res, next) {
         if(req.isAuthenticated()) {
-            loggedInUser = req.user;
-            console.log(loggedInUser);
+            if(loggedInUser === undefined) {
+                loggedInUser = req.user;
+            }
             if(loggedInUser.roles.indexOf("admin") >= 0 || loggedInUser[0].roles.indexOf("admin") >= 0) {
                 next();
             }
