@@ -1,79 +1,63 @@
-/*var passport         = require('passport');
-var LocalStrategy    = require('passport-local').Strategy;*/
+var passport         = require('passport');
+var LocalStrategy    = require('passport-local').Strategy;
+var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function(app, userModel) {
 
-    app.post('/api/project/login', login);
+    var auth = authorized;
+    var loggedInUser;
+
+    app.post('/api/project/login', passport.authenticate('local'), login);
     app.post('/api/project/logout', logout);
     app.post('/api/project/register', register);
-    //app.post('/api/project/admin/user', isAdmin, createUser);
-    app.post('/api/project/admin/user', createUser);
+    app.post('/api/project/admin/user', isAdmin, createUser);
     app.get('/api/project/loggedin', loggedin);
-    /*app.get('/api/project/admin/user', isAdmin, findAllUsers);
-    app.get('/api/project/admin/user/:id', isAdmin, findUserById);*/
-    app.get('/api/project/admin/user', findAllUsers);
-    app.get('/api/project/admin/user/:id', findUserById);
+    app.get('/api/project/admin/user', isAdmin, findAllUsers);
+    app.get('/api/project/admin/user/:id', isAdmin, findUserById);
     app.get('/api/project/user?username=:username', findUserByUsername);
-    app.put('/api/project/user/:id', updateUserById);
-    /*app.put('/api/project/admin/user/:id', isAdmin, updateUserById);
-    app.delete('/api/project/admin/user/:id', isAdmin, deleteUserById);*/
-    app.put('/api/project/admin/user/:id', updateUserById);
-    app.delete('/api/project/admin/user/:id', deleteUserById);
-    app.put('/api/project/user/:id/music', userFavoritesMusic);
+    app.put('/api/project/user/:id', auth, updateUserById);
+    app.put('/api/project/admin/user/:id', isAdmin, updateUserById);
+    app.delete('/api/project/admin/user/:id', isAdmin, deleteUserById);
+    app.get('/api/project/user/:userId/music', findUserFavorites);
 
-    /*passport.use('project', new LocalStrategy(localStrategy));
+    passport.use(new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
 
     function localStrategy(username, password, done) {
-        console.log("in server localStrategy");
-        userModelProject
-            .findUserByCredentials({username: username, password: password})
+        userModel
+            .findUserByUsername(username)
             .then(
                 function(user) {
-                    console.log("success");
-                    console.log(user);
-                    if (user === null) { console.log("if");return done(null, false); }
-                    return done(null, user);
+                    if(user && bcrypt.compareSync(password, user.password)) {
+                        return done(null, user);
+                    } else {
+                        return done(null, false);
+                    }
                 },
                 function(err) {
-                    console.log("error");
-                    console.log(err);
                     if (err) { return done(err); }
                 }
             );
     }
 
     function serializeUser(user, done) {
+        delete user.password;
         done(null, user);
     }
 
     function deserializeUser(user, done) {
-        console.log("deserializeUser");
-        console.log(user);
-        if(user.favoriteMusic) {
-            userModelProject
-                .findUserById(user._id)
-                .then(
-                    function (user) {
-                        done(null, user);
-                    },
-                    function (err) {
-                        done(err, null);
-                    }
-                );
-        } else {
-            userModelAssignment
-                .findUserById(user._id)
-                .then(
-                    function (user) {
-                        done(null, user);
-                    },
-                    function (err) {
-                        done(err, null);
-                    }
-                );
-        }
+        userModel
+            .findUserById(user._id)
+            .then(
+                function(user){
+                    delete user.password;
+                    done(null, user);
+                },
+                function(err){
+                    done(err, null);
+                }
+            );
     }
 
     function authorized (req, res, next) {
@@ -82,14 +66,14 @@ module.exports = function(app, userModel) {
         } else {
             next();
         }
-    }*/
+    }
 
     function createUser(req, res) {
         var newUser = req.body;
         if(newUser.roles && newUser.roles.length > 1) {
             newUser.roles = newUser.roles.split(",");
         } else {
-            newUser.roles = ["user"];
+            newUser.roles = ["student"];
         }
 
         // first check if a user already exists with the username
@@ -130,19 +114,38 @@ module.exports = function(app, userModel) {
     }
 
     function register(req, res) {
-        var user = req.body;
-        user.roles = ['user'];
+        var newUser = req.body;
+        newUser.roles = ['student'];
 
-        user = userModel.createUser(user)
-            // handle model promise
+        userModel
+            .findUserByUsername(newUser.username)
             .then(
-                // login user if promise resolved
-                function ( doc ) {
-                    req.session.currentUser = doc;
-                    res.json(user);
+                function(user){
+                    if(user) {
+                        res.json(null);
+                    } else {
+                        newUser.password = bcrypt.hashSync(newUser.password);
+                        return userModel.createUser(newUser);
+                    }
                 },
-                // send error if promise rejected
-                function ( err ) {
+                function(err){
+                    res.status(400).send(err);
+                }
+            )
+            .then(
+                function(user){
+                    if(user){
+                        req.login(user, function(err) {
+                            if(err) {
+                                res.status(400).send(err);
+                            } else {
+                                loggedInUser = user;
+                                res.json(user);
+                            }
+                        });
+                    }
+                },
+                function(err){
                     res.status(400).send(err);
                 }
             );
@@ -185,6 +188,7 @@ module.exports = function(app, userModel) {
         var userResponse = userModel.findUserByUsername(username)
             .then(
                 function(doc) {
+                    delete doc.password;
                     res.json(doc);
                 },
                 // send error if promise rejected
@@ -224,53 +228,48 @@ module.exports = function(app, userModel) {
     }
 
     function login(req, res) {
-        var credentials = req.body;
-        var user = userModel.findUserByCredentials(credentials)
-            .then(
-                function (doc) {
-                    req.session.currentUser = doc;
-                    res.json(doc);
-                },
-                // send error if promise rejected
-                function ( err ) {
-                    res.status(400).send(err);
-                }
-            )
+        console.log("in server login");
+        var user = req.user;
+        loggedInUser = user;
+        res.json(user);
     }
 
     function loggedin(req, res) {
-        res.json(req.session.currentUser);
+        res.send(req.isAuthenticated() ? req.user[0] : '0');
     }
 
     function logout(req, res) {
-        req.session.destroy();
+        req.logOut();
         res.send(200);
     }
 
-    /*function isAdmin(req, res, next) {
+    function isAdmin(req, res, next) {
         if(req.isAuthenticated()) {
-            if(loggedInUser.roles.indexOf("admin") >= 0) {
+            if(loggedInUser === undefined) {
+                loggedInUser = req.user;
+            }
+            if(loggedInUser.roles.indexOf("admin") >= 0 || loggedInUser[0].roles.indexOf("admin") >= 0) {
                 next();
             }
         }
         else {
             res.send(403);
         }
-    }*/
+    }
 
-    function userFavoritesMusic(req, res) {
-        var userId = req.params.id;
-        var music = req.body;
-        console.log(music);
-        userModel.userFavoritesMusic(userId, music)
+    function findUserFavorites(req, res) {
+        var userId =req.params.userId;
+        userModel.findUserFavorites(userId)
             .then(
-                function(doc) {
-                    res.json(doc);
-                },
+            function(doc) {
+                console.log("findUserFavorites");
+                console.log(doc);
+                res.json(doc.favoriteMusic);
+            },
 
-                function(err) {
-                    res.status(400).send(err);
-                }
-            );
+            function(err) {
+                res.status(400).send(err);
+            }
+        );
     }
 };

@@ -17,7 +17,8 @@
             updateUser: updateUser,
             updateUserById: updateUserById,
             login: login,
-            logout: logout
+            logout: logout,
+            findUserFavorites: findUserFavorites
         };
 
         return model;
@@ -69,6 +70,10 @@
 
         function logout() {
             return $http.post('/api/project/logout');
+        }
+
+        function findUserFavorites(userId) {
+            return $http.get('/api/project/user/' + userId +'/music');
         }
     }
 })();

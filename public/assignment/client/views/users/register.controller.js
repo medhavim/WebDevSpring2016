@@ -40,7 +40,6 @@
                 return;
             }
 
-
             UserService
                 .register(user)
                 .then(

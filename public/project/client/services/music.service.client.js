@@ -6,40 +6,38 @@
 
     function musicService($http) {
 
-        var comments = [];
-
         var api = {
-            findComments: findComments,
+            findAllComments: findAllComments,
             postComment: postComment,
-            findFavoritedUsers: findFavoritedUsers,
-            postFavoritedUser: postFavoritedUser
+            deleteComment: deleteComment,
+            findFavoriteUsers: findFavoriteUsers,
+            postFavoriteUser: postFavoriteUser,
+            removeFavoriteUser: removeFavoriteUser
         };
         return api;
 
-        function findComments(mbId) {
-            var commentsForMusic = [];
-            for (var com in comments) {
-                if (comments[com].mbId === mbId)
-                {
-                    commentsForMusic.push(comments[com]);
-                }
-            }
-
-            return commentsForMusic;
+        function findAllComments(mbId) {
+            return $http.get('/api/project/music/' + mbId + '/comment');
         }
 
-        function postComment(comment) {
-            comments.push(comment);
-            return comment;
+        function postComment(mbId, comment) {
+            return $http.post('/api/project/music/' + mbId + '/comment', comment);
         }
 
-        function findFavoritedUsers(mbId) {
-            return $http.get('/api/project/music/' + mbId + '/favuser');
+        function deleteComment(mbId, commentId) {
+            return $http.delete('/api/project/music/' + mbId + '/comment/' + commentId);
         }
 
-        function postFavoritedUser(mbId, userId, username) {
-            return $http.put('/api/project/music/' + mbId + '/favuser/' + userId, username);
+        function findFavoriteUsers(mbId) {
+            return $http.get('/api/project/music/' + mbId + '/user');
         }
 
+        function postFavoriteUser(userId, username, music) {
+            return $http.post("/api/project/user/" + userId + "/" + username + "/music/" + music.mbId, music);
+        }
+
+        function removeFavoriteUser(userId, mbId) {
+            return $http.delete("/api/project/music/" + mbId + "/user/" + userId);
+        }
     }
 })();

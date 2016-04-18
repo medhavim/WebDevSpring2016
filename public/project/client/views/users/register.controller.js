@@ -41,40 +41,20 @@
                 return;
             }
 
-            // checks if the username is entered is present in the system
-            UserService.register(user)
-                .then(function(response){
-                        vm.message = null;
-                        if(response.data === null) {
-                            vm.message = "User already exists";
-                            return ;
-                        } else {
-                            var newUser = {
-                                "firstName": "",
-                                "lastName": "",
-                                "username": user.username,
-                                "password": user.password,
-                                "emails": [user.email]};
-
-                            UserService.createUser(newUser)
-                                .then(function(response) {
-                                        if (response.data) {
-                                            var createdUser = response.data;
-                                            UserService.setCurrentUser(createdUser);
-                                            UserService.getCurrentUser();
-                                            $location.url("/profile/" + createdUser.username);
-                                        } else {
-                                            vm.message = "Error in registration";
-                                        }
-                                    },
-                                    function(err) {
-                                        vm.error = err;
-                                    });
+            UserService
+                .register(user)
+                .then(
+                    function(response) {
+                        var user = response.data;
+                        if(user != null) {
+                            UserService.setCurrentUser(user);
+                            $location.url("/profile/"+ user.username);
                         }
                     },
                     function(err) {
                         vm.error = err;
-                    });
+                    }
+                );
         }
     }
 })();

@@ -4,20 +4,28 @@
         .module("PrismaticMusicApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController(UserService) {
+    function ProfileController(UserService, $rootScope) {
         var vm = this;
         vm.update = update;
         vm.failureMessage = null;
         vm.successMessage = null;
+        vm.musicTitle = null;
 
         function init() {
             UserService
                 .getCurrentUser()
                 .then(function(response){
-                    //console.log(response);
                     vm.user = response.data;
                     UserService.setCurrentUser(response.data);
                 });
+
+            UserService
+                .findUserFavorites($rootScope.currentUser._id)
+                .then(function(response) {
+                    console.log(response);
+                    vm.musicTitle = response.data;
+                });
+            console.log(vm);
         } init();
 
         // This function updates the details of a particular user ID

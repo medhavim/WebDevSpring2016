@@ -22,13 +22,11 @@
             } else {
                 UserService.login(user)
                     .then(function (response) {
-                        //console.log(response);
                         if (response.data !== null) {
                             $rootScope.data = response.data;
                             vm.user = response.data;
-                            console.log(vm.user);
                             UserService.setCurrentUser(vm.user);
-                            //$location.path("/profile/" + vm.user.username);
+                            $location.path("/profile/" + vm.user.username);
 
                             if ($rootScope.currentUser.roles !== null
                                 && typeof($rootScope.currentUser.roles) !== 'undefined'

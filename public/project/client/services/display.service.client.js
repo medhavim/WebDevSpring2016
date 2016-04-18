@@ -5,7 +5,7 @@
         .module("PrismaticMusicApp")
         .factory("displayService", displayService);
 
-    function displayService($http) {
+    function displayService() {
         var api = {
             displayArtistImage: displayArtistImage,
             displayTrackImage: displayTrackImage,
@@ -22,7 +22,6 @@
         }
 
         function displayArtistImage(res) {
-            //var artists = res.results.artistmatches.artist;
             var artists = res.artist;
             for (var a in artists)
                 displayImage(artists[a].image);
@@ -40,7 +39,7 @@
             var albums = res.album;
             for (var a in albums)
                 displayImage(albums[a].image);
-            return res.track;
+            return res.album;
         }
     }
 

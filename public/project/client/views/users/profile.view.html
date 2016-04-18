@@ -57,6 +57,13 @@
             </div>
         </div>
 
+        <div class="form-group" ng-show="currentUser.favoriteMusic">
+            <label class="col-sm-2 control-label">Music Liked:</label>
+            <ul ng-repeat="music in currentUser.favoriteMusic">
+                <li><a href="#/artist/details/{{music.mbId}}">{{music.musicTitle}}</a></li>
+            </ul>
+        </div>
+
         <!-- Button for the profile update of the user to happen -->
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-2">

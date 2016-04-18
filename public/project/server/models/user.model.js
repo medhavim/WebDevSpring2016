@@ -8,7 +8,7 @@ module.exports = function (db, mongoose) {
     var ProjectUserSchema = require("./user.schema.server.js")(mongoose);
 
     // create user model from schema
-    var ProjectUserModel =  mongoose.model('ProjectUser', ProjectUserSchema);
+    var ProjectUserModel =  mongoose.model('projectUser', ProjectUserSchema);
 
     var api = {
         createUser: createUser,
@@ -18,7 +18,9 @@ module.exports = function (db, mongoose) {
         findUserByCredentials: findUserByCredentials,
         deleteUserById: deleteUserById,
         updateUserById: updateUserById,
-        userFavoritesMusic : userFavoritesMusic
+        userFavoritesMusic : userFavoritesMusic,
+        removeFavoriteUser:removeFavoriteUser,
+        findUserFavorites : findUserFavorites
     };
     return api;
 
@@ -156,20 +158,19 @@ module.exports = function (db, mongoose) {
 
     function userFavoritesMusic(userId, music) {
         var deferred = q.defer();
-
-        // find the user
         ProjectUserModel.findById(userId, function (err, doc) {
-
             // reject promise if error
             if (err) {
                 deferred.reject(err);
             } else {
-                // add movie id to user likes
-                doc.favoriteMusic.push(music.mdId);
+                // add music id to user likes
+                doc.favoriteMusic.push (music);
+
                 // save user
                 doc.save (function (err, doc) {
 
                     if (err) {
+                        // reject promise if error
                         deferred.reject(err);
                     } else {
 
@@ -179,7 +180,44 @@ module.exports = function (db, mongoose) {
                 });
             }
         });
+        // return a promise
+        return deferred.promise;
+    }
 
-        return deferred;
+    function removeFavoriteUser(userId, mbId) {
+
+        var deferred = q.defer();
+
+        ProjectUserModel.update({_id: userId},
+            {$pull: {favoriteMusic: {mbId: mbId}}},
+            function (err, doc) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    ProjectUserModel.findById(userId, function (err, doc) {
+                        if (err) {
+                            deferred.reject(err);
+                        } else {
+                            //console.log(doc);
+                            deferred.resolve(doc);
+                        }
+                    });
+                }
+            });
+        return deferred.promise;
+    }
+
+    function findUserFavorites(userId) {
+        var deferred = q.defer();
+
+        ProjectUserModel.findById(userId, function (err, doc) {
+            if (err) {
+                // reject promise if error
+                deferred.reject(err);
+            } else {//console.log(doc);
+                deferred.resolve(doc);
+            }
+        });
+        return deferred.promise;
     }
 };
