@@ -33,8 +33,8 @@ module.exports = function (db, mongoose) {
 
     function userLikesMusic(user, music) {
         var deferred = q.defer();
-        console.log("userLikesMusic");
-        console.log(music);
+        //console.log("userLikesMusic");
+        //console.log(music);
         ProjectMusicModel.findOne({mbId: music.mbId},
 
             function (err, doc) {
@@ -101,7 +101,7 @@ module.exports = function (db, mongoose) {
         return deferred.promise;
     }
 
-    function postComment(mbId, comment) {
+    function postComment(mbId, musicTitle, comment) {
         var deferred = q.defer();
 
 
@@ -129,6 +129,7 @@ module.exports = function (db, mongoose) {
                 } else {
                     music = new ProjectMusicModel({
                         mbId : mbId,
+                        musicTitle: musicTitle,
                         favoriteUsers : [],
                         ratings : [],
                         comments : []

@@ -14,6 +14,14 @@
                     loggedin: checkCurrentUser
                 }
             })
+            .when("/home/artist", {
+                templateUrl: "views/home/home.artist.view.html",
+                controller: "HomeController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
             .when("/search", {
                 templateUrl: "views/search/search.view.html",
                 controller: "SearchController",

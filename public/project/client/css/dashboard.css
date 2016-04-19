@@ -168,6 +168,7 @@ p {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
     text-decoration: none;
     color: ivory;
+    overflow-wrap: break-word;
 }
 
 .panel-body {
@@ -251,6 +252,7 @@ label {
     background-color: transparent;
     border: snow;
     font-size: x-large;
+    padding: 0px;
 }
 
 .thumbnail > div > a {
@@ -280,8 +282,8 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 .container-fluid {
-    padding-left: 30px;
-    padding-right: 30px;
+    /*padding-left: 30px;
+    padding-right: 30px;*/
     background-color: rgba(0, 0, 0, 0.4);
     color:#1b1b1b;
 }
@@ -299,6 +301,16 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     background-color: rgba(255, 20, 145, 0.5);
 }
 
+.nav-tabs {
+    display: inline-flex;
+}
+ul, ol {
+    padding-left: 20px;
+}
+
+.img-rounded {
+    border-radius: 30px;
+}
 
 #tags {
     margin-bottom: 20px;
@@ -388,25 +400,7 @@ ul#tags
     width: 100%;
     height: 70px;
 }
-/* Player related */
-/*
-.sc-background-orange {
-    background-color: hotpink;
-    background-image: -webkit-linear-gradient(top,#ff1493 0%,#ffb6c1 100%);
-    background-image: linear-gradient(to bottom,#ff1493 0%,#ffb6c1 100%);
+
+#profileDetails {
+    color:white;
 }
-
-.soundHeader.visual .soundHeader__title {
-    width: 150px;
-    height: 80px;
-}
-
-.sc-media, .sc-media-content, .sc-media-body {
-    background-color: transparent;
-}
-
-
-circle {
-    color: deeppink;
-    stroke: #ff1493;
-}*/

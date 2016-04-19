@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("TrackController", TrackController);
 
-    function TrackController($routeParams, $rootScope, artistService, displayService, trackService, musicService) {
+    function TrackController($routeParams, $rootScope, displayService, trackService, musicService) {
         var vm = this;
 
         var mbId = $routeParams.mb_id;
@@ -103,7 +103,7 @@
 
         vm.postComment = postComment;
 
-        function postComment() {
+        function postComment(favMusicData) {
             if (currentUser === undefined) {
                 alert("You need to login to post a comment!!");
                 $location.path("/login");
@@ -116,10 +116,15 @@
                     timestamp: new Date(),
                     comment: vm.commentBox
                 };
+                var musicTitle= favMusicData.name;
                 console.log(comment);
-                var com = musicService.postComment(mbId, comment)
+                var com = musicService.postComment(mbId, musicTitle, comment)
                     .then(function (response) {
-                        vm.comments.push(comment);
+                        if (vm.comments === null) {
+                            vm.comments = [comment];
+                        } else {
+                            vm.comments.push(comment);
+                        }
                     });
             }
         }
@@ -160,13 +165,14 @@
                         musicTitle: favMusicData.name
                     };
 
-                    console.log(favMusicData);
-                    console.log(music);
-
-                    musicService.postFavoriteUser(userId, currentUser.username, music);
+                    musicService.postFavoriteUser(userId, currentUser.username, music)
+                        .then(function(response) {
+                            vm.favoriteUsers.push(currentUser.username);
+                        })
                 }
             }
-            getLikes();
+            //getLikes();
+            init();
         }
     }
 

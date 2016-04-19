@@ -15,6 +15,7 @@
 
         var otherUser;
         var otherUserId = $routeParams.userId;
+        console.log(otherUserId);
         UserService
             .findUserById(otherUserId)
             .then(

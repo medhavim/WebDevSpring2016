@@ -77,7 +77,7 @@
 
         vm.postComment = postComment;
 
-        function postComment() {
+        function postComment(favMusicData) {
             if (currentUser === undefined) {
                 alert("You need to login to post a comment!!");
                 $location.path("/login");
@@ -90,10 +90,15 @@
                     timestamp: new Date(),
                     comment: vm.commentBox
                 };
-                var com = musicService.postComment(mbId, comment)
+                var musicTitle= favMusicData.name;
+                var com = musicService.postComment(mbId, musicTitle, comment)
                     .then(function (response) {
                         //console.log(response.data);
-                        vm.comments.push(comment);
+                        if (vm.comments === null) {
+                            vm.comments = [comment];
+                        } else {
+                            vm.comments.push(comment);
+                        }
                     });
             }
         }
@@ -119,6 +124,7 @@
         vm.userFavoritesMusic = userFavoritesMusic;
 
         function userFavoritesMusic(favMusicData) {
+            console.log(favMusicData);
             if (currentUser === undefined) {
                 alert("You need to login to add to favourites!!");
                 $location.path("/login");
@@ -133,11 +139,15 @@
                         mbId: favMusicData.mbid,
                         musicTitle: favMusicData.name
                     };
-
-                    musicService.postFavoriteUser(userId, currentUser.username, music);
+                    console.log(music);
+                    musicService.postFavoriteUser(userId, currentUser.username, music)
+                        .then(function(response) {
+                            vm.favoriteUsers.push(currentUser.username);
+                        })
                 }
             }
-            getLikes();
+            //getLikes();
+            init();
         }
     }
 })();

@@ -4,7 +4,14 @@
 
 <div ng-controller="HomeController">
 
-    <div ng-show="model.topTracks.length">
+    <nav>
+        <ul class="nav nav-tabs">
+            <li ng-show="model.topTracks" class="active"><a href="#/home">Top Tracks</a></li>
+            <li ng-show="model.topArtists"><a href="#/home/artist">Top Artists</a></li>
+        </ul>
+    </nav>
+
+    <div ng-show="model.topTracks">
         <h3>Trending Tracks</h3>
         <div class="row">
             <div ng-repeat="track in model.topTracks">
@@ -17,25 +24,6 @@
                             <div class = "caption">
                                 <a href="#/player/{{track.name}}/{{track.artist.name}}">
                                     <span class="glyphicon glyphicon-play-circle"> </span> {{track.name}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div ng-show="model.topArtists.length">
-        <h3>Trending Artists</h3>
-        <div class="row">
-            <div ng-repeat="artist in model.topArtists">
-                <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
-                    <div class = "thumbnail">
-                        <div class="row">
-                            <a href="#/artist/details/{{artist.mbid}}">
-                                <img class="media-object img-rounded img-responsive" src="{{artist.image.large}}" alt = "No Image Found!"> </a>
-                            <div class = "caption">
-                                <a href="#/artist/details/{{artist.mbid}}">{{artist.name}}</a>
                             </div>
                         </div>
                     </div>

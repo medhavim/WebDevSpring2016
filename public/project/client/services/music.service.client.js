@@ -20,8 +20,8 @@
             return $http.get('/api/project/music/' + mbId + '/comment');
         }
 
-        function postComment(mbId, comment) {
-            return $http.post('/api/project/music/' + mbId + '/comment', comment);
+        function postComment(mbId, musicTitle, comment) {
+            return $http.post('/api/project/music/' + mbId + '/' + musicTitle + '/comment', comment);
         }
 
         function deleteComment(mbId, commentId) {

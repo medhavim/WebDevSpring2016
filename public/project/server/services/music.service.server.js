@@ -2,7 +2,7 @@ module.exports = function(app, musicModel, userModel) {
     app.get('/api/project/music/:mbId/user', findFavoriteUsers);
     app.post('/api/project/user/:userId/:username/music/:mbId', createFavoriteUser);
     app.get('/api/project/music/:mbId/comment', findAllComments);
-    app.post('/api/project/music/:mbId/comment', postComment);
+    app.post('/api/project/music/:mbId/:musicTitle/comment', postComment);
     app.delete('/api/project/music/:mbId/comment/:commentId', deleteComment);
     app.delete('/api/project/music/:mbId/user/:userId', removeFavoriteUser);
 
@@ -75,8 +75,10 @@ module.exports = function(app, musicModel, userModel) {
 
     function postComment(req ,res) {
         var mbId = req.params.mbId;
+        var musicTitle = req.params.musicTitle;
         var comment = req.body;
-        var commentCreate = musicModel.postComment(mbId, comment)
+        console.log(musicTitle);
+        var commentCreate = musicModel.postComment(mbId, musicTitle, comment)
             .then(
                 function (doc) {
                     res.json(doc);

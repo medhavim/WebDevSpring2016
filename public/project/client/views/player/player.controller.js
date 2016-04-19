@@ -11,18 +11,14 @@
         var artist = $routeParams.artistName;
         var title = $routeParams.trackName;
 
-        //vm.title = null;
-        //vm.tags = null;
+        vm.title = title;
 
         function init() {
-            //vm.artist = artist;
 
             SC.initialize({
                 client_id: '98f35e5571e2edb9a137bf54910e57a1'
             });
             playSong(artist, title);
-            console.log("init");
-            console.log(vm);
         }
 
         init();
@@ -67,47 +63,7 @@
                     }, document.getElementById('player'));
                 }
             });
-            console.log("playSong");
-            console.log(vm);
         }
 
-        /*function playSong(artist, title) {
-            SC.get('/users', {
-                q: artist
-            }, function (users) {
-                console.log(users);
-                var maxCountIndex =0;
-                for (var i = 0; i < users.length; i++) {
-                    if(users[i].track_count > users[maxCountIndex].track_count) {
-                        maxCountIndex = i;
-                    }
-                }
-                console.log("maxCountIndex");
-                console.log(maxCountIndex);
-                console.log(users[maxCountIndex].username);
-                SC.get('/users/' + users[maxCountIndex].username + '/tracks', {
-                    limit: 100//, bpm: {from: 20}
-                }, function (tracks) {
-                    var trackList = "";
-                    console.log(tracks);
-                    for (var i = 0; i < tracks.length; i++) {
-                        /!* populate trackList html *!/
-                        console.log("in for");
-                        console.log(tracks[i]);
-                        if (tracks[i].user.username === artist || tracks[i].track_type === "original") {
-                            //trackList += tracks[i];
-                            console.log("Tracks");
-                            console.log(tracks[i]);
-                            SC.oEmbed(tracks[i].permalink_url, {
-                                auto_play: true,
-                                maxHeight: 200
-                            }, document.getElementById('player'));
-                        }
-                    }
-                    //console.log("Tracks");
-                    //console.log(trackList);
-                });
-            });
-        }*/
     }
 })();

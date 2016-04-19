@@ -176,7 +176,7 @@ module.exports = function(app, userModel) {
         var userResponse = userModel.findUserById(userId)
             .then(
                 function(doc) {
-                    console.log(doc);
+                    //console.log(doc);
                     res.json(doc);
                 },
                 // send error if promise rejected
@@ -231,7 +231,7 @@ module.exports = function(app, userModel) {
     }
 
     function login(req, res) {
-        console.log("in server login");
+        //console.log("in server login");
         var user = req.user;
         loggedInUser = user;
         res.json(user);
@@ -267,7 +267,7 @@ module.exports = function(app, userModel) {
         userModel.followUser(userId, otherUser)
             .then(
                 function (doc) {
-                    console.log(doc);
+                    //console.log(doc);
                     res.json(doc);
                 },
 

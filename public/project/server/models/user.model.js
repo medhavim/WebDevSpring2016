@@ -72,7 +72,7 @@ module.exports = function (db, mongoose) {
         var deferred = q.defer();
 
         // find with mongoose user model's find()
-        console.log(userId);
+        //console.log(userId);
         ProjectUserModel.find({_id: userId}, function (err, doc) {
             if (err) {
                 // reject promise if error
@@ -165,6 +165,8 @@ module.exports = function (db, mongoose) {
             if (err) {
                 deferred.reject(err);
             } else {
+                //console.log("music");
+                //console.log(music);
                 // add music id to user likes
                 doc.favoriteMusic.push (music);
 
@@ -190,6 +192,15 @@ module.exports = function (db, mongoose) {
 
         var deferred = q.defer();
 
+        /*ProjectUserModel.remove({_id: userId, {favoriteMusic: {mbId: mbId}}}, function (err, doc) {
+            if (err) {
+                // reject promise if error
+                deferred.reject(err);
+            } else {
+                // resolve promise
+                deferred.resolve(doc);
+            }
+        });*/
         ProjectUserModel.update({_id: userId},
             {$pull: {favoriteMusic: {mbId: mbId}}},
             function (err, doc) {
