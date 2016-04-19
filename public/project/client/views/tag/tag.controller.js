@@ -6,6 +6,7 @@
 
     function TagController($routeParams, tagService, displayService) {
         var vm = this;
+        vm.search = null;
 
         var tagValue = $routeParams.tagValue;
         vm.tagName=tagValue;
@@ -31,6 +32,7 @@
         }
 
         function topTracks(tagValue) {
+            vm.search = true;
             //console.log("in TrackController trackInfo()");
             tagService.findTracksByTag(tagValue)
                 .then(function(response) {
@@ -42,6 +44,7 @@
         }
 
         function topArtists(tagValue) {
+            vm.search = true;
             //console.log("in TrackController trackInfo()");
             tagService.findArtistsByTag(tagValue)
                 .then(function(response) {
@@ -53,6 +56,7 @@
         }
 
         function topAlbums(tagValue) {
+            vm.search = true;
             //console.log("in TrackController trackInfo()");
             tagService.findAlbumsByTag(tagValue)
                 .then(function(response) {

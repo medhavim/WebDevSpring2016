@@ -1,0 +1,43 @@
+<div ng-controller="ProfileReadOnlyController">
+<h1 class="page-header">{{model.user.firstName}}&nbsp;{{model.user.lastName}}&nbsp;</h1>
+<button type="button" class="btn btn-primary" ng-click="model.followUser()">Follow</button>
+<div ng-show="model.followMessage" class="alert alert-success" role="alert">{{model.followMessage}}</div>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label label-left">Username:</label>
+        <div class="col-sm-7">
+            {{model.user.username}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label label-left">First Name:</label>
+        <div class="col-sm-7">
+            {{model.user.firstName}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label label-left">Last Name:</label>
+        <div class="col-sm-7">
+            {{model.user.lastName}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email:</label>
+        <div class="col-sm-7">
+            {{model.user.emails}}
+        </div>
+    </div>
+    <div class="form-group" ng-show="currentUser.favoriteMusic">
+        <label class="col-sm-2 control-label">Favorite Music:</label>
+        <ul ng-repeat="music in model.user.favoriteMusic">
+            <li><a href="#/details/{{location.locationId}}">{{music.musicTitle}}</a></li>
+        </ul>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">No of followers:</label>
+
+    </div>
+</div>
+</div>

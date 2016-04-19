@@ -295,6 +295,11 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 /*.table.table-striped>tbody>tr:nth-of-type(odd){background-color: rgba(230, 23, 230, 0.5)}*/
 .table-hover>tbody>tr:hover{background-color:rgba(230, 23, 230, 0.5)}
 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background-color: rgba(255, 20, 145, 0.5);
+}
+
+
 #tags {
     margin-bottom: 20px;
     margin-top: 20px;

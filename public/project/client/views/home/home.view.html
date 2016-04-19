@@ -15,7 +15,8 @@
                             <a href="#/artist/details/{{track.artist.mbid}}">
                                 <img class="media-object img-rounded img-responsive" src="{{track.image.large}}" alt = "No Image Found!"> </a>
                             <div class = "caption">
-                                <a href="#/player/{{track.name}}/{{track.artist.name}}">{{track.name}}</a>
+                                <a href="#/player/{{track.name}}/{{track.artist.name}}">
+                                    <span class="glyphicon glyphicon-play-circle"> </span> {{track.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +35,7 @@
                             <a href="#/artist/details/{{artist.mbid}}">
                                 <img class="media-object img-rounded img-responsive" src="{{artist.image.large}}" alt = "No Image Found!"> </a>
                             <div class = "caption">
-                                <a href="#/track/{{artist.mbid}}">{{artist.name}}</a>
+                                <a href="#/artist/details/{{artist.mbid}}">{{artist.name}}</a>
                             </div>
                         </div>
                     </div>

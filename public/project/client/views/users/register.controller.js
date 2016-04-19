@@ -48,7 +48,7 @@
                         var user = response.data;
                         if(user != null) {
                             UserService.setCurrentUser(user);
-                            $location.url("/profile/"+ user.username);
+                            $location.url("/profile");
                         }
                     },
                     function(err) {

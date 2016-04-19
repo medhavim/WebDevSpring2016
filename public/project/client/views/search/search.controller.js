@@ -10,9 +10,14 @@
         vm.fetchArtist = fetchArtist;
         vm.fetchTrack = fetchTrack;
         vm.fetchAlbum = fetchAlbum;
+        //vm.$location = $location;
+        //console.log("location");
+        //console.log($location);
+        vm.search = null;
 
         function init() {
             var searchTitle = $routeParams.title;
+            vm.searchTitle = searchTitle;
 
             if(searchTitle) {
                 vm.sortType = 'artist';
@@ -26,6 +31,7 @@
         init();
 
         function fetchArtist(searchTitle) {
+            vm.search = true;
             artistService.findArtistsByTitle(searchTitle)
                 .then(function (response) {
                     if(response.data) {
@@ -37,6 +43,7 @@
         }
 
         function fetchTrack(searchTitle) {
+            vm.search = true;
             trackService.findTracksByTitle(searchTitle)
                 .then(function (response) {
                     if(response.data) {
@@ -48,6 +55,7 @@
         }
 
         function fetchAlbum(searchTitle) {
+            vm.search = true;
             albumService.findAlbumsByTitle(searchTitle)
                 .then(function (response) {
 

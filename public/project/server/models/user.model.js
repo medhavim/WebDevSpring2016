@@ -20,7 +20,8 @@ module.exports = function (db, mongoose) {
         updateUserById: updateUserById,
         userFavoritesMusic : userFavoritesMusic,
         removeFavoriteUser:removeFavoriteUser,
-        findUserFavorites : findUserFavorites
+        findUserFavorites : findUserFavorites,
+        followUser : followUser
     };
     return api;
 
@@ -71,6 +72,7 @@ module.exports = function (db, mongoose) {
         var deferred = q.defer();
 
         // find with mongoose user model's find()
+        console.log(userId);
         ProjectUserModel.find({_id: userId}, function (err, doc) {
             if (err) {
                 // reject promise if error
@@ -204,6 +206,37 @@ module.exports = function (db, mongoose) {
                     });
                 }
             });
+        return deferred.promise;
+    }
+
+    function followUser(userId, otherUser) {
+        var deferred = q.defer();
+
+
+        ProjectUserModel.findById(userId, function (err, doc) {
+
+            // reject promise if error
+            if (err) {
+                deferred.reject(err);
+            } else {
+
+                // add movie id to user likes
+                doc.following.push (otherUser);
+
+                // save user
+                doc.save (function (err, doc) {
+
+                    if (err) {
+                        deferred.reject(err);
+                    } else {
+
+                        // resolve promise with user
+                        deferred.resolve (doc);
+                    }
+                });
+            }
+        });
+
         return deferred.promise;
     }
 

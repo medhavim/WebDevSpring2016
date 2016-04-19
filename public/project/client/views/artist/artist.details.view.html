@@ -63,12 +63,12 @@
         <br/>
 
         <div class="container-fluid">
-            <!--<div ng-include="'views/track/track.view.html'"></div>-->
             <h4 class="page-header">Tracks</h4>
             <div class="row container-fluid">
                 <ul ng-repeat="track in model.tracks | limitTo: 30">
-                    <li id="trackList">
-                        <a href="#/player/{{track.name}}/{{track.artist.name}}">{{track.name}}</a>
+                    <li>
+                        <a href="#/player/{{track.name}}/{{track.artist.name}}">
+                            <span class="glyphicon glyphicon-play-circle"></span> {{track.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -80,8 +80,8 @@
                 <div class="col-sm-6 col-md-3 col-ms-6 text-center hover-me">
                     <div class="row container-fluid">
                         <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
-                        <div class="container-fluid col-md-6">
-                            <a href="#/artist/details/{{similarArtist.mbid}}"> {{similarArtist.name}} </a>
+                        <div class="container-fluid col-md-6 col-sm-3 col-lg-6">
+                            <a href="#/search/artist/{{similarArtist.name}}">{{similarArtist.name}}</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
             </div>
             <div ng-show="model.favoriteUsers">
                 <ul ng-repeat = "user in model.favoriteUsers track by $index" ng-show="currentUser">
-                    <li><a href="">{{user.username}}</a></li>
+                    <li><a href="#/profile/{{user._id}}">{{user.username}}</a></li>
                 </ul>
             </div>
         </div>

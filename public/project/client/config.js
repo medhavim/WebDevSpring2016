@@ -22,8 +22,24 @@
                     loggedin: checkCurrentUser
                 }
             })
-            .when("/search/:title", {
+            .when("/search/artist/:title", {
                 templateUrl: "views/search/search.view.html",
+                controller: "SearchController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
+            .when("/search/album/:title", {
+                templateUrl: "views/search/album.search.view.html",
+                controller: "SearchController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
+            .when("/search/track/:title", {
+                templateUrl: "views/search/track.search.view.html",
                 controller: "SearchController",
                 controllerAs: "model",
                 resolve: {
@@ -46,6 +62,14 @@
                     loggedin: checkCurrentUser
                 }
             })
+            .when("/track/details/:title/:artist", {
+                templateUrl: "views/track/track.details.view.html",
+                controller: "TrackController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
             .when("/album/details/:mb_id", {
                 templateUrl: "views/album/album.details.view.html",
                 controller: "AlbumController",
@@ -54,14 +78,6 @@
                     loggedin: checkCurrentUser
                 }
             })
-            /*.when("/track/:mb_id", {
-                templateUrl: "views/track/track.view.html",
-                controller: "TrackController",
-                controllerAs: "model",
-                resolve: {
-                    loggedin: checkCurrentUser
-                }
-            })*/
             .when("/profile", {
                 templateUrl: "views/users/profile.view.html",
                 controller: "ProfileController",
@@ -70,13 +86,11 @@
                     loggedin: checkLoggedin
                 }
             })
-            .when("/profile/:userid", {
-                templateUrl: "views/users/profile.view.html",
-                controller: "ProfileController",
-                controllerAs: "model",
-                resolve: {
-                    loggedin: checkLoggedin
-                }
+            .when('/profile/:userId', {
+                templateUrl: "views/users/profile.readonly.view.html",
+                controller: "ProfileReadOnlyController",
+                controllerAs : "model"
+
             })
             .when("/register", {
                 templateUrl: "views/users/register.view.html",
@@ -104,6 +118,22 @@
             })
             .when("/tag/:tagValue", {
                 templateUrl: "views/tag/tag.view.html",
+                controller: "TagController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
+            .when("/tag/album/:tagValue", {
+                templateUrl: "views/tag/tag.album.view.html",
+                controller: "TagController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
+            })
+            .when("/tag/track/:tagValue", {
+                templateUrl: "views/tag/tag.track.view.html",
                 controller: "TagController",
                 controllerAs: "model",
                 resolve: {

@@ -8,6 +8,8 @@
         var vm = this;
 
         var mbId = $routeParams.mb_id;
+        var trackName = $routeParams.title;
+        var artistName = $routeParams.artist;
         var currentUser = $rootScope.currentUser;
         vm.favoriteUsers = [];
         vm.musicLiked = "no";
@@ -20,7 +22,11 @@
                 userId = null;
             }
 
-            fetchTracks(mbId);
+            if(mbId === null || mbId === undefined) {
+                fetchTracks(trackName,artistName);
+            } else {
+                fetchTracks(mbId);
+            }
 
             musicService.findAllComments(mbId)
                 .then(function (response) {
@@ -38,12 +44,30 @@
         function fetchTracks(mbId) {
             trackService.findTracksByMbId(mbId)
                 .then(function(response) {
-                    console.log(response);
+                    //console.log(response);
                     vm.details = response.data.track;
                     vm.album = vm.details.album;
                     vm.artist = vm.details.artist;
                     vm.tags = vm.details.toptags.tag;
                     vm.image = displayService.displayImage(vm.album.image);
+                    similarTracks(vm.details.mbid);
+                    //console.log(vm);
+                });
+        }
+
+        function fetchTracks(trackName,artistName) {
+            trackService.findTracksByTitleAndArtist(trackName,artistName)
+                .then(function(response) {
+                    console.log(response);
+                    vm.details = response.data.track;
+                    vm.album = vm.details.album;
+                    vm.artist = vm.details.artist;
+                    vm.tags = vm.details.toptags.tag;
+                    if (vm.album === undefined) {
+
+                    } else {
+                        vm.image = displayService.displayImage(vm.album.image);
+                    }
                     similarTracks(vm.details.mbid);
                     console.log(vm);
                 });
@@ -92,6 +116,7 @@
                     timestamp: new Date(),
                     comment: vm.commentBox
                 };
+                console.log(comment);
                 var com = musicService.postComment(mbId, comment)
                     .then(function (response) {
                         vm.comments.push(comment);

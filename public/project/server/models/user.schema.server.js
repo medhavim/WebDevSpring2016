@@ -8,7 +8,8 @@ module.exports = function(mongoose) {
         emails : [String],
         phones : [String],
         roles : [String],
-        favoriteMusic : [{mbId : String, musicTitle : String}]
+        favoriteMusic : [{mbId : String, musicTitle : String}],
+        following : [{username : String, userId : String}]
     }, {collection : 'project.user'});
 
     return ProjectUserSchema;

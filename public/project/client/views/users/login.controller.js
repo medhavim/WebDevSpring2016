@@ -33,7 +33,7 @@
                                 && $rootScope.currentUser.roles.indexOf('admin') >= 0) {
                                 $location.path("/admin");
                             } else {
-                                $location.path("/profile/" + vm.user.username);
+                                $location.path("/profile");
                             }
                         } else {
                             vm.message = "Wrong username and/or password.";

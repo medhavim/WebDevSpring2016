@@ -68,7 +68,7 @@
                     vm.tags = vm.details.tags.tag;
                     vm.stats = vm.details.stats;
                     //console.log("fetchArtist");
-                    //console.log(vm);
+                    console.log(vm);
                 });
         }
 
@@ -77,6 +77,7 @@
                 .then(function (response) {
                     vm.data = response.data;
                     vm.tracks = displayService.displayTrackImage(vm.data.toptracks)
+                    //console.log(vm.tracks);
                 });
         }
 

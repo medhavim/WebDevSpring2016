@@ -30,7 +30,7 @@
                 <ul id="tags" ng-repeat="albumTags in model.tags">
                     <li>
                         <div id="taglist" class="row">
-                            <a href="#/tag/{{albumTags.name}}">{{albumTags.name}}</a>
+                            <a href="#/tag/album/{{albumTags.name}}">{{albumTags.name}}</a>
                         </div>
                     </li>
                 </ul>
@@ -68,7 +68,8 @@
             <div class="row container-fluid">
                 <ul ng-repeat="track in model.tracks | limitTo: 30">
                     <li>
-                        <a href="#/player/{{track.name}}/{{track.artist.name}}">{{track.name}}</a>
+                        <a href="#/player/{{track.name}}/{{track.artist.name}}">
+                            <span class="glyphicon glyphicon-play-circle"></span> {{track.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +82,7 @@
                     <div class="row container-fluid">
                         <img class="media-object pull-left img-rounded img-thumbnail img-responsive" src="{{similarArtist.image.medium}}" alt = "No Image Found!">
                         <div class="container-fluid col-md-6">
-                            <a href="#/artist/details/{{similarArtist.mbid}}"> {{similarArtist.name}} </a>
+                            <a href="#/search/artist/{{similarArtist.name}}"> {{similarArtist.name}} </a>
                         </div>
                     </div>
                 </div>

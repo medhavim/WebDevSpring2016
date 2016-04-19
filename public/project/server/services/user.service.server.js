@@ -13,12 +13,14 @@ module.exports = function(app, userModel) {
     app.post('/api/project/admin/user', isAdmin, createUser);
     app.get('/api/project/loggedin', loggedin);
     app.get('/api/project/admin/user', isAdmin, findAllUsers);
-    app.get('/api/project/admin/user/:id', isAdmin, findUserById);
+    //app.get('/api/project/admin/user/:id', isAdmin, findUserById);
+    app.get('/api/project/user/:id', findUserById);
     app.get('/api/project/user?username=:username', findUserByUsername);
     app.put('/api/project/user/:id', auth, updateUserById);
     app.put('/api/project/admin/user/:id', isAdmin, updateUserById);
     app.delete('/api/project/admin/user/:id', isAdmin, deleteUserById);
     app.get('/api/project/user/:userId/music', findUserFavorites);
+    app.post("/api/project/user/:userid/follow", followUser);
 
     passport.use(new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
@@ -174,6 +176,7 @@ module.exports = function(app, userModel) {
         var userResponse = userModel.findUserById(userId)
             .then(
                 function(doc) {
+                    console.log(doc);
                     res.json(doc);
                 },
                 // send error if promise rejected
@@ -257,13 +260,30 @@ module.exports = function(app, userModel) {
         }
     }
 
+    function followUser(req, res) {
+        var otherUser = req.body;
+        var userId = req.params.userid;
+
+        userModel.followUser(userId, otherUser)
+            .then(
+                function (doc) {
+                    console.log(doc);
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
+    }
+
     function findUserFavorites(req, res) {
         var userId =req.params.userId;
         userModel.findUserFavorites(userId)
             .then(
             function(doc) {
-                console.log("findUserFavorites");
-                console.log(doc);
+                //console.log("findUserFavorites");
+                //console.log(doc);
                 res.json(doc.favoriteMusic);
             },
 
