@@ -14,12 +14,15 @@
             deleteUserById: deleteUserById,
             findAllUsers: findAllUsers,
             findUserById : findUserById,
+            findUserByName: findUserByName,
             updateUser: updateUser,
             updateUserById: updateUserById,
             login: login,
             logout: logout,
             findUserFavorites: findUserFavorites,
-            followUser : followUser
+            followUser: followUser,
+            unfollowUser: unfollowUser,
+            findFollowing: findFollowing
         };
 
         return model;
@@ -56,6 +59,10 @@
             return $http.get('/api/project/user/' + userId);
         }
 
+        function findUserByName(username) {
+            return $http.get('/api/project/user/username/' + username);
+        }
+
         function updateUser(userId, user) {
             return $http.put('/api/project/user/' + userId, user);
         }
@@ -79,6 +86,14 @@
 
         function followUser(otherUser, userId) {
             return $http.post('/api/project/user/' + userId + '/follow', otherUser);
+        }
+
+        function unfollowUser(otherUser, userId) {
+            return $http.delete('/api/project/user/' + userId + '/unfollow', otherUser);
+        }
+
+        function findFollowing(userId, otherUser) {
+            return $http.get('/api/project/user/' + userId + '/following', otherUser);
         }
     }
 })();

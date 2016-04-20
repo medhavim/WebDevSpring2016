@@ -13,14 +13,16 @@ module.exports = function(app, userModel) {
     app.post('/api/project/admin/user', isAdmin, createUser);
     app.get('/api/project/loggedin', loggedin);
     app.get('/api/project/admin/user', isAdmin, findAllUsers);
-    //app.get('/api/project/admin/user/:id', isAdmin, findUserById);
     app.get('/api/project/user/:id', findUserById);
     app.get('/api/project/user?username=:username', findUserByUsername);
+    //app.get('/api/project/user/username/:username', findUserByName);
     app.put('/api/project/user/:id', auth, updateUserById);
     app.put('/api/project/admin/user/:id', isAdmin, updateUserById);
     app.delete('/api/project/admin/user/:id', isAdmin, deleteUserById);
     app.get('/api/project/user/:userId/music', findUserFavorites);
     app.post("/api/project/user/:userid/follow", followUser);
+    app.delete("/api/project/user/:userid/unfollow", unfollowUser);
+    app.get('/api/project/user/:userId/following', findFollowing);
 
     passport.use(new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
@@ -201,6 +203,21 @@ module.exports = function(app, userModel) {
             );
     }
 
+    /*function findUserByName(req, res) {
+        var username = req.params.username;
+        var userResponse = userModel.findUserByName(username)
+            .then(
+                function(doc) {
+                    delete doc.password;
+                    res.json(doc);
+                },
+                // send error if promise rejected
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
+    }*/
+
     function updateUserById(req, res) {
         var userId = req.params.id;
         var user = req.body;
@@ -277,6 +294,24 @@ module.exports = function(app, userModel) {
             )
     }
 
+
+    function unfollowUser(req, res) {
+        var otherUser = req.body;
+        var userId = req.params.userid;
+
+        userModel.unfollowUser(userId, otherUser)
+            .then(
+                function (doc) {
+                    //console.log(doc);
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
+    }
+
     function findUserFavorites(req, res) {
         var userId =req.params.userId;
         userModel.findUserFavorites(userId)
@@ -291,5 +326,22 @@ module.exports = function(app, userModel) {
                 res.status(400).send(err);
             }
         );
+    }
+
+    function findFollowing(req, res) {
+        var userId =req.params.userId;
+        var otherUser = req.body;
+        userModel.findFollowing(userId)
+            .then(
+                function(doc) {
+                    //console.log("findUserFavorites");
+                    //console.log(doc);
+                    res.json(doc.following);
+                },
+
+                function(err) {
+                    res.status(400).send(err);
+                }
+            );
     }
 };

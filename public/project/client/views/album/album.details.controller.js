@@ -60,7 +60,7 @@
                     vm.albumImage = displayService.displayImage(vm.details.image);
                     vm.tags = vm.details.tags.tag;
                     vm.tracks = displayService.displayTrackImage(vm.details.tracks);
-                    console.log(vm.details);
+                    //console.log(vm.details);
                     vm.artist = vm.details.artist;
                     similarArtists(vm.artist);
                 });
@@ -124,7 +124,7 @@
         vm.userFavoritesMusic = userFavoritesMusic;
 
         function userFavoritesMusic(favMusicData) {
-            console.log(favMusicData);
+            //console.log(favMusicData);
             if (currentUser === undefined) {
                 alert("You need to login to add to favourites!!");
                 $location.path("/login");
@@ -139,7 +139,7 @@
                         mbId: favMusicData.mbid,
                         musicTitle: favMusicData.name
                     };
-                    console.log(music);
+                    //console.log(music);
                     musicService.postFavoriteUser(userId, currentUser.username, music)
                         .then(function(response) {
                             vm.favoriteUsers.push(currentUser.username);

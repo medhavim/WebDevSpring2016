@@ -68,7 +68,7 @@
                     vm.tags = vm.details.tags.tag;
                     vm.stats = vm.details.stats;
                     //console.log("fetchArtist");
-                    console.log(vm);
+                    //console.log(vm);
                 });
         }
 

@@ -7,6 +7,19 @@
     function ProfileReadOnlyController($routeParams, UserService, $rootScope) {
         var vm = this;
 
+        var currUser= $rootScope.currentUser;
+        vm.followUsers = null;
+
+        if (currUser !== undefined) {
+            for (var i = 0; i < currUser.following.length; i++) {
+                if (vm.followUsers === null) {
+                    vm.followUsers = [currUser.following[i].username];
+                } else {
+                    vm.followUsers.push(currUser.following[i].username);
+                }
+            }
+        }
+
         function init() {
 
         }
@@ -41,6 +54,11 @@
                 .followUser(otherUsr, $rootScope.currentUser._id)
                 .then(
                     function(response) {
+                        if (vm.followUsers === null) {
+                            vm.followUsers = [currUser.following.username];
+                        } else {
+                            vm.followUsers.push(currUser.following.username);
+                        }
                         vm.followMessage = "You are now following " + otherUser.username;
                     }
                 )

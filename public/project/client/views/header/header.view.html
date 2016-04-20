@@ -24,7 +24,8 @@
             <ul class="nav navbar-nav">
                 <li>
                     <a href="https://docs.google.com/document/d/1yR4FKBg1WxTPJKaEz8K0LxTHvty7N3FH78vj9XiLFnc/edit?usp=sharing"
-                       data-toggle="collapse" data-target=".navbar-main-collapse">Documentation</a>
+                       data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-list"></span> Documentation</a>
                 </li>
 
                 <li ng-show="currentUser" ng-class="active">
@@ -33,38 +34,41 @@
                 </li>
 
                 <li ng-class="{'active' : model.$location.url() =='/home'}">
-                    <a href="#/home" data-toggle="collapse" data-target=".navbar-main-collapse">Home
+                    <a href="#/home" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-music"></span> Home
                         <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li ng-show="currentUser"
                     ng-class="{'active' : model.$location.url().search('/profile') >= 0}">
-                    <a href="#/profile" data-toggle="collapse" data-target=".navbar-main-collapse">Profile</a>
+                    <a href="#/profile" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-home"></span> Profile</a>
                 </li>
 
                 <li ng-class="{'active' : model.$location.url() =='/search' }">
-                    <a href="#/search" data-toggle="collapse" data-target=".navbar-main-collapse">Search</a>
+                    <a href="#/search" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-search"></span> Search</a>
                 </li>
-
-                <!--<li ng-class="{'active' : $location.url() =='/track' }">
-                    <a href="#/track" data-toggle="collapse" data-target=".navbar-main-collapse">Tracks</a>
-                </li>-->
 
                 <li ng-show="currentUser.roles.indexOf('admin') >= 0"
                     ng-class="{'active' : model.$location.url() =='/admin'}">
-                    <a href="#/admin" data-toggle="collapse" data-target=".navbar-main-collapse">Admin</a>
+                    <a href="#/admin" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-lock"></span> Admin</a>
                 </li>
 
                 <li ng-hide="currentUser" ng-class="{'active':model.$location.url()== '/register'}">
-                    <a href="#/register" data-toggle="collapse" data-target=".navbar-main-collapse">Register</a>
+                    <a href="#/register" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-user"></span> Register</a>
                 </li>
 
                 <li ng-hide="currentUser" ng-class="{'active':model.$location.url()== '/login'}">
-                    <a href="#/login" data-toggle="collapse" data-target=".navbar-main-collapse">Login</a>
+                    <a href="#/login" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
                 </li>
 
                 <li ng-show="currentUser">
-                    <a href="#/home" ng-click="model.logout()" data-toggle="collapse" data-target=".navbar-main-collapse">Logout</a>
+                    <a href="#/home" ng-click="model.logout()" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="glyphicon glyphicon-log-out"></span> Logout</a>
                 </li>
             </ul>
         </div>

@@ -33,7 +33,13 @@
                             <span ng-show="model.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span></span>
                 Last Name
             </th>
-            <th class="col-xs-3">Roles</th>
+            <th class="col-xs-3" ng-click="model.sortType='roles'; model.sortReverse = !model.sortReverse">
+                        <span ng-show="model.sortType == 'roles'">
+                            <span ng-show="!model.sortReverse" class="glyphicon glyphicon-triangle-top"
+                                  aria-hidden="true"></span>
+                            <span ng-show="model.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span></span>
+                Roles</th>
+
             <th class="col-xs-3">Actions</th>
         </tr>
         <tr>

@@ -4,7 +4,7 @@
         .module("PrismaticMusicApp")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController($location, $rootScope, UserService) {
+    function RegisterController($location, UserService) {
         var vm = this;
         vm.register = register;
         vm.message = null;
@@ -44,14 +44,14 @@
             UserService
                 .register(user)
                 .then(
-                    function(response) {
+                    function (response) {
                         var user = response.data;
-                        if(user != null) {
+                        if (user != null) {
                             UserService.setCurrentUser(user);
                             $location.url("/profile");
                         }
                     },
-                    function(err) {
+                    function (err) {
                         vm.error = err;
                     }
                 );

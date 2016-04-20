@@ -58,6 +58,7 @@
             if(user.roles) {
                 user.roles = user.roles.split(",");
             }
+
             UserService
                 .createUser(user)
                 .then(function(response) {
@@ -76,6 +77,7 @@
                 response.data[i].roles = response.data[i].roles.toString();
             }
             vm.users = response.data;
+            console.log(vm.users);
         }
 
         function handleError(error) {
