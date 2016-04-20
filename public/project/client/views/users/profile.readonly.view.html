@@ -1,11 +1,5 @@
-<div class="container-fluid" ng-controller="ProfileReadOnlyController">
+<div class="container-fluid" align="center" ng-controller="ProfileReadOnlyController">
     <h1 class="page-header">{{model.user.firstName}}&nbsp;{{model.user.lastName}}&nbsp;</h1>
-    <div ng-show="currentUser">
-        <button ng-hide="model.followUsers.indexOf(model.user.username) >=0 "
-                type="button" class="btn btn-primary" ng-click="model.followUser()">Follow</button>
-        <!--<button ng-show="model.followUsers.indexOf(model.user.username) >=0 " type="button" class="btn btn-primary" ng-click="model.unfollowUser()">Unollow</button>-->
-        <p ng-show="model.followUsers.indexOf(model.user.username) >=0">You are following {{model.user.firstName}}!</p>
-    </div>
 
     <div ng-show="model.followMessage" class="alert alert-success" role="alert">{{model.followMessage}}</div>
 
@@ -42,4 +36,12 @@
             </ul>
         </div>
     </div>
+
+    <div ng-show="currentUser">
+        <button ng-hide="model.followUsers.indexOf(model.user.username) >=0 "
+                type="button" class="btn btn-primary" ng-click="model.followUser()">Follow</button>
+        <!--<button ng-show="model.followUsers.indexOf(model.user.username) >=0 " type="button" class="btn btn-primary" ng-click="model.unfollowUser()">Unollow</button>-->
+        <p ng-show="model.followUsers.indexOf(model.user.username) >=0">You are following {{model.user.firstName}}!</p>
+    </div>
+
 </div>

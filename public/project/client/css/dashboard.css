@@ -279,6 +279,7 @@ h1, .h1 {
 
 h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-family:"Marker Felt";
+    background-color: rgba(0,0,0,0.5);
 }
 
 .container-fluid {
@@ -310,6 +311,12 @@ ul, ol {
 
 .img-rounded {
     border-radius: 30px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 3px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #tags {
@@ -403,6 +410,7 @@ ul#tags
 
 #profileDetails {
     color:white;
+    font-weight: bold;
 }
 
 #newMember {
