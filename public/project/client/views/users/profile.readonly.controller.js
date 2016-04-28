@@ -9,37 +9,54 @@
 
         var currUser= $rootScope.currentUser;
         vm.followUsers = null;
+        vm.following = currUser.following;
+        var otherUser;
+        var otherUserId = $routeParams.userId;
+        vm.followBtn = "yes";
+        vm.otherFollowBtn = "yes";
 
-        if (currUser !== undefined) {
-            for (var i = 0; i < currUser.following.length; i++) {
-                if (vm.followUsers === null) {
-                    vm.followUsers = [currUser.following[i].username];
+
+
+        function init() {
+            if (currUser._id === otherUserId) {
+                vm.followBtn = "no";
+            } else {
+                vm.followBtn = "yes";
+            }
+
+            for (var i in vm.following) {
+                if (vm.following[i].userId === otherUserId) {
+                    vm.otherFollowBtn = "no";
                 } else {
-                    vm.followUsers.push(currUser.following[i].username);
+                    vm.otherFollowBtn = "yes";
+                }
+            }
+
+            UserService
+                .findUserById(otherUserId)
+                .then(
+                    function(response) {
+                        var user = response.data[0];
+                        user.emails = user.emails.toString();
+                        vm.user = user;
+                        otherUser = user;
+                    }
+                );
+
+            if (currUser !== undefined) {
+                for (var i = 0; i < currUser.following.length; i++) {
+                    if (vm.followUsers === null) {
+                        vm.followUsers = [currUser.following[i].username];
+                    } else {
+                        vm.followUsers.push(currUser.following[i].username);
+                    }
                 }
             }
         }
 
-        function init() {
-
-        }
-
         init();
 
-        var otherUser;
-        var otherUserId = $routeParams.userId;
-        console.log(otherUserId);
-        UserService
-            .findUserById(otherUserId)
-            .then(
-                function(response) {
-                    console.log(response.data);
-                    var user = response.data[0];
-                    user.emails = user.emails.toString();
-                    vm.user = user;
-                    otherUser = user;
-                }
-            );
+
 
         vm.followUser = followUser;
 
@@ -59,12 +76,12 @@
                         } else {
                             vm.followUsers.push(currUser.following.username);
                         }
+                        vm.otherFollowBtn="no";
                         vm.followMessage = "You are now following " + otherUser.username;
                     }
-                )
+                );
+            init();
         }
-
-
 
     }
 })();

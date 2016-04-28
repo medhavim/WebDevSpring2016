@@ -34,6 +34,7 @@
                         vm.comments = null;
                     } else {
                         vm.comments = response.data.comments;
+                        console.log(vm.comments);
                     }
                 });
 
@@ -94,7 +95,13 @@
                 .then(function (response) {
                     vm.favoriteUsers = response.data;
                     if (vm.favoriteUsers.length > 0) {
-                        vm.musicLiked = "yes";
+                        for(var i in vm.favoriteUsers)
+                        {
+                            //console.log(vm.favoriteUsers[i].username);
+                            if(vm.favoriteUsers[i].username === currentUser.username) {
+                                vm.musicLiked = "yes";
+                            }
+                        }
                     } else {
                         vm.musicLiked = "no";
                     }

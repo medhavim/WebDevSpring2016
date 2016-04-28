@@ -97,7 +97,10 @@
             .when('/profile/:userId', {
                 templateUrl: "views/users/profile.readonly.view.html",
                 controller: "ProfileReadOnlyController",
-                controllerAs : "model"
+                controllerAs : "model",
+                resolve: {
+                    loggedin: checkCurrentUser
+                }
 
             })
             .when("/register", {
