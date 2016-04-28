@@ -93,7 +93,7 @@
                         vm.followMessage = "You are now following " + otherUser.username;
                     }
                 );
-            findUser();;
+            findUser();
         }
 
         vm.unfollowUser = unfollowUser;
