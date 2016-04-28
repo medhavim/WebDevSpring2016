@@ -21,7 +21,8 @@ module.exports = function (db, mongoose) {
         userFavoritesMusic : userFavoritesMusic,
         removeFavoriteUser:removeFavoriteUser,
         findUserFavorites : findUserFavorites,
-        followUser : followUser
+        followUser : followUser,
+        unfollowUser : unfollowUser
     };
     return api;
 
@@ -262,6 +263,27 @@ module.exports = function (db, mongoose) {
                 deferred.resolve(doc);
             }
         });
+        return deferred.promise;
+    }
+
+    function unfollowUser(userId, otherUserId) {
+        var deferred = q.defer();
+        ProjectUserModel.update({_id: userId},
+            {$pull: {following: {userId : otherUserId}}},
+            function (err, doc) {
+                if (err) {
+                    deferred.reject(err);
+                } else {
+                    ProjectUserModel.findById(userId, function (err, doc) {
+                        if (err) {
+                            deferred.reject(err);
+                        } else {
+                            //console.log(doc);
+                            deferred.resolve(doc);
+                        }
+                    });
+                }
+            });
         return deferred.promise;
     }
 };

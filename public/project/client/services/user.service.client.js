@@ -89,7 +89,7 @@
         }
 
         function unfollowUser(otherUser, userId) {
-            return $http.delete('/api/project/user/' + userId + '/unfollow', otherUser);
+            return $http.delete('/api/project/user/' + userId + '/unfollow/' + otherUser);
         }
 
         function findFollowing(userId, otherUser) {

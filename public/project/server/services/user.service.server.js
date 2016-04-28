@@ -21,7 +21,7 @@ module.exports = function(app, userModel) {
     app.delete('/api/project/admin/user/:id', isAdmin, deleteUserById);
     app.get('/api/project/user/:userId/music', findUserFavorites);
     app.post("/api/project/user/:userid/follow", followUser);
-    app.delete("/api/project/user/:userid/unfollow", unfollowUser);
+    app.delete("/api/project/user/:userid/unfollow/:otherUserId", unfollowUser);
     app.get('/api/project/user/:userId/following', findFollowing);
 
     passport.use(new LocalStrategy(localStrategy));
@@ -203,21 +203,6 @@ module.exports = function(app, userModel) {
             );
     }
 
-    /*function findUserByName(req, res) {
-        var username = req.params.username;
-        var userResponse = userModel.findUserByName(username)
-            .then(
-                function(doc) {
-                    delete doc.password;
-                    res.json(doc);
-                },
-                // send error if promise rejected
-                function(err) {
-                    res.status(400).send(err);
-                }
-            );
-    }*/
-
     function updateUserById(req, res) {
         var userId = req.params.id;
         var user = req.body;
@@ -296,10 +281,10 @@ module.exports = function(app, userModel) {
 
 
     function unfollowUser(req, res) {
-        var otherUser = req.body;
         var userId = req.params.userid;
+        var otherUserId = req.params.otherUserId;
 
-        userModel.unfollowUser(userId, otherUser)
+        userModel.unfollowUser(userId, otherUserId)
             .then(
                 function (doc) {
                     //console.log(doc);

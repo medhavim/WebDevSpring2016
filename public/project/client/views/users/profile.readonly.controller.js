@@ -40,8 +40,22 @@
                 }
             }
 
+            if (currUser !== undefined) {
+                for (var i = 0; i < currUser.following.length; i++) {
+                    if (vm.followUsers === null) {
+                        vm.followUsers = [currUser.following[i].username];
+                    } else {
+                        vm.followUsers.push(currUser.following[i].username);
+                    }
+                }
+            }
 
+            findUser();
+        }
 
+        init();
+
+        function findUser() {
             UserService
                 .findUserById(otherUserId)
                 .then(
@@ -52,19 +66,7 @@
                         otherUser = user;
                     }
                 );
-
-            if (currUser !== undefined) {
-                for (var i = 0; i < currUser.following.length; i++) {
-                    if (vm.followUsers === null) {
-                        vm.followUsers = [currUser.following[i].username];
-                    } else {
-                        vm.followUsers.push(currUser.following[i].username);
-                    }
-                }
-            }
         }
-
-        init();
 
 
 
@@ -87,11 +89,25 @@
                             vm.followUsers.push(currUser.following.username);
                         }
                         vm.otherFollowBtn="no";
+                        vm.followBtn = "yes";
                         vm.followMessage = "You are now following " + otherUser.username;
                     }
                 );
-            init();
+            findUser();;
         }
 
+        vm.unfollowUser = unfollowUser;
+
+        function unfollowUser() {
+            UserService.unfollowUser(otherUserId, currUser._id)
+                .then(
+                    function(response) {
+                        vm.otherFollowBtn="yes";
+                        vm.followBtn = "yes";
+                        vm.followMessage = "You are now not following " + otherUser.username;
+                    }
+                )
+        }
+        findUser();
     }
 })();
