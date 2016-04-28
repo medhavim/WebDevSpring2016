@@ -17,7 +17,6 @@
         function init() {
             if (currentUser != null) {
                 userId = currentUser._id;
-                //console.log(userId);
             } else {
                 userId = null;
             }
@@ -81,29 +80,21 @@
                     });
         }
 
-        /*function trackInfo(mbId) {
-            console.log("in TrackController trackInfo()");
-            trackService.findTracksByMbId(mbId)
-                .then(function(response) {
-                    vm.details = displayService.displayTrackImage(response.data.toptracks);
-                });
-        }*/
-
         function getLikes() {
             musicService
                 .findFavoriteUsers(mbId)
                 .then(function (response) {
                     vm.favoriteUsers = response.data;
-                    if (vm.favoriteUsers.length > 0) {
-                        for(var i in vm.favoriteUsers)
-                        {
-                            //console.log(vm.favoriteUsers[i].username);
-                            if(vm.favoriteUsers[i].username === currentUser.username) {
-                                vm.musicLiked = "yes";
+                    if (currentUser !== undefined) {
+                        if (vm.favoriteUsers.length > 0) {
+                            for (var i in vm.favoriteUsers) {
+                                if (vm.favoriteUsers[i].username === currentUser.username) {
+                                    vm.musicLiked = "yes";
+                                }
                             }
+                        } else {
+                            vm.musicLiked = "no";
                         }
-                    } else {
-                        vm.musicLiked = "no";
                     }
                 });
         }

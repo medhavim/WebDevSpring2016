@@ -9,7 +9,8 @@
 
         var currUser= $rootScope.currentUser;
         vm.followUsers = null;
-        vm.following = currUser.following;
+
+
         var otherUser;
         var otherUserId = $routeParams.userId;
         vm.followBtn = "yes";
@@ -18,19 +19,28 @@
 
 
         function init() {
-            if (currUser._id === otherUserId) {
-                vm.followBtn = "no";
+            if(currUser !== undefined) {
+                vm.following = currUser.following;
+                for (var i in vm.following) {
+                    if (vm.following[i].userId === otherUserId) {
+                        vm.otherFollowBtn = "no";
+                    } else {
+                        vm.otherFollowBtn = "yes";
+                    }
+                }
             } else {
-                vm.followBtn = "yes";
+                vm.following = null;
             }
 
-            for (var i in vm.following) {
-                if (vm.following[i].userId === otherUserId) {
-                    vm.otherFollowBtn = "no";
+            if(currUser !== undefined) {
+                if (currUser._id === otherUserId) {
+                    vm.followBtn = "no";
                 } else {
-                    vm.otherFollowBtn = "yes";
+                    vm.followBtn = "yes";
                 }
             }
+
+
 
             UserService
                 .findUserById(otherUserId)

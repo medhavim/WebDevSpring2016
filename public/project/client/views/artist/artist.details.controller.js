@@ -17,7 +17,6 @@
         function init() {
             if (currentUser != null) {
                 userId = currentUser._id;
-                //console.log(userId);
             } else {
                 userId = null;
             }
@@ -28,7 +27,6 @@
 
             musicService.findAllComments(mbId)
                 .then(function (response) {
-                    //console.log(response.data);
                     if (response.data === null) {
                         vm.comments = null;
                     } else {
@@ -37,8 +35,6 @@
                 });
 
             getLikes();
-
-            //console.log(vm);
         }
 
         init();
@@ -47,27 +43,22 @@
             musicService
                 .findFavoriteUsers(mbId)
                 .then(function (response) {
-                    //console.log("getLikes");
-                    //console.log(response);
                     vm.favoriteUsers = response.data;
-                    //console.log(vm.favoriteUsers);
-                    //console.log(currentUser);
-                    if (vm.favoriteUsers.length > 0) {
-                        for(var i in vm.favoriteUsers)
-                        {
-                            //console.log(vm.favoriteUsers[i].username);
-                            if(vm.favoriteUsers[i].username === currentUser.username) {
-                                vm.musicLiked = "yes";
+                    if (currentUser !== undefined) {
+                        if (vm.favoriteUsers.length > 0) {
+                            for (var i in vm.favoriteUsers) {
+                                if (vm.favoriteUsers[i].username === currentUser.username) {
+                                    vm.musicLiked = "yes";
+                                }
                             }
+                        } else {
+                            vm.musicLiked = "no";
                         }
-                    } else {
-                        vm.musicLiked = "no";
                     }
                 });
         }
 
         function fetchArtist(mbId) {
-            //console.log("in ArtistDetailsController fetchArtist()");
             artistService.findArtistByMbId(mbId)
                 .then(function (response) {
                     vm.details = displayService.displayArtistImage(response.data);
@@ -75,8 +66,6 @@
                     vm.similar = displayService.displayArtistImage(vm.details.similar);
                     vm.tags = vm.details.tags.tag;
                     vm.stats = vm.details.stats;
-                    //console.log("fetchArtist");
-                    //console.log(vm);
                 });
         }
 
@@ -84,8 +73,7 @@
             artistService.findTracksByMbId(mbId)
                 .then(function (response) {
                     vm.data = response.data;
-                    vm.tracks = displayService.displayTrackImage(vm.data.toptracks)
-                    //console.log(vm.tracks);
+                    vm.tracks = displayService.displayTrackImage(vm.data.toptracks);
                 });
         }
 
@@ -159,7 +147,6 @@
                         })
                 }
             }
-            //getLikes();
             init();
         }
     }

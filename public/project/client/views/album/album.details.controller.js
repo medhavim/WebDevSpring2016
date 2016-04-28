@@ -24,8 +24,6 @@
 
             fetchAlbum(mbId);
 
-            //similarArtists();
-
             musicService.findAllComments(mbId)
                 .then(function (response) {
                     if (response.data === null) {
@@ -45,16 +43,16 @@
                 .findFavoriteUsers(mbId)
                 .then(function (response) {
                     vm.favoriteUsers = response.data;
-                    if (vm.favoriteUsers.length > 0) {
-                        for(var i in vm.favoriteUsers)
-                        {
-                            //console.log(vm.favoriteUsers[i].username);
-                            if(vm.favoriteUsers[i].username === currentUser.username) {
-                                vm.musicLiked = "yes";
+                    if (currentUser !== undefined) {
+                        if (vm.favoriteUsers.length > 0) {
+                            for (var i in vm.favoriteUsers) {
+                                if (vm.favoriteUsers[i].username === currentUser.username) {
+                                    vm.musicLiked = "yes";
+                                }
                             }
+                        } else {
+                            vm.musicLiked = "no";
                         }
-                    } else {
-                        vm.musicLiked = "no";
                     }
                 });
         }
@@ -145,14 +143,12 @@
                         mbId: favMusicData.mbid,
                         musicTitle: favMusicData.name
                     };
-                    //console.log(music);
                     musicService.postFavoriteUser(userId, currentUser.username, music)
                         .then(function(response) {
                             vm.favoriteUsers.push(currentUser.username);
                         })
                 }
             }
-            //getLikes();
             init();
         }
     }
