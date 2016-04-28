@@ -10,9 +10,6 @@
         vm.fetchArtist = fetchArtist;
         vm.fetchTrack = fetchTrack;
         vm.fetchAlbum = fetchAlbum;
-        //vm.$location = $location;
-        //console.log("location");
-        //console.log($location);
         vm.search = null;
 
         function init() {
