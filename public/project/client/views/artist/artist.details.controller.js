@@ -89,7 +89,7 @@
                     commentId: (new Date).getTime(),
                     userId: $rootScope.currentUser._id,
                     username: $rootScope.currentUser.username,
-                    timestamp: new Date(),
+                    timestamp: new Date().toDateString() + ' ' + new Date().toLocaleTimeString(),
                     comment: vm.commentBox
                 };
                 var musicTitle= favMusicData.name;
